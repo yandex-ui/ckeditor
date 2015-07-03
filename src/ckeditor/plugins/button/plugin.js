@@ -29,11 +29,10 @@
 	template += ' onkeydown="return CKEDITOR.tools.callFunction({keydownFn},event);"' +
 		' onfocus="return CKEDITOR.tools.callFunction({focusFn},event);" ' +
 		( CKEDITOR.env.ie ? 'onclick="return false;" onmouseup' : 'onclick' ) + // #188
-			'="CKEDITOR.tools.callFunction({clickFn},this);return false;">' +
-		'<span class="cke_button_icon cke_button__{iconName}_icon" style="{style}"';
+			'="CKEDITOR.tools.callFunction({clickFn},this);return false;">';
 
 
-	template += '>&nbsp;</span>' +
+	template += '{icoHtml}' +
 		'<span id="{id}_label" class="cke_button_label cke_button__{name}_label" aria-hidden="false">{label}</span>' +
 		'{arrowHtml}' +
 		'</a>';
@@ -43,8 +42,11 @@
 	( CKEDITOR.env.hc ? '&#9660;' : '' ) +
 		'</span>';
 
+	var templateIcon = '<span class="cke_button_icon cke_button__{iconName}_icon" style="{style}">&nbsp;</span>';
+
 	var btnArrowTpl = CKEDITOR.addTemplate( 'buttonArrow', templateArrow ),
-		btnTpl = CKEDITOR.addTemplate( 'button', template );
+		btnTpl = CKEDITOR.addTemplate( 'button', template ),
+		btnIcoTpl = CKEDITOR.addTemplate( 'buttonIcon', templateIcon );
 
 	CKEDITOR.plugins.add( 'button', {
 		lang: 'af,ar,bg,ca,cs,da,de,el,en,en-gb,eo,es,fa,fi,fr,gl,he,hu,it,ja,km,ko,ku,lt,nb,nl,pl,pt,pt-br,ro,ru,sk,sl,sq,sv,tr,tt,uk,vi,zh,zh-cn', // %REMOVE_LINE_CORE%
@@ -251,6 +253,8 @@
 				this.icon = null;
 			}
 
+			var style = CKEDITOR.skin.getIconStyle( iconName, ( editor.lang.dir == 'rtl' ), this.icon, this.iconOffset );
+
 			var params = {
 				id: id,
 				name: name,
@@ -265,8 +269,11 @@
 				keydownFn: keydownFn,
 				focusFn: focusFn,
 				clickFn: clickFn,
-				style: CKEDITOR.skin.getIconStyle( iconName, ( editor.lang.dir == 'rtl' ), this.icon, this.iconOffset ),
-				arrowHtml: this.hasArrow ? btnArrowTpl.output() : ''
+				style: style,
+				arrowHtml: this.hasArrow ? btnArrowTpl.output() : '',
+				icoHtml: this.icoTmpl ?
+					this.icoTmpl.output({ id: id, iconName: iconName }) :
+					btnIcoTpl.output({ iconName: iconName, style: style })
 			};
 
 			btnTpl.output( params, output );

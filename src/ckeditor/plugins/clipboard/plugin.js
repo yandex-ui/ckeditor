@@ -1042,9 +1042,7 @@
 			// Do not use paste bin if the browser let us get HTML or files from dataTranfer.
 			if ( beforePasteNotCanceled && clipboard.canClipboardApiBeTrusted( eventData.dataTransfer, editor ) ) {
 				evt.data.preventDefault();
-				setTimeout( function() {
-					firePasteEvents( editor, eventData );
-				}, 0 );
+				firePasteEvents( editor, eventData );
 			} else {
 				getClipboardDataByPastebin( evt, function( data ) {
 					// Clean up.
@@ -2456,11 +2454,14 @@
 
 			if ( this.$ && this.$.items && this.$.items[ 0 ] ) {
 				try {
-					file = this.$.items[ 0 ].getAsFile();
-					// Duck typing
-					if ( file && file.type ) {
-						return file;
+					for (var i = 0, l = this.$.items.length; i < l; i++) {
+						file = this.$.items[ i ].getAsFile();
+						// Duck typing
+						if ( file && file.type ) {
+							return file;
+						}
 					}
+
 				} catch ( err ) {
 					// noop
 				}

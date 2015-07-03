@@ -39,7 +39,7 @@
 		}
 	}
 
-	function saveStyles( element, isInsideEditor ) {
+	function saveStyles( element, isInsideEditor, ignoredClasses ) {
 		var data = protectFormStyles( element );
 		var retval = {};
 
@@ -47,7 +47,13 @@
 
 		if ( !isInsideEditor ) {
 			retval[ 'class' ] = $element.className || '';
-			$element.className = '';
+
+			if (ignoredClasses) {
+				$element.className = ( retval[ 'class' ].match(ignoredClasses) || [] ).join('');
+
+			} else {
+				$element.className = '';
+			}
 		}
 
 		retval.inline = $element.style.cssText || '';
@@ -131,6 +137,7 @@
 						return node.type == CKEDITOR.NODE_ELEMENT && node.hasClass( 'cke_inner' );
 					} );
 					var contents = editor.ui.space( 'contents' );
+					var ignoredClasses = editor.config.maximizeIgnoredClasses;
 
 					// Save current selection and scroll position in editing area.
 					if ( editor.mode == 'wysiwyg' ) {
@@ -154,12 +161,12 @@
 						// Save and reset the styles for the entire node tree.
 						var currentNode = editor.container;
 						while ( ( currentNode = currentNode.getParent() ) ) {
-							currentNode.setCustomData( 'maximize_saved_styles', saveStyles( currentNode ) );
+							currentNode.setCustomData( 'maximize_saved_styles', saveStyles( currentNode, false, ignoredClasses ) );
 							// Show under floatpanels (-1) and context menu (-2).
 							currentNode.setStyle( 'z-index', editor.config.baseFloatZIndex - 5 );
 						}
-						contents.setCustomData( 'maximize_saved_styles', saveStyles( contents, true ) );
-						container.setCustomData( 'maximize_saved_styles', saveStyles( container, true ) );
+						contents.setCustomData( 'maximize_saved_styles', saveStyles( contents, true, ignoredClasses ) );
+						container.setCustomData( 'maximize_saved_styles', saveStyles( container, true, ignoredClasses ) );
 
 						// Hide scroll bars.
 						var styles = {
@@ -192,6 +199,9 @@
 						container.addClass( 'cke_maximized' );
 
 						resizeHandler();
+						editor._maximizeResizeTimeout = setTimeout(function() {
+							resizeHandler();
+						}, 0);
 
 						// Still not top left? Fix it. (Bug #174)
 						var offset = container.getDocumentPosition();
@@ -205,6 +215,8 @@
 					}
 					// Restore from fullscreen if the state is on.
 					else if ( this.state == CKEDITOR.TRISTATE_ON ) {
+						clearTimeout(editor._maximizeResizeTimeout);
+
 						// Remove event handler for resizing.
 						mainWindow.removeListener( 'resize', resizeHandler );
 

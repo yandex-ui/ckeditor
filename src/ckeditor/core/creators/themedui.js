@@ -390,7 +390,9 @@ CKEDITOR.replaceClass = 'ckeditor';
 	function loadTheme( editor ) {
 		var name = editor.name,
 			element = editor.element,
-			elementMode = editor.elementMode;
+			elementMode = editor.elementMode,
+			isResetClass = typeof(editor.config.themeResetAll) === 'boolean' ? editor.config.themeResetAll : true,
+			resetClass = (isResetClass ? 'cke_reset_all' : '');
 
 		// Get the HTML for the predefined spaces.
 		var topHtml = editor.fire( 'uiSpace', { space: 'top', html: '' } ).html;
@@ -408,7 +410,9 @@ CKEDITOR.replaceClass = 'ckeditor';
 				( editor.title ? '<span id="cke_{name}_arialbl" class="cke_voice_label">{voiceLabel}</span>' : '' ) +
 				'<{outerEl} class="cke_inner cke_reset" role="presentation">' +
 					'{topHtml}' +
-					'<{outerEl} id="{contentId}" class="cke_contents cke_reset" role="presentation"></{outerEl}>' +
+					'<{outerEl} id="{contentWrapId}" class="cke_contents_wrap">' +
+						'<{outerEl} id="{contentId}" class="cke_contents cke_reset" role="presentation"></{outerEl}>' +
+					'</{outerEl}>' +
 					'{bottomHtml}' +
 				'</{outerEl}>' +
 			'</{outerEl}>' );
@@ -419,9 +423,10 @@ CKEDITOR.replaceClass = 'ckeditor';
 			langDir: editor.lang.dir,
 			langCode: editor.langCode,
 			voiceLabel: editor.title,
-			topHtml: topHtml ? '<span id="' + editor.ui.spaceId( 'top' ) + '" class="cke_top cke_reset_all" role="presentation" style="height:auto">' + topHtml + '</span>' : '',
+			topHtml: topHtml ? '<span id="' + editor.ui.spaceId( 'top' ) + '" class="cke_top ' + resetClass + '" role="presentation" style="height:auto">' + topHtml + '</span>' : '',
 			contentId: editor.ui.spaceId( 'contents' ),
-			bottomHtml: bottomHtml ? '<span id="' + editor.ui.spaceId( 'bottom' ) + '" class="cke_bottom cke_reset_all" role="presentation">' + bottomHtml + '</span>' : '',
+			contentWrapId: editor.ui.spaceId( 'contents_wrap' ),
+			bottomHtml: bottomHtml ? '<span id="' + editor.ui.spaceId( 'bottom' ) + '" class="cke_bottom ' + resetClass + '" role="presentation">' + bottomHtml + '</span>' : '',
 			outerEl: CKEDITOR.env.ie ? 'span' : 'div'	// #9571
 		} ) );
 
