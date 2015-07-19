@@ -15,6 +15,7 @@ var CKBUILDER_CONFIG = {
         '.editorconfig',
         '.gitignore',
         '.gitattributes',
+        '.gitmodules',
         'gruntfile.js',
         '.idea',
         '.jscsrc',
@@ -45,6 +46,8 @@ var CKBUILDER_CONFIG = {
         'uk': 1
     },
     plugins: {
+        // дополнение прототипа кнопок
+        exbutton: 1,
         // набор фильтров против xss
         xss: 1,
         // ресайзер картинок для вебкита
