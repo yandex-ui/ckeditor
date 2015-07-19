@@ -51,6 +51,8 @@ var CKBUILDER_CONFIG = {
 		imgresize: 1,
 		// автосоздание ссылок по Enter
 		autolink2: 1,
+		// открыть ссылку в новом окне
+		openlink: 1,
 	    filetools: 1,
 	    tableresize: 1,
 	    // замена iframe на div
