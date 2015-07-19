@@ -60,7 +60,7 @@ if ( !window.CKEDITOR ) {
 			 *
 			 *		alert( CKEDITOR.revision ); // e.g. '3975'
 			 */
-			revision: '96c7272',
+			revision: 'b52228d',
 
 			/**
 			 * A 3-digit random integer, valid for the entire life of the CKEDITOR object.
@@ -30455,25 +30455,20 @@ CKEDITOR.skin.chameleon = ( function() {
             return;
         }
 
-        var isRestoreFocus = (event && event.restoreFocus);
-
         for (var eventName in this._editorHideEvents) {
             this._editor.removeListener(eventName, this._hideWrapper);
         }
 
         this._wrapper.removeAllListeners();
 
-        if (isRestoreFocus) {
-            var selection = this._editor.getSelection();
-            selection.removeAllRanges();
+        var selection = this._editor.getSelection();
+        selection.removeAllRanges();
 
-            this._element.replace(this._wrapper);
+        this._element.replace(this._wrapper);
 
+        if (event && event.restoreFocus) {
             selection.selectElement(this._element);
             this._element.focus();
-
-        } else {
-            this._element.replace(this._wrapper);
         }
 
         delete this._wrapper;
