@@ -2,6 +2,14 @@
     /* borschik:include:ckeditor/dev/builder/release/ckeditor/ckeditor.js */
     /* borschik:include:ckeditor/dev/builder/release/ckeditor/styles.js */
 
+    // FIXME сделать автосборку всех js
+    /* borschik:include:ckeditor/dev/builder/release/ckeditor/plugins/clipboard/dialogs/paste.js */
+    /* borschik:include:ckeditor/dev/builder/release/ckeditor/plugins/colordialog/dialogs/colordialog.js */
+    /* borschik:include:ckeditor/dev/builder/release/ckeditor/plugins/link/dialogs/link.js */
+    /* borschik:include:ckeditor/dev/builder/release/ckeditor/plugins/link/dialogs/anchor.js */
+    /* borschik:include:ckeditor/dev/builder/release/ckeditor/plugins/table/dialogs/table.js */
+    /* borschik:include:ckeditor/dev/builder/release/ckeditor/plugins/tabletools/dialogs/tableCell.js */
+
     CKEDITOR.disableAutoInline = true;
 
     [
