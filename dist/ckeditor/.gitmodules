@@ -1,0 +1,12 @@
+[submodule "plugins/imgresize"]
+	path = plugins/imgresize
+	url = git@github.com:Katochimoto/ckeditor-imgresize.git
+[submodule "plugins/autolink2"]
+	path = plugins/autolink2
+	url = git@github.com:Katochimoto/ckeditor-autolink2.git
+[submodule "plugins/openlink"]
+	path = plugins/openlink
+	url = git@github.com:Katochimoto/ckeditor-openlink.git
+[submodule "plugins/xss"]
+	path = plugins/xss
+	url = git@github.com:Katochimoto/ckeditor-xss.git
