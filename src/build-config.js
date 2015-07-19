@@ -47,6 +47,7 @@ var CKBUILDER_CONFIG = {
 	    'uk': 1
 	},
 	plugins: {
+		imgresize: 1,
 	    filetools: 1,
 	    tableresize: 1,
 	    // замена iframe на div
