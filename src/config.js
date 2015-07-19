@@ -88,6 +88,8 @@
             { name: 'removeformat', items: [ 'RemoveFormat' ] },
             { name: 'switchmode', items: [ 'SwitchMode' ] }
         ];
+
+        return config;
     };
 
 }());
