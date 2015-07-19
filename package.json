@@ -25,5 +25,5 @@
     "engines": {
         "node": ">=0.6.0"
     },
-    "main": "dist/ckeditor.js"
+    "main": "dist/ckeditor-full.js"
 }
