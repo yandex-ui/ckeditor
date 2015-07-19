@@ -1,4 +1,4 @@
-Jane.module('jane.ckeditor.js', function() {
+(function() {
     window.CKEDITOR_BASEPATH = Daria.Config.staticRoot + '/mail/modules/ckeditor/js/ckeditor/';
 
     /* borschik:include:js/ckeditor/ckeditor.js */
@@ -169,7 +169,7 @@ Jane.module('jane.ckeditor.js', function() {
             tags[0]=["[contact_name]", "Name", "Name"];
             tags[1]=["[contact_email]", "email", "email"];
             tags[2]=["[contact_user_name]", "User name", "User name"];
-            
+
             // Create style objects for all defined styles.
 
             editor.ui.addRichCombo( 'tokens',
@@ -196,7 +196,7 @@ Jane.module('jane.ckeditor.js', function() {
                     },
 
                     onClick : function( value )
-                    {         
+                    {
                     editor.focus();
                     editor.fire( 'saveSnapshot' );
                     editor.insertHtml(value);
@@ -208,5 +208,4 @@ Jane.module('jane.ckeditor.js', function() {
         }
     });
 
-});
-
+}());
