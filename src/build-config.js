@@ -47,7 +47,10 @@ var CKBUILDER_CONFIG = {
 	    'uk': 1
 	},
 	plugins: {
+		// ресайзер картинок для вебкита
 		imgresize: 1,
+		// автосоздание ссылок по Enter
+		autolink2: 1,
 	    filetools: 1,
 	    tableresize: 1,
 	    // замена iframe на div
