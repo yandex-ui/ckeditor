@@ -13,6 +13,10 @@ clean:
 	rm -rf $(CURDIR)/src/ckeditor/dev/builder/release/ckeditor
 	rm -rf $(CURDIR)/dist/ckeditor.js
 
+node_modules: package.json
+	npm install
+	touch node_modules
+
 $(CURDIR)/src/ckeditor/dev/builder/release/ckeditor: $(src_js)
 	$(CURDIR)/src/ckeditor/dev/builder/build.sh \
 		--skip-omitted-in-build-config \

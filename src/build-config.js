@@ -47,6 +47,8 @@ var CKBUILDER_CONFIG = {
 	    'uk': 1
 	},
 	plugins: {
+		// набор фильтров против xss
+		xss: 1,
 		// ресайзер картинок для вебкита
 		imgresize: 1,
 		// автосоздание ссылок по Enter
