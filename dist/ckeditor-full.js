@@ -56998,5 +56998,4 @@ CKEDITOR.dialog.add( 'cellProperties', function( editor ) {
 
 /* config.js end */
 
-
 }());

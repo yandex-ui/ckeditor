@@ -47,5 +47,4 @@
     });
 
     /* borschik:include:config.js */
-
 }());
