@@ -58,7 +58,7 @@ if ( !window.CKEDITOR ) {
 			 *
 			 *		alert( CKEDITOR.revision ); // e.g. '3975'
 			 */
-			revision: 'b6ab70e',
+			revision: '96c7272',
 
 			/**
 			 * A 3-digit random integer, valid for the entire life of the CKEDITOR object.
@@ -30406,16 +30406,16 @@ CKEDITOR.skin.chameleon = ( function() {
         this._element = element;
         this._wrapper = this._getWrapper(this._element);
 
+        var selection = this._editor.getSelection();
+        selection.removeAllRanges();
+
         if (!this._wrapper) {
             this._wrapper = this._editor._imgresizeWrapper.clone(true);
             this._wrapper.replace(this._element);
             this._element.appendTo(this._wrapper);
         }
 
-        var selection = this._editor.getSelection();
-        selection.removeAllRanges();
         selection.selectElement(this._wrapper);
-
         this._wrapper.focus();
 
         this._controls = this._wrapper.findOne('.cke_imgresize_controls');
@@ -30444,21 +30444,35 @@ CKEDITOR.skin.chameleon = ( function() {
     Resizer.prototype._onKeydown = function(event) {
         var nativeEvent = event.data.$;
         if (!nativeEvent.shiftKey) {
-            this._hideWrapper();
+            this._hideWrapper({ 'restoreFocus': true });
         }
     };
 
-    Resizer.prototype._hideWrapper = function() {
+    Resizer.prototype._hideWrapper = function(event) {
         if (!this._wrapper) {
             return;
         }
+
+        var isRestoreFocus = (event && event.restoreFocus);
 
         for (var eventName in this._editorHideEvents) {
             this._editor.removeListener(eventName, this._hideWrapper);
         }
 
         this._wrapper.removeAllListeners();
-        this._element.replace(this._wrapper);
+
+        if (isRestoreFocus) {
+            var selection = this._editor.getSelection();
+            selection.removeAllRanges();
+
+            this._element.replace(this._wrapper);
+
+            selection.selectElement(this._element);
+            this._element.focus();
+
+        } else {
+            this._element.replace(this._wrapper);
+        }
 
         delete this._wrapper;
         delete this._element;
