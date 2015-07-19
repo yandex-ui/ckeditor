@@ -33,8 +33,7 @@ $(CURDIR)/src/ckeditor/dev/builder/release/ckeditor: $(src_js)
 
 $(CURDIR)/dist/ckeditor-full.js: node_modules $(CURDIR)/src/ckeditor/dev/builder/release/ckeditor
 	mkdir -p $(CURDIR)/dist
-	rm -f $@
-	$(NPM_BIN)/borschik -m no -i $(CURDIR)/src/ckeditor.js >> $@
+	$(NPM_BIN)/borschik -m no -i $(CURDIR)/src/ckeditor.js -o $@
 
 $(CURDIR)/dist/ckeditor-full.min.js: $(CURDIR)/dist/ckeditor-full.js
 	$(NPM_BIN)/borschik -i $< -o $@
