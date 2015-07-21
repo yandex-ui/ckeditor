@@ -74,21 +74,6 @@
         config.disableNativeSpellChecker = false;
         config.uiColor = '#ffffff';
 
-        config.toolbar_Max = [
-            { name: 'attachment', items: [ 'Attachment' ] },
-            { name: 'clipboard', items: [ 'Undo', 'Redo' ] },
-            { name: 'basicstyles', items: [ 'Bold', 'Italic', 'Underline', 'Strike' ] },
-            { name: 'links', items: [ 'Link', 'Unlink' ] },
-            { name: 'blockquote', items: [ 'Blockquote' ] },
-            { name: 'styles', items: [ 'TextColor', 'BGColor' ] },
-            { name: 'fontstyles', items: [ 'Font', 'FontSize' ] },
-            { name: 'paragraph', items: [ 'NumberedList', 'BulletedList' ] },
-            { name: 'align', items: [ 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock' ] },
-            { name: 'tools', items: [ 'Maximize' ] },
-            { name: 'removeformat', items: [ 'RemoveFormat' ] },
-            { name: 'switchmode', items: [ 'SwitchMode' ] }
-        ];
-
         return config;
     };
 
