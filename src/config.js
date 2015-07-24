@@ -56,7 +56,8 @@
         'td',
         'tr',
         'u',
-        'ul'
+        'ul',
+        's'
     ];
 
     var allowFilter = validTags.join(' ') + '; *[' + validAttrs.join(',') + ']; *{*}';
