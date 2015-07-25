@@ -46,6 +46,8 @@ var CKBUILDER_CONFIG = {
         'uk': 1
     },
     plugins: {
+        // песочница для divarea, превентит некоторые события
+        divareasb: 1,
         // дополнение прототипа кнопок
         exbutton: 1,
         // набор фильтров против xss

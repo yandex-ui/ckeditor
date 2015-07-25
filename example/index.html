@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        window.CKEDITOR_BASEPATH = '/dist/ckeditor/';
+    </script>
+    <script src="/dist/ckeditor-full.js"></script>
+</head>
+<body>
+    <textarea id="editor"></textarea>
+<script>
+var config = {
+    'themeResetAll': false,
+    'language': 'ru',
+    'enableHotkeys': true,
+    'title': '',
+    'toolbar': 'Max',
+    //'extraPlugins': 'pasteimage,switchmode,hotkeys,view,signature,attachment,emoticons,svgicons',
+    'viewTopLayout': 'layout-compose-message-editor-top',
+    'viewBottomLayout': 'layout-compose-message-editor-bottom',
+    'toolbar_Max': [
+        { 'name': 'attachment', 'items': [ 'Attachment' ] },
+        { 'name': 'clipboard', 'items': [ 'Undo', 'Redo' ] },
+        { 'name': 'basicstyles', 'items': [ 'Bold', 'Italic', 'Underline', 'Strike' ] },
+        { 'name': 'links', 'items': [ 'Link', 'Unlink' ] },
+        { 'name': 'blockquote', 'items': [ 'Blockquote' ] },
+        { 'name': 'styles', 'items': [ 'TextColor', 'BGColor' ] },
+        { 'name': 'fontstyles', 'items': [ 'Font', 'FontSize' ] },
+        { 'name': 'emoticons', 'items': [ 'Emoticons' ] },
+        { 'name': 'paragraph', 'items': [ 'NumberedList', 'BulletedList' ] },
+        { 'name': 'align', 'items': [ 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock' ] },
+        { 'name': 'tools', 'items': [ 'Maximize' ] },
+        { 'name': 'removeformat', 'items': [ 'RemoveFormat' ] },
+        { 'name': 'switchmode', 'items': [ 'SwitchMode' ] }
+    ],
+    'on': {
+        'instanceReady': function() {
+            this.setData('<p><img src="http://placehold.it/200x150"> This content will be replaced with the editor.</p>');
+        }
+    }
+};
+
+CKEDITOR.editorConfig(config);
+
+CKEDITOR.replace('editor', config);
+</script>
+</body>
+</html>
