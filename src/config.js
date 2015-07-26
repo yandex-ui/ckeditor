@@ -74,6 +74,7 @@
         config.browserContextMenuOnCtrl = true;
         config.disableNativeSpellChecker = false;
         config.uiColor = '#ffffff';
+        config.disallowedContent = '*{position,z-index}';
 
         return config;
     };
