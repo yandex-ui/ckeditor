@@ -58,7 +58,7 @@ if ( !window.CKEDITOR ) {
 			 *
 			 *		alert( CKEDITOR.revision ); // e.g. '3975'
 			 */
-			revision: 'd67c66f',
+			revision: '9ed9928',
 
 			/**
 			 * A 3-digit random integer, valid for the entire life of the CKEDITOR object.
@@ -30314,11 +30314,15 @@ CKEDITOR.skin.chameleon = ( function() {
                 command.disable();
             });
 
+            editor.on('drop', function(event) {
+                this._onDrop.call(editor, event);
+                command.enable();
+            }, this);
+
             editor.on('dragend', function() {
                 command.enable();
             });
 
-            editor.on('paste', this._onPaste);
             editor.on('destroy', this._onDestroy);
             editor.on('uiReady', this._dropContextReset);
             editor.on('maximize', this._dropContextReset);
@@ -30335,14 +30339,17 @@ CKEDITOR.skin.chameleon = ( function() {
         /**
          * @this {Editor}
          */
-        _onPaste: function(event) {
-            var eventMethod = event.data.method;
-            var dataTransfer = event.data.dataTransfer;
-            var clipboardData = dataTransfer.$;
+        _onDrop: function(event) {
+            var command = this.getCommand(CMD_PLACEHOLDER);
+            if (command.state === CKEDITOR.TRISTATE_DISABLED) {
+                return;
+            }
 
-            // в IE11 clipboardData может не быть при вставке текста
+            var nativeEvent = event.data.$;
+
+            // в IE11 dataTransfer может не быть при вставке текста
             // @see DARIA-50325
-            if (!clipboardData) {
+            if (!nativeEvent.dataTransfer) {
                 return;
             }
 
@@ -30350,7 +30357,7 @@ CKEDITOR.skin.chameleon = ( function() {
              * @config CKEDITOR.config.imageUploadUrl
              */
             var uploadUrl = CKEDITOR.fileTools.getUploadUrl(this.config, 'image');
-            var clipboardIterator = new ClipboardDataIterator(clipboardData);
+            var clipboardIterator = new ClipboardDataIterator(nativeEvent.dataTransfer);
 
             clipboardIterator.on('iterator:inline', function(event) {
                 var loader = this.uploadRepository.create(event.data);
@@ -30359,11 +30366,8 @@ CKEDITOR.skin.chameleon = ( function() {
             }, this);
 
             clipboardIterator.on('iterator:file', function(event) {
-                // вставка файлов обрабатывается только для драга
-                if (eventMethod === 'drop') {
-                    var data = Array.isArray(event.data) ? event.data : [ event.data ];
-                    this.fire('pastefile:dropfile', data);
-                }
+                var data = Array.isArray(event.data) ? event.data : [ event.data ];
+                this.fire('pastefile:dropfile', data);
             }, this);
 
             clipboardIterator.on('iterator:html', function(event) {
@@ -30377,7 +30381,7 @@ CKEDITOR.skin.chameleon = ( function() {
 
             var data = clipboardIterator.iterate();
             if (data.prevent) {
-                event.cancel();
+                nativeEvent.preventDefault();
             }
         },
 
@@ -30494,7 +30498,7 @@ CKEDITOR.skin.chameleon = ( function() {
         this._stopDropPropagation = false;
         this._isShow = false;
 
-        this._leaveDebounce = _.debounce(this._leave.bind(this), 100);
+        this._leaveDebounce = _.debounce(this._leave.bind(this), 200);
         this._onDragenter = this._onDragenter.bind(this);
         this._onDrop = this._onDrop.bind(this);
         this._onDragover = this._onDragover.bind(this);
