@@ -60,7 +60,7 @@ if ( !window.CKEDITOR ) {
 			 *
 			 *		alert( CKEDITOR.revision ); // e.g. '3975'
 			 */
-			revision: '32a8e1c',
+			revision: 'de72c9b',
 
 			/**
 			 * A 3-digit random integer, valid for the entire life of the CKEDITOR object.
@@ -30475,6 +30475,7 @@ CKEDITOR.skin.chameleon = ( function() {
         this._hide = this._hide.bind(this);
         this._over = this._over.bind(this);
 
+        this._editor.on('drop', this._onDropEditor, this, null, -1);
         this._node.addEventListener('dragover', this._over, false);
         this._node.addEventListener('dragenter', this._show, false);
         this._node.addEventListener('dragleave', this._hide, false);
@@ -30497,14 +30498,9 @@ CKEDITOR.skin.chameleon = ( function() {
     DNDHover.prototype._hide = function(event) {
         event.stopPropagation();
         event.preventDefault();
-
-        var idx = this._collection.indexOf(event.target);
-        if (idx !== -1) {
-            this._collection.splice(idx, 1);
-        }
-
-        if (!this._collection.length) {
-            this.fire('leave', event);
+        this._leaveAction(event);
+        if (event.type === 'drop') {
+            this.fire('drop', event);
         }
     };
 
@@ -30526,8 +30522,26 @@ CKEDITOR.skin.chameleon = ( function() {
         event.dataTransfer.dropEffect = 'copy';
     };
 
+    DNDHover.prototype._onDropEditor = function(event) {
+        var nativeEvent = event.data.$;
+        nativeEvent.stopPropagation();
+        this._leaveAction(nativeEvent);
+    };
+
+    DNDHover.prototype._leaveAction = function(event) {
+        var idx = this._collection.indexOf(event.target);
+        if (idx !== -1) {
+            this._collection.splice(idx, 1);
+        }
+
+        if (!this._collection.length) {
+            this.fire('leave', event);
+        }
+    };
+
     DNDHover.prototype.destroy = function() {
         this.removeAllListeners();
+        this._editor.removeListener('drop', this._onDropEditor);
         this._node.removeEventListener('dragover', this._over, false);
         this._node.removeEventListener('dragenter', this._show, false);
         this._node.removeEventListener('dragleave', this._hide, false);
