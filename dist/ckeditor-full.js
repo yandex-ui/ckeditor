@@ -60,7 +60,7 @@ if ( !window.CKEDITOR ) {
 			 *
 			 *		alert( CKEDITOR.revision ); // e.g. '3975'
 			 */
-			revision: '413bc2a',
+			revision: 'f347257',
 
 			/**
 			 * A 3-digit random integer, valid for the entire life of the CKEDITOR object.
@@ -30619,14 +30619,20 @@ CKEDITOR.skin.chameleon = ( function() {
     };
 
     DNDHover.prototype.destroy = function() {
+        var editable = this._editor.editable();
+        if (editable) {
+            editable.removeListener('scroll', this._onScroll);
+        }
+
         this.removeAllListeners();
         this._editor.removeListener('dragend', this._onDragendEditor);
         this._editor.removeListener('drop', this._onDropEditor);
-        this._editor.editable().removeListener('scroll', this._onScroll);
+
         window.removeEventListener('dragover', this._onDragover, false);
         window.removeEventListener('dragenter', this._onDragenter, false);
         window.removeEventListener('drop', this._onDrop, false);
         window.removeEventListener('scroll', this._onScroll, false);
+
         this._dropContext = null;
     };
 
