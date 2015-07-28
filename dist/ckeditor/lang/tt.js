@@ -240,10 +240,6 @@ CKEDITOR.lang['tt'] = {
     	iframe : 'IFrame',
     	unknown : 'Танылмаган объект'
     },
-    contextmenu : 
-    {
-    	options : 'Контекст меню үзлекләре'
-    },
     colordialog : 
     {
     	clear : 'Бушату',

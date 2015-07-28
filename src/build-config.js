@@ -1,7 +1,7 @@
 /**
- * @license Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * Отключено специально: contextmenu, tabletools, tableresize
  */
+
 /* exported CKBUILDER_CONFIG */
 var CKBUILDER_CONFIG = {
     skin: 'moono',
@@ -63,7 +63,7 @@ var CKBUILDER_CONFIG = {
         // открыть ссылку в новом окне
         openlink: 1,
         filetools: 1,
-        tableresize: 1,
+        tableresize: 0,
         // замена iframe на div
         divarea: 1,
         a11yhelp: 0,
@@ -81,7 +81,7 @@ var CKBUILDER_CONFIG = {
         // диалог выбора цвета для кнопок цвета текста и фона
         colordialog: 1,
         // добавляет контекстное меню
-        contextmenu: 1,
+        contextmenu: 0,
         // вкладки для диалоговых окон
         dialogadvtab: 1,
         // кнопка создать div контейнер
@@ -160,7 +160,7 @@ var CKBUILDER_CONFIG = {
         tab: 1,
         table: 1,
         // зависит от contextmenu
-        tabletools: 1,
+        tabletools: 0,
         // диалог выбора шаблонов
         templates: 0,
         toolbar: 1,

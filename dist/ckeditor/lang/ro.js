@@ -240,10 +240,6 @@ CKEDITOR.lang['ro'] = {
     	iframe : 'IFrame',
     	unknown : 'Unknown Object'
     },
-    contextmenu : 
-    {
-    	options : 'Opțiuni Meniu Contextual'
-    },
     colordialog : 
     {
     	clear : 'Clear',

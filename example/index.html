@@ -24,6 +24,7 @@ var config = {
     'enableHotkeys': true,
     'title': '',
     'toolbar': 'Max',
+    'height': 500,
     //'extraPlugins': 'pasteimage,switchmode,hotkeys,view,signature,attachment,emoticons,svgicons',
     'viewTopLayout': 'layout-compose-message-editor-top',
     'viewBottomLayout': 'layout-compose-message-editor-bottom',
@@ -45,9 +46,13 @@ var config = {
     'on': {
         'instanceReady': function() {
             this.setData(
-                '<div>This content will be replaced with the editor.</div>' +
+                '<h4>Удаление ссылки по границе</h4>' +
+                '<div><a href="http://ya.ru">http://ya.ru</a></div>' +
+                '<div><br/></div>' +
+                '<h4>Ресайз картинки</h4>' +
                 '<div><img src="http://placehold.it/200x150" /></div>' +
                 '<div><br/></div>' +
+                '<h4>Разрыв вложенных цитат</h4>' +
                 '<blockquote><blockquote><blockquote>1<br/>2</blockquote></blockquote></blockquote>' +
                 '<div><br/></div>'
             );

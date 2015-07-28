@@ -240,10 +240,6 @@ CKEDITOR.lang['ka'] = {
     	iframe : 'IFrame',
     	unknown : 'უცნობი ობიექტი'
     },
-    contextmenu : 
-    {
-    	options : 'კონტექსტური მენიუს პარამეტრები'
-    },
     colordialog : 
     {
     	clear : 'გასუფთავება',

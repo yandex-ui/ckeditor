@@ -8,9 +8,12 @@
     /* borschik:include:ckeditor/dev/builder/release/ckeditor/plugins/link/dialogs/link.js */
     /* borschik:include:ckeditor/dev/builder/release/ckeditor/plugins/link/dialogs/anchor.js */
     /* borschik:include:ckeditor/dev/builder/release/ckeditor/plugins/table/dialogs/table.js */
-    /* borschik:include:ckeditor/dev/builder/release/ckeditor/plugins/tabletools/dialogs/tableCell.js */
 
     CKEDITOR.disableAutoInline = true;
+
+    // показываем нативное еонтекстное меню
+    // в редакторе нет нормального способа через конфиг это отключить
+    CKEDITOR.dom.element.prototype.disableContextMenu = function() {};
 
     /**
      * Теги, которые могут быть пустыми

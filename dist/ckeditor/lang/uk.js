@@ -240,10 +240,6 @@ CKEDITOR.lang['uk'] = {
     	iframe : 'IFrame',
     	unknown : 'Невідомий об\'єкт'
     },
-    contextmenu : 
-    {
-    	options : 'Опції контекстного меню'
-    },
     colordialog : 
     {
     	clear : 'Очистити',
