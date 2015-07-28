@@ -62,5 +62,29 @@
         }
     });
 
+    (function() {
+        /**
+         * Перехват команды показа окна диалога, чтобы иметь возможность подставить своё
+         */
+
+        var _openDialog = CKEDITOR.editor.prototype.openDialog;
+
+        CKEDITOR.tools.extend(CKEDITOR.editor.prototype, {
+            openDialog: function(dialogName, callback) {
+                var data = {
+                    'callback': callback,
+                    'dialogName': dialogName,
+                    'canShow': true
+                };
+
+                this.fire('checkOpenDialog', data);
+
+                if (data.canShow) {
+                    return _openDialog.apply(this, arguments);
+                }
+            }
+        }, true);
+    }());
+
     /* borschik:include:config.js */
 }());
