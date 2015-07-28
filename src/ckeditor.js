@@ -12,6 +12,9 @@
 
     CKEDITOR.disableAutoInline = true;
 
+    /**
+     * Теги, которые могут быть пустыми
+     */
     [
         'div',
         'h1',
@@ -25,6 +28,16 @@
 
     ].forEach(function(tagName) {
         CKEDITOR.dtd.$removeEmpty[ tagName ] = false;
+    });
+
+    /**
+     * Теги, которые не должны быть пустыми
+     */
+    [
+        'blockquote'
+
+    ].forEach(function(tagName) {
+        CKEDITOR.dtd.$removeEmpty[ tagName ] = true;
     });
 
     CKEDITOR.on('dialogDefinition', function(ev) {
