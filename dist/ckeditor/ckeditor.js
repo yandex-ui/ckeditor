@@ -58,7 +58,7 @@ if ( !window.CKEDITOR ) {
 			 *
 			 *		alert( CKEDITOR.revision ); // e.g. '3975'
 			 */
-			revision: 'c034041',
+			revision: 'a193ac6',
 
 			/**
 			 * A 3-digit random integer, valid for the entire life of the CKEDITOR object.
@@ -30471,13 +30471,29 @@ CKEDITOR.skin.chameleon = ( function() {
                 }
             });
 
+            editor.on('dragstart', globalDragDisable);
+            editor.on('dragend', globalDragEnable);
+            editor.on('drop', function(event) {
+                this._onDrop.call(editor, event);
+                globalDragEnable();
+            }, this);
+
+            editor.on('instanceReady', this._onInstanceReady);
+            editor.on('destroy', this._onDestroy);
+            editor.on('maximize', this._dropContextReset);
+            editor.on('mode', this._dropContextReset);
+            editor.on('paste', this._onPaste);
+            editor.on('afterPaste', this._onAfterPaste);
+        },
+
+        _onInstanceReady: function() {
             /*
             CKEDITOR.filter.transformationsTools.test = function(element) {
                 element.attributes[ 'data-cke-pastefile-inline' ] = String(CKEDITOR.tools.getNextNumber());
             };
             */
 
-            editor.pasteFilter.addTransformations([
+            this.pasteFilter.addTransformations([
                 [
                     {
                         'element': 'img',
@@ -30496,19 +30512,6 @@ CKEDITOR.skin.chameleon = ( function() {
                     }
                 ]
             ]);
-
-            editor.on('dragstart', globalDragDisable);
-            editor.on('dragend', globalDragEnable);
-            editor.on('drop', function(event) {
-                this._onDrop.call(editor, event);
-                globalDragEnable();
-            }, this);
-
-            editor.on('destroy', this._onDestroy);
-            editor.on('maximize', this._dropContextReset);
-            editor.on('mode', this._dropContextReset);
-            editor.on('paste', this._onPaste);
-            editor.on('afterPaste', this._onAfterPaste);
         },
 
         _onDestroy: function() {
