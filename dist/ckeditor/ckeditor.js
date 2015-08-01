@@ -58,7 +58,7 @@ if ( !window.CKEDITOR ) {
 			 *
 			 *		alert( CKEDITOR.revision ); // e.g. '3975'
 			 */
-			revision: '5e4803c',
+			revision: '507c2b2',
 
 			/**
 			 * A 3-digit random integer, valid for the entire life of the CKEDITOR object.
@@ -32028,6 +32028,10 @@ CKEDITOR.skin.chameleon = ( function() {
             } else {
                 start = range.startContainer;
                 offset = range.startOffset;
+            }
+
+            if (offset === 0) {
+                break;
             }
 
             range.setStart(start, offset - 1);
