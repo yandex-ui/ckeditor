@@ -225,11 +225,11 @@ CKEDITOR.lang['ru'] = {
     filetools : 
     {
     	loadError : 'Ошибка при чтении файла',
-    	networkError : 'Network error occurred during file upload.',
-    	httpError404 : 'HTTP error occurred during file upload (404: File not found).',
-    	httpError403 : 'HTTP error occurred during file upload (403: Forbidden).',
-    	httpError : 'HTTP error occurred during file upload (error status: %1).',
-    	noUrlError : 'Upload URL is not defined.',
+    	networkError : 'Сетевая ошибка при загрузке файла',
+    	httpError404 : 'HTTP ошибка при загрузке файла (404: Файл не найден)',
+    	httpError403 : 'HTTP ошибка при загрузке файла (403: Запрещено)',
+    	httpError : 'HTTP ошибка при загрузке файла (%1)',
+    	noUrlError : 'Не определен URL для загрузки файлов',
     	responseError : 'Некорректный ответ сервера'
     },
     fakeobjects : 
