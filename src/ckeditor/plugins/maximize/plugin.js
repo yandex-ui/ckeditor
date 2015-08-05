@@ -273,46 +273,46 @@
 
 					this.toggleState();
 
-					if (isDestroy) {
-						return;
-					}
+					if (!isDestroy) {
+						// Toggle button label.
+						var button = this.uiItems[ 0 ];
+						// Only try to change the button if it exists (#6166)
+						if ( button ) {
+							var label = ( this.state == CKEDITOR.TRISTATE_OFF ) ? lang.maximize.maximize : lang.maximize.minimize;
+							var buttonNode = CKEDITOR.document.getById( button._.id );
+							buttonNode.getChild( 1 ).setHtml( label );
+							buttonNode.setAttribute( 'title', label );
+							buttonNode.setAttribute( 'href', 'javascript:void("' + label + '");' ); // jshint ignore:line
+						}
 
-					// Toggle button label.
-					var button = this.uiItems[ 0 ];
-					// Only try to change the button if it exists (#6166)
-					if ( button ) {
-						var label = ( this.state == CKEDITOR.TRISTATE_OFF ) ? lang.maximize.maximize : lang.maximize.minimize;
-						var buttonNode = CKEDITOR.document.getById( button._.id );
-						buttonNode.getChild( 1 ).setHtml( label );
-						buttonNode.setAttribute( 'title', label );
-						buttonNode.setAttribute( 'href', 'javascript:void("' + label + '");' ); // jshint ignore:line
-					}
+						// Restore selection and scroll position in editing area.
+						if ( editor.mode == 'wysiwyg' ) {
+							if ( savedSelection ) {
+								// Fixing positioning editor chrome in Firefox break design mode. (#5149)
+								CKEDITOR.env.gecko && refreshCursor( editor );
 
-					// Restore selection and scroll position in editing area.
-					if ( editor.mode == 'wysiwyg' ) {
-						if ( savedSelection ) {
-							// Fixing positioning editor chrome in Firefox break design mode. (#5149)
-							CKEDITOR.env.gecko && refreshCursor( editor );
-
-							editor.getSelection().selectRanges( savedSelection );
-							var element = editor.getSelection().getStartElement();
-							element && element.scrollIntoView( true );
+								editor.getSelection().selectRanges( savedSelection );
+								var element = editor.getSelection().getStartElement();
+								element && element.scrollIntoView( true );
+							} else {
+								mainWindow.$.scrollTo( savedScroll.x, savedScroll.y );
+							}
 						} else {
-							mainWindow.$.scrollTo( savedScroll.x, savedScroll.y );
+							if ( savedSelection ) {
+								$textarea.selectionStart = savedSelection[ 0 ];
+								$textarea.selectionEnd = savedSelection[ 1 ];
+							}
+							$textarea.scrollLeft = savedScroll[ 0 ];
+							$textarea.scrollTop = savedScroll[ 1 ];
 						}
-					} else {
-						if ( savedSelection ) {
-							$textarea.selectionStart = savedSelection[ 0 ];
-							$textarea.selectionEnd = savedSelection[ 1 ];
-						}
-						$textarea.scrollLeft = savedScroll[ 0 ];
-						$textarea.scrollTop = savedScroll[ 1 ];
 					}
 
 					savedSelection = savedScroll = null;
 					savedState = this.state;
 
-					editor.fire( 'maximize', this.state );
+					if (!isDestroy) {
+						editor.fire( 'maximize', this.state );
+					}
 				},
 				canUndo: false
 			} );
