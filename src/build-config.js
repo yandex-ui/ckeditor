@@ -131,7 +131,7 @@ var CKBUILDER_CONFIG = {
         // кнопка добавления разрыва страницы
         pagebreak: 0,
         // вставить из Word
-        pastefromword: 0,
+        pastefromword: 1,
         // вставлять всегда как plain
         pastetext: 0,
         // кнопка предварительного просмотра
