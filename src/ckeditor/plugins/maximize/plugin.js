@@ -127,12 +127,18 @@
 			// Retain state after mode switches.
 			var savedState = CKEDITOR.TRISTATE_OFF;
 
+			var maximizeElements = [];
+
 			editor.addCommand( 'maximize', {
 				// Disabled on iOS (#8307).
 				modes: { wysiwyg: !CKEDITOR.env.iOS, source: !CKEDITOR.env.iOS },
 				readOnly: 1,
 				editorFocus: false,
-				exec: function() {
+				exec: function(editor, isDestroy) {
+					if (isDestroy && this.state !== CKEDITOR.TRISTATE_ON) {
+						return;
+					}
+
 					var container = editor.container.getFirst( function( node ) {
 						return node.type == CKEDITOR.NODE_ELEMENT && node.hasClass( 'cke_inner' );
 					} );
@@ -159,8 +165,10 @@
 						outerScroll = mainWindow.getScrollPosition();
 
 						// Save and reset the styles for the entire node tree.
+						maximizeElements = [];
 						var currentNode = editor.container;
 						while ( ( currentNode = currentNode.getParent() ) ) {
+							maximizeElements.push(currentNode);
 							currentNode.setCustomData( 'maximize_saved_styles', saveStyles( currentNode, false, ignoredClasses ) );
 							// Show under floatpanels (-1) and context menu (-2).
 							currentNode.setStyle( 'z-index', editor.config.baseFloatZIndex - 5 );
@@ -231,8 +239,7 @@
 							editorElements[ i ].removeCustomData( 'maximize_saved_styles' );
 						}
 
-						currentNode = editor.container;
-						while ( ( currentNode = currentNode.getParent() ) ) {
+						while ( ( currentNode = maximizeElements.pop() ) ) {
 							restoreStyles( currentNode, currentNode.getCustomData( 'maximize_saved_styles' ) );
 							currentNode.removeCustomData( 'maximize_saved_styles' );
 						}
@@ -253,7 +260,7 @@
 							}, 0 );
 						}
 
-						if (editor.status === 'ready') {
+						if (!isDestroy) {
 							// Emit a resize event, because this time the size is modified in
 							// restoreStyles.
 							editor.fire( 'resize', {
@@ -265,6 +272,10 @@
 					}
 
 					this.toggleState();
+
+					if (isDestroy) {
+						return;
+					}
 
 					// Toggle button label.
 					var button = this.uiItems[ 0 ];
@@ -319,9 +330,7 @@
 			}, null, null, 100 );
 
 			editor.on( 'beforeDestroy', function() {
-				if (editor.getCommand( 'maximize' ).state === CKEDITOR.TRISTATE_ON) {
-					editor.execCommand( 'maximize' );
-				}
+				editor.execCommand( 'maximize', true );
 			} );
 		}
 	} );
