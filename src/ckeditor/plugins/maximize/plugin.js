@@ -223,6 +223,10 @@
 						// Restore CSS styles for the entire node tree.
 						var editorElements = [ contents, container ];
 						for ( var i = 0; i < editorElements.length; i++ ) {
+							if (!editorElements[ i ]) {
+								continue;
+							}
+
 							restoreStyles( editorElements[ i ], editorElements[ i ].getCustomData( 'maximize_saved_styles' ) );
 							editorElements[ i ].removeCustomData( 'maximize_saved_styles' );
 						}
@@ -249,13 +253,15 @@
 							}, 0 );
 						}
 
-						// Emit a resize event, because this time the size is modified in
-						// restoreStyles.
-						editor.fire( 'resize', {
-							outerHeight: editor.container.$.offsetHeight,
-							contentsHeight: contents.$.offsetHeight,
-							outerWidth: editor.container.$.offsetWidth
-						} );
+						if (editor.status === 'ready') {
+							// Emit a resize event, because this time the size is modified in
+							// restoreStyles.
+							editor.fire( 'resize', {
+								outerHeight: editor.container.$.offsetHeight,
+								contentsHeight: contents.$.offsetHeight,
+								outerWidth: editor.container.$.offsetWidth
+							} );
+						}
 					}
 
 					this.toggleState();
