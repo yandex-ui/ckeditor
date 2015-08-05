@@ -60,7 +60,7 @@ if ( !window.CKEDITOR ) {
 			 *
 			 *		alert( CKEDITOR.revision ); // e.g. '3975'
 			 */
-			revision: 'deb841c',
+			revision: 'f463b8c',
 
 			/**
 			 * A 3-digit random integer, valid for the entire life of the CKEDITOR object.
@@ -49258,6 +49258,12 @@ CKEDITOR.htmlWriter = CKEDITOR.tools.createClass( {
 				var command = editor.getCommand( 'maximize' );
 				command.setState( command.state == CKEDITOR.TRISTATE_DISABLED ? CKEDITOR.TRISTATE_DISABLED : savedState );
 			}, null, null, 100 );
+
+			editor.on( 'beforeDestroy', function() {
+				if (editor.getCommand( 'maximize' ).state === CKEDITOR.TRISTATE_ON) {
+					editor.execCommand( 'maximize' );
+				}
+			} );
 		}
 	} );
 } )();
