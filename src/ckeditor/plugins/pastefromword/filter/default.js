@@ -288,7 +288,10 @@
 			// Providing a shorthand style then retrieve one or more style component values.
 			getStyleComponents: ( function() {
 				var calculator = CKEDITOR.dom.element.createFromHtml( '<div style="position:absolute;left:-9999px;top:-9999px;"></div>', CKEDITOR.document );
-				CKEDITOR.document.getBody().append( calculator );
+
+				CKEDITOR.domReady(function() {
+					CKEDITOR.document.getBody().append( calculator );
+				});
 
 				return function( name, styleValue, fetchList ) {
 					calculator.setStyle( name, styleValue );
