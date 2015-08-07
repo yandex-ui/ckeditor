@@ -826,8 +826,10 @@
 			// Body can't be also used for Opera which fills it with <br>
 			// what is indistinguishable from pasted <br> (copying <br> in Opera isn't possible,
 			// but it can be copied from other browser).
-			var pastebin = new CKEDITOR.dom.element(
-				( CKEDITOR.env.webkit || editable.is( 'body' ) ) && !CKEDITOR.env.ie ? 'body' : 'div', doc );
+
+			// CKEDITOR.env.webkit || editable.is( 'body' ) ) && !CKEDITOR.env.ie
+			var isPasteBody = !CKEDITOR.env.ie;
+			var pastebin = new CKEDITOR.dom.element( isPasteBody ? 'body' : 'div', doc );
 
 			pastebin.setAttributes( {
 				id: 'cke_pastebin',
@@ -838,10 +840,10 @@
 				offsetParent,
 				win = doc.getWindow();
 
+			// Opera and IE doesn't allow to append to html element.
+			editable.getAscendant( isPasteBody ? 'html' : 'body', 1 ).append( pastebin );
+
 			if ( CKEDITOR.env.webkit ) {
-				// It's better to paste close to the real paste destination, so inherited styles
-				// (which Webkits will try to compensate by styling span) differs less from the destination's one.
-				editable.append( pastebin );
 				// Style pastebin like .cke_editable, to minimize differences between origin and destination. (#9754)
 				pastebin.addClass( 'cke_editable' );
 
@@ -857,9 +859,6 @@
 
 					containerOffset = offsetParent.getDocumentPosition().y;
 				}
-			} else {
-				// Opera and IE doesn't allow to append to html element.
-				editable.getAscendant( CKEDITOR.env.ie ? 'body' : 'html', 1 ).append( pastebin );
 			}
 
 			pastebin.setStyles( {
@@ -1045,6 +1044,16 @@
 				firePasteEvents( editor, eventData );
 			} else {
 				getClipboardDataByPastebin( evt, function( data ) {
+					// fake linebreak
+					var fakeBreak = '<br>';
+					if (editor.enterMode === CKEDITOR.ENTER_DIV) {
+						fakeBreak = '<div><br></div>';
+					} else if (editor.enterMode === CKEDITOR.ENTER_P) {
+						fakeBreak = '<p>&nbsp;</p>';
+					}
+
+					data = data.replace(/(<(?:\/table|\/ul|\/ol|\/blockquote|img\/?)>)(\s*)$/i, '$1' + fakeBreak + '$2');
+
 					// Clean up.
 					eventData.dataValue = data.replace( /<span[^>]+data-cke-bookmark[^<]*?<\/span>/ig, '' );
 
