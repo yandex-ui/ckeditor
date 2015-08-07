@@ -6,63 +6,95 @@
     </script>
     <style media="screen">
     blockquote {
-      _border: 1px solid #fff;
-      border-left: 1px solid #ccc;
-      margin: 0 0 0 1em;
-      padding-left: 1em;
+        _border: 1px solid #fff;
+        border-left: 1px solid #ccc;
+        margin: 0 0 0 1em;
+        padding-left: 1em;
     }
     </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.0/lodash.min.js"></script>
+    <script src="/node_modules/lodash/index.js"></script>
+    <script src="/node_modules/vow/vow.min.js"></script>
     <script src="/dist/ckeditor-full.js"></script>
 </head>
 <body>
-    <textarea id="editor"></textarea>
+    <table width="100%">
+        <tr>
+            <td width="50%"><textarea id="editor1"></textarea></td>
+            <td width="50%"><textarea id="editor2"></textarea></td>
+        </tr>
+    </table>
 <script>
-var config = {
-    'themeResetAll': false,
-    'language': 'ru',
-    'enableHotkeys': true,
-    'title': '',
-    'toolbar': 'Max',
-    'height': 500,
-    //'extraPlugins': 'pasteimage,switchmode,hotkeys,view,signature,attachment,emoticons,svgicons',
-    'viewTopLayout': 'layout-compose-message-editor-top',
-    'viewBottomLayout': 'layout-compose-message-editor-bottom',
-    'toolbar_Max': [
-        { 'name': 'attachment', 'items': [ 'Attachment' ] },
-        { 'name': 'clipboard', 'items': [ 'Undo', 'Redo' ] },
-        { 'name': 'basicstyles', 'items': [ 'Bold', 'Italic', 'Underline', 'Strike' ] },
-        { 'name': 'links', 'items': [ 'Link', 'Unlink' ] },
-        { 'name': 'blockquote', 'items': [ 'Blockquote' ] },
-        { 'name': 'styles', 'items': [ 'TextColor', 'BGColor' ] },
-        { 'name': 'fontstyles', 'items': [ 'Font', 'FontSize' ] },
-        { 'name': 'emoticons', 'items': [ 'Emoticons' ] },
-        { 'name': 'paragraph', 'items': [ 'NumberedList', 'BulletedList' ] },
-        { 'name': 'align', 'items': [ 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock' ] },
-        { 'name': 'tools', 'items': [ 'Maximize' ] },
-        { 'name': 'removeformat', 'items': [ 'RemoveFormat' ] },
-        { 'name': 'switchmode', 'items': [ 'SwitchMode' ] }
-    ],
-    'on': {
-        'instanceReady': function() {
-            this.setData(
-                '<h4>Удаление ссылки по границе</h4>' +
-                '<div><a href="http://ya.ru">http://ya.ru</a></div>' +
-                '<div><br/></div>' +
-                '<h4>Ресайз картинки</h4>' +
-                '<div><img src="http://placehold.it/200x150" /></div>' +
-                '<div><br/></div>' +
-                '<h4>Разрыв вложенных цитат</h4>' +
-                '<blockquote><blockquote><blockquote>1<br/>2</blockquote></blockquote></blockquote>' +
-                '<div><br/></div>'
-            );
+(function() {
+    var config = {
+        'themeResetAll': false,
+        'language': 'ru',
+        'enableHotkeys': true,
+        'title': '',
+        'height': 500,
+        'on': {
+            'instanceReady': function() {
+                this.setData(
+                    '<h4>Удаление ссылки по границе</h4>' +
+                    '<div><a href="http://ya.ru">http://ya.ru</a></div>' +
+                    '<div><br/></div>' +
+                    '<h4>Ресайз картинки</h4>' +
+                    '<div><img src="http://placehold.it/200x150" /></div>' +
+                    '<div><br/></div>' +
+                    '<h4>Разрыв вложенных цитат</h4>' +
+                    '<blockquote><blockquote><blockquote>1<br/>2</blockquote></blockquote></blockquote>' +
+                    '<div><br/></div>' +
+                    '<table class="cke_show_borders" cellpadding="0" cellspacing="0" border="0">' +
+                    '    <tr>' +
+                    '        <td>1</td>' +
+                    '        <td>2</td>' +
+                    '    </tr>' +
+                    '</table>'
+                );
+            }
         }
-    }
-};
+    };
 
-CKEDITOR.editorConfig(config);
+    CKEDITOR.editorConfig(config);
 
-CKEDITOR.replace('editor', config);
+    CKEDITOR.replace('editor1', config);
+}());
+</script>
+<script>
+(function() {
+    var config = {
+        'themeResetAll': false,
+        'language': 'ru',
+        'enableHotkeys': true,
+        'title': '',
+        'height': 500,
+        'removePlugins': 'divarea',
+        'on': {
+            'instanceReady': function() {
+                this.setData(
+                    '<h4>Удаление ссылки по границе</h4>' +
+                    '<div><a href="http://ya.ru">http://ya.ru</a></div>' +
+                    '<div><br/></div>' +
+                    '<h4>Ресайз картинки</h4>' +
+                    '<div><img src="http://placehold.it/200x150" /></div>' +
+                    '<div><br/></div>' +
+                    '<h4>Разрыв вложенных цитат</h4>' +
+                    '<blockquote><blockquote><blockquote>1<br/>2</blockquote></blockquote></blockquote>' +
+                    '<div><br/></div>' +
+                    '<table class="cke_show_borders" cellpadding="0" cellspacing="0" border="0">' +
+                    '    <tr>' +
+                    '        <td>1</td>' +
+                    '        <td>2</td>' +
+                    '    </tr>' +
+                    '</table>'
+                );
+            }
+        }
+    };
+
+    CKEDITOR.editorConfig(config);
+
+    CKEDITOR.replace('editor2', config);
+}());
 </script>
 </body>
 </html>

@@ -63,18 +63,37 @@
     var allowFilter = validTags.join(' ') + '; *[' + validAttrs.join(',') + ']; *{*}';
 
     CKEDITOR.editorConfig = function(config) {
-        config.baseFloatZIndex = 100;
-        config.enterMode = CKEDITOR.ENTER_DIV;
-        config.customConfig = '';
-        config.autoUpdateElement = false;
-        config.docType = '<!DOCTYPE html>';
-        config.pasteFilter = allowFilter;
         config.allowedContent = allowFilter;
-        config.width = '100%';
+        config.autoUpdateElement = false;
+        config.baseFloatZIndex = 100;
         config.browserContextMenuOnCtrl = true;
+        config.customConfig = '';
         config.disableNativeSpellChecker = false;
-        config.uiColor = '#ffffff';
         config.disallowedContent = '*{position,z-index}';
+        config.docType = '<!DOCTYPE html>';
+        config.enterMode = CKEDITOR.ENTER_DIV;
+        config.pasteFilter = allowFilter;
+        config.pasteFromWordNumberedHeadingToList = true;
+        config.pasteFromWordRemoveFontStyles = false;
+        config.pasteFromWordRemoveStyles = false;
+        config.uiColor = '#ffffff';
+        config.width = '100%';
+
+        config.toolbar = [
+            { 'name': 'attachment', 'items': [ 'Attachment' ] },
+            { 'name': 'clipboard', 'items': [ 'Undo', 'Redo', 'PasteFromWord' ] },
+            { 'name': 'basicstyles', 'items': [ 'Bold', 'Italic', 'Underline', 'Strike' ] },
+            { 'name': 'links', 'items': [ 'Link', 'Unlink' ] },
+            { 'name': 'blockquote', 'items': [ 'Blockquote' ] },
+            { 'name': 'styles', 'items': [ 'TextColor', 'BGColor' ] }, // 'MailTextColor', 'MailBGColor'
+            { 'name': 'fontstyles', 'items': [ 'Font', 'FontSize' ] }, // 'MailFont', 'MailFontSize'
+            { 'name': 'emoticons', 'items': [ 'Emoticons' ] },
+            { 'name': 'paragraph', 'items': [ 'NumberedList', 'BulletedList' ] },
+            { 'name': 'align', 'items': [ 'JustifyLeft', 'JustifyCenter', 'JustifyRight' ] },
+            { 'name': 'tools', 'items': [ 'Maximize' ] },
+            { 'name': 'removeformat', 'items': [ 'RemoveFormat' ] },
+            { 'name': 'switchmode', 'items': [ 'SwitchMode' ] }
+        ];
 
         return config;
     };
