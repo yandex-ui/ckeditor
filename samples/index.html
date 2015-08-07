@@ -24,6 +24,23 @@
         </tr>
     </table>
 <script>
+var content = '<h4>Открыть ссылку в новом окне</h4>' +
+    '<div><a href="http://ya.ru">http://ya.ru</a></div>' +
+    '<div><a href="http://ya.ru"><span style="color:#ff0000;">цветная ссылка</span></a></div>' +
+    '<div><br/></div>' +
+    '<h4>Ресайз картинки</h4>' +
+    '<div><img src="http://placehold.it/200x150" /></div>' +
+    '<div><br/></div>' +
+    '<h4>Разрыв вложенных цитат</h4>' +
+    '<blockquote><blockquote><blockquote>1<br/>2</blockquote></blockquote></blockquote>' +
+    '<div><br/></div>' +
+    '<table class="cke_show_borders" cellpadding="0" cellspacing="0" border="0">' +
+    '    <tr>' +
+    '        <td>1</td>' +
+    '        <td>2</td>' +
+    '    </tr>' +
+    '</table>';
+
 (function() {
     var config = {
         'themeResetAll': false,
@@ -33,23 +50,7 @@
         'height': 500,
         'on': {
             'instanceReady': function() {
-                this.setData(
-                    '<h4>Удаление ссылки по границе</h4>' +
-                    '<div><a href="http://ya.ru">http://ya.ru</a></div>' +
-                    '<div><br/></div>' +
-                    '<h4>Ресайз картинки</h4>' +
-                    '<div><img src="http://placehold.it/200x150" /></div>' +
-                    '<div><br/></div>' +
-                    '<h4>Разрыв вложенных цитат</h4>' +
-                    '<blockquote><blockquote><blockquote>1<br/>2</blockquote></blockquote></blockquote>' +
-                    '<div><br/></div>' +
-                    '<table class="cke_show_borders" cellpadding="0" cellspacing="0" border="0">' +
-                    '    <tr>' +
-                    '        <td>1</td>' +
-                    '        <td>2</td>' +
-                    '    </tr>' +
-                    '</table>'
-                );
+                this.setData(content);
             }
         }
     };
@@ -70,23 +71,7 @@
         'removePlugins': 'divarea',
         'on': {
             'instanceReady': function() {
-                this.setData(
-                    '<h4>Удаление ссылки по границе</h4>' +
-                    '<div><a href="http://ya.ru">http://ya.ru</a></div>' +
-                    '<div><br/></div>' +
-                    '<h4>Ресайз картинки</h4>' +
-                    '<div><img src="http://placehold.it/200x150" /></div>' +
-                    '<div><br/></div>' +
-                    '<h4>Разрыв вложенных цитат</h4>' +
-                    '<blockquote><blockquote><blockquote>1<br/>2</blockquote></blockquote></blockquote>' +
-                    '<div><br/></div>' +
-                    '<table class="cke_show_borders" cellpadding="0" cellspacing="0" border="0">' +
-                    '    <tr>' +
-                    '        <td>1</td>' +
-                    '        <td>2</td>' +
-                    '    </tr>' +
-                    '</table>'
-                );
+                this.setData(content);
             }
         }
     };
