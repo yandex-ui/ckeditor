@@ -194,7 +194,7 @@
 
 						// Resize and move to top left.
 						// Special treatment for FF Quirks (#7284)
-						container.setStyle( 'position', CKEDITOR.env.gecko && CKEDITOR.env.quirks ? 'fixed' : 'absolute' );
+						container.setStyle( 'position', 'fixed' );
 						container.$.offsetLeft; // SAFARI BUG: See #2066.
 						container.setStyles( {
 							// Show under floatpanels (-1) and context menu (-2).
