@@ -129,7 +129,7 @@
 
 			var maximizeElements = [];
 
-			editor.addCommand( 'maximize', {
+			var command = editor.addCommand( 'maximize', {
 				// Disabled on iOS (#8307).
 				modes: { wysiwyg: !CKEDITOR.env.iOS, source: !CKEDITOR.env.iOS },
 				readOnly: 1,
@@ -316,6 +316,14 @@
 				},
 				canUndo: false
 			} );
+
+			command.on('state', function() {
+				if (this.state === CKEDITOR.TRISTATE_OFF) {
+					var evt = CKEDITOR.document.$.createEvent('Event');
+					evt.initEvent('resize', true, true);
+					CKEDITOR.document.getWindow().$.dispatchEvent(evt)
+				}
+			});
 
 			editor.ui.addButton && editor.ui.addButton( 'Maximize', {
 				label: lang.maximize.maximize,
