@@ -60,7 +60,7 @@ if ( !window.CKEDITOR ) {
 			 *
 			 *		alert( CKEDITOR.revision ); // e.g. '3975'
 			 */
-			revision: 'db63f74',
+			revision: 'ba7f239',
 
 			/**
 			 * A 3-digit random integer, valid for the entire life of the CKEDITOR object.
@@ -49245,7 +49245,7 @@ CKEDITOR.htmlWriter = CKEDITOR.tools.createClass( {
 
 						// Resize and move to top left.
 						// Special treatment for FF Quirks (#7284)
-						container.setStyle( 'position', CKEDITOR.env.gecko && CKEDITOR.env.quirks ? 'fixed' : 'absolute' );
+						container.setStyle( 'position', 'fixed' );
 						container.$.offsetLeft; // SAFARI BUG: See #2066.
 						container.setStyles( {
 							// Show under floatpanels (-1) and context menu (-2).
