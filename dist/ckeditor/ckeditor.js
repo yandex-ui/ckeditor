@@ -58,7 +58,7 @@ if ( !window.CKEDITOR ) {
 			 *
 			 *		alert( CKEDITOR.revision ); // e.g. '3975'
 			 */
-			revision: 'ba7f239',
+			revision: '6ba526d',
 
 			/**
 			 * A 3-digit random integer, valid for the entire life of the CKEDITOR object.
@@ -49178,7 +49178,7 @@ CKEDITOR.htmlWriter = CKEDITOR.tools.createClass( {
 
 			var maximizeElements = [];
 
-			editor.addCommand( 'maximize', {
+			var command = editor.addCommand( 'maximize', {
 				// Disabled on iOS (#8307).
 				modes: { wysiwyg: !CKEDITOR.env.iOS, source: !CKEDITOR.env.iOS },
 				readOnly: 1,
@@ -49365,6 +49365,12 @@ CKEDITOR.htmlWriter = CKEDITOR.tools.createClass( {
 				},
 				canUndo: false
 			} );
+
+			command.on('state', function() {
+				if (this.state === CKEDITOR.TRISTATE_OFF) {
+					CKEDITOR.document.getWindow().fire('resize');
+				}
+			});
 
 			editor.ui.addButton && editor.ui.addButton( 'Maximize', {
 				label: lang.maximize.maximize,
