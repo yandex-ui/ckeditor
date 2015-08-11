@@ -60,7 +60,7 @@ if ( !window.CKEDITOR ) {
 			 *
 			 *		alert( CKEDITOR.revision ); // e.g. '3975'
 			 */
-			revision: '64e19ef',
+			revision: 'fe74c50',
 
 			/**
 			 * A 3-digit random integer, valid for the entire life of the CKEDITOR object.
@@ -32345,7 +32345,9 @@ CKEDITOR.skin.chameleon = ( function() {
             }
 
             event.stop();
-            window.open(href, '_blank');
+            setTimeout(function() {
+				window.open(href, '_blank');
+			}, 0);
         }
     });
 }());
