@@ -144,7 +144,6 @@
 					} );
 					var contents = editor.ui.space( 'contents' );
 					var ignoredClasses = editor.config.maximizeIgnoredClasses;
-					var htmlElement = mainDocument.getDocumentElement();
 
 					// Save current selection and scroll position in editing area.
 					if ( editor.mode == 'wysiwyg' ) {
@@ -184,6 +183,7 @@
 							height: 0
 						};
 
+						var htmlElement = mainDocument.getDocumentElement();
 						htmlElement.addClass('cke_editor_maximized');
 						htmlElement.setStyles( styles );
 
@@ -251,8 +251,6 @@
 							restoreStyles( currentNode, currentNode.getCustomData( 'maximize_saved_styles' ) );
 							currentNode.removeCustomData( 'maximize_saved_styles' );
 						}
-
-						htmlElement.removeClass('cke_editor_maximized');
 
 						// Restore the window scroll position.
 						CKEDITOR.env.ie ? setTimeout( function() {
