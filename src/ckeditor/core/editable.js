@@ -1064,7 +1064,7 @@
 						// #11727. Note: htmlDP assures that input/textarea/select have contenteditable=false
 						// attributes. However, they also have data-cke-editable attribute, so isReadOnly() returns false,
 						// and therefore those elements are correctly selected by this code.
-						if ( control.is( 'img', 'hr', 'input', 'textarea', 'select' ) && !control.isReadOnly() ) {
+						if ( control.is( 'hr', 'input', 'textarea', 'select' ) && !control.isReadOnly() ) {
 							editor.getSelection().selectElement( control );
 
 							// Prevent focus from stealing from the editable. (#9515)
@@ -1290,7 +1290,7 @@
 
 	// #9222: Show text cursor in Gecko.
 	// Show default cursor over control elements on all non-IEs.
-	CKEDITOR.addCss( '.cke_editable{cursor:text}.cke_editable img,.cke_editable input,.cke_editable textarea{cursor:default}' );
+	CKEDITOR.addCss( '.cke_editable{cursor:text},.cke_editable input,.cke_editable textarea{cursor:default}' );
 
 	//
 	//
