@@ -144,6 +144,7 @@
 					} );
 					var contents = editor.ui.space( 'contents' );
 					var ignoredClasses = editor.config.maximizeIgnoredClasses;
+					var htmlElement = mainDocument.getDocumentElement();
 
 					// Save current selection and scroll position in editing area.
 					if ( editor.mode == 'wysiwyg' ) {
@@ -183,9 +184,16 @@
 							height: 0
 						};
 
-						mainDocument.getDocumentElement().setStyles( styles );
-						!CKEDITOR.env.gecko && mainDocument.getDocumentElement().setStyle( 'position', 'fixed' );
-						!( CKEDITOR.env.gecko && CKEDITOR.env.quirks ) && mainDocument.getBody().setStyles( styles );
+						htmlElement.addClass('cke_editor_maximized');
+						htmlElement.setStyles( styles );
+
+						if (!CKEDITOR.env.gecko) {
+							htmlElement.setStyle( 'position', 'fixed' );
+						}
+
+						if (!(CKEDITOR.env.gecko && CKEDITOR.env.quirks)) {
+							mainDocument.getBody().setStyles( styles );
+						}
 
 						// Scroll to the top left (IE needs some time for it - #4923).
 						CKEDITOR.env.ie ? setTimeout( function() {
@@ -243,6 +251,8 @@
 							restoreStyles( currentNode, currentNode.getCustomData( 'maximize_saved_styles' ) );
 							currentNode.removeCustomData( 'maximize_saved_styles' );
 						}
+
+						htmlElement.removeClass('cke_editor_maximized');
 
 						// Restore the window scroll position.
 						CKEDITOR.env.ie ? setTimeout( function() {
