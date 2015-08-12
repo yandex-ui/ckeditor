@@ -95,6 +95,18 @@
             { 'name': 'switchmode', 'items': [ 'SwitchMode' ] }
         ];
 
+        // если оставить тег "s"
+        // то сброс стиля работает плохо
+        // @see DARIA-50688
+        // замена на span - безболезненный фикс
+        config.coreStyles_strike = {
+            'element': 'span',
+            'overrides': 'strike',
+            'styles': {
+                'text-decoration': 'line-through'
+            }
+        };
+
         return config;
     };
 
