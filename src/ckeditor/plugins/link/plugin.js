@@ -708,15 +708,25 @@
 		},
 
 		refresh: function( editor, path ) {
+			var selection = editor.getSelection();
+			var range = selection && selection.getRanges()[ 0 ];
+
+			if (range && !range.collapsed) {
+				this.setState( CKEDITOR.TRISTATE_OFF );
+				return;
+			}
+
 			// Despite our initial hope, document.queryCommandEnabled() does not work
 			// for this in Firefox. So we must detect the state by element paths.
 
 			var element = path.lastElement && path.lastElement.getAscendant( 'a', true );
 
-			if ( element && element.getName() == 'a' && element.getAttribute( 'href' ) && element.getChildCount() )
+			if ( element && element.getName() == 'a' && element.getAttribute( 'href' ) && element.getChildCount() ) {
 				this.setState( CKEDITOR.TRISTATE_OFF );
-			else
-				this.setState( CKEDITOR.TRISTATE_DISABLED );
+				return;
+			}
+
+			this.setState( CKEDITOR.TRISTATE_DISABLED );
 		},
 
 		contextSensitive: 1,
