@@ -170,6 +170,31 @@
 			}
 
 			this.compiledProtectionFunction = getCompiledProtectionFunction( editor );
+
+			editor._linkMouseupCallback = this._onDocumentMouseup.bind(editor);
+
+			var unlinkStatusRefresh = function(event) {
+				CKEDITOR.document.removeListener('mouseup', this._linkMouseupCallback);
+				this.document.removeListener('mouseup', this._linkMouseupCallback);
+
+				if (this.mode === 'wysiwyg' &&
+					!this.readOnly &&
+					event.name !== 'beforeDestroy') {
+
+					CKEDITOR.document.on('mouseup', this._linkMouseupCallback);
+					if (!CKEDITOR.document.equals(this.document)) {
+						this.document.on('mouseup', this._linkMouseupCallback);
+					}
+				}
+			};
+
+			editor.on('mode', unlinkStatusRefresh);
+			editor.on('readOnly', unlinkStatusRefresh);
+			editor.on('beforeDestroy', unlinkStatusRefresh);
+		},
+
+		_onDocumentMouseup: function() {
+			this.getCommand('unlink').refresh(this);
 		},
 
 		afterInit: function( editor ) {
@@ -717,19 +742,21 @@
 			var selection = editor.getSelection();
 			var range = selection && selection.getRanges()[ 0 ];
 
-			if (range && !range.collapsed) {
-				this.setState( CKEDITOR.TRISTATE_OFF );
-				return;
-			}
+			if (range) {
+				if (!range.collapsed) {
+					this.setState( CKEDITOR.TRISTATE_OFF );
+					return;
+				}
 
-			// Despite our initial hope, document.queryCommandEnabled() does not work
-			// for this in Firefox. So we must detect the state by element paths.
+				// Despite our initial hope, document.queryCommandEnabled() does not work
+				// for this in Firefox. So we must detect the state by element paths.
 
-			var element = path.lastElement && path.lastElement.getAscendant( 'a', true );
+				var element = path && path.lastElement && path.lastElement.getAscendant( 'a', true );
 
-			if ( element && element.getName() == 'a' && element.getAttribute( 'href' ) && element.getChildCount() ) {
-				this.setState( CKEDITOR.TRISTATE_OFF );
-				return;
+				if ( element && element.getName() == 'a' && element.getAttribute( 'href' ) && element.getChildCount() ) {
+					this.setState( CKEDITOR.TRISTATE_OFF );
+					return;
+				}
 			}
 
 			this.setState( CKEDITOR.TRISTATE_DISABLED );
