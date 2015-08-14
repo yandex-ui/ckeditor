@@ -175,14 +175,14 @@
 
 			var unlinkStatusRefresh = function(event) {
 				CKEDITOR.document.removeListener('mouseup', this._linkMouseupCallback);
-				this.document.removeListener('mouseup', this._linkMouseupCallback);
+				this.document && this.document.removeListener('mouseup', this._linkMouseupCallback);
 
 				if (this.mode === 'wysiwyg' &&
 					!this.readOnly &&
 					event.name !== 'beforeDestroy') {
 
 					CKEDITOR.document.on('mouseup', this._linkMouseupCallback);
-					if (!CKEDITOR.document.equals(this.document)) {
+					if (this.document && !CKEDITOR.document.equals(this.document)) {
 						this.document.on('mouseup', this._linkMouseupCallback);
 					}
 				}
