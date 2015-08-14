@@ -60,7 +60,7 @@ if ( !window.CKEDITOR ) {
 			 *
 			 *		alert( CKEDITOR.revision ); // e.g. '3975'
 			 */
-			revision: '5ecd68d',
+			revision: '823307b',
 
 			/**
 			 * A 3-digit random integer, valid for the entire life of the CKEDITOR object.
@@ -30916,7 +30916,7 @@ CKEDITOR.skin.chameleon = ( function() {
         }
 
         for (var eventName in this.BASE_DRAG_EVENTS) {
-            document.addEventListener(eventName, this[ this.BASE_DRAG_BINDS[ eventName ] ], false);
+            document.addEventListener(eventName, this[ this.BASE_DRAG_EVENTS[ eventName ] ], false);
         }
     }
 
