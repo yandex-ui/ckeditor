@@ -193,7 +193,19 @@
 			editor.on('beforeDestroy', unlinkStatusRefresh);
 		},
 
-		_onDocumentMouseup: function() {
+		_onDocumentMouseup: function(event) {
+			var button = this.ui.get('Unlink');
+			var buttonElement = button && button.getElement();
+
+			// не надо обновлять статус кнопки
+			// если кликнули по ней
+			if (buttonElement) {
+				var targetElement = new CKEDITOR.dom.element(event.data.$.target);
+				if (buttonElement.contains(targetElement)) {
+					return;
+				}
+			}
+
 			this.getCommand('unlink').refresh(this);
 		},
 
