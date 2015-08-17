@@ -60,7 +60,7 @@ if ( !window.CKEDITOR ) {
 			 *
 			 *		alert( CKEDITOR.revision ); // e.g. '3975'
 			 */
-			revision: '01896cd',
+			revision: '1015d45',
 
 			/**
 			 * A 3-digit random integer, valid for the entire life of the CKEDITOR object.
@@ -47502,7 +47502,19 @@ CKEDITOR.htmlWriter = CKEDITOR.tools.createClass( {
 			editor.on('beforeDestroy', unlinkStatusRefresh);
 		},
 
-		_onDocumentMouseup: function() {
+		_onDocumentMouseup: function(event) {
+			var button = this.ui.get('Unlink');
+			var buttonElement = button && button.getElement();
+
+			// не надо обновлять статус кнопки
+			// если кликнули по ней
+			if (buttonElement) {
+				var targetElement = new CKEDITOR.dom.element(event.data.$.target);
+				if (buttonElement.contains(targetElement)) {
+					return;
+				}
+			}
+
 			this.getCommand('unlink').refresh(this);
 		},
 
