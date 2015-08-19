@@ -1057,8 +1057,13 @@
 						// #11727. Note: htmlDP assures that input/textarea/select have contenteditable=false
 						// attributes. However, they also have data-cke-editable attribute, so isReadOnly() returns false,
 						// and therefore those elements are correctly selected by this code.
-						if ( control.is( 'hr', 'input', 'textarea', 'select' ) && !control.isReadOnly() ) {
-							editor.getSelection().selectElement( control );
+						if ( control.is( 'img', 'hr', 'input', 'textarea', 'select' ) && !control.isReadOnly() ) {
+							var selection = editor.getSelection();
+							var ranges = selection.getRanges();
+
+							if (!ranges.length || ranges[0].collapsed) {
+								selection.selectElement( control );
+							}
 
 							// Prevent focus from stealing from the editable. (#9515)
 							if ( control.is( 'input', 'textarea', 'select' ) )
