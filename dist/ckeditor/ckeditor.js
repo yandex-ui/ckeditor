@@ -58,7 +58,7 @@ if ( !window.CKEDITOR ) {
 			 *
 			 *		alert( CKEDITOR.revision ); // e.g. '3975'
 			 */
-			revision: '055c4e4',
+			revision: '90b340d',
 
 			/**
 			 * A 3-digit random integer, valid for the entire life of the CKEDITOR object.
@@ -31007,10 +31007,6 @@ CKEDITOR.skin.chameleon = ( function() {
         this._editor = editor;
         this._isShow = false;
         this._stopDropPropagation = false;
-        // при перетаскивании из другой вкладки почты метка так же будет в данных
-        // учитываем метку только для текущей вкладки
-        // для этого название метки создается уникальным
-        this._labelPrevented = 'application/x-drag-prevented-' + String(Math.floor(Math.random() * 100000));
 
         for (var methodName in this.METHODS_BINDS) {
             this[ methodName ] = this[ methodName ].bind(this);
@@ -31033,6 +31029,8 @@ CKEDITOR.skin.chameleon = ( function() {
 
     CKEDITOR.event.implementOn(DNDHover.prototype);
 
+    DNDHover.prototype.LABEL_PREVENTED = 'application/x-drag-prevented';
+
     DNDHover.prototype.METHODS_BINDS = {
         '_leave': 1,
         '_onDragend': 1,
@@ -31054,11 +31052,11 @@ CKEDITOR.skin.chameleon = ( function() {
 
     DNDHover.prototype._iteratorsDragPrevented = {
         'items': function(item) {
-            return (item.type === this._labelPrevented);
+            return (item.type === this.LABEL_PREVENTED);
         },
 
         'types': function(item) {
-            return (item === this._labelPrevented);
+            return (item === this.LABEL_PREVENTED);
         }
     };
 
@@ -31084,7 +31082,7 @@ CKEDITOR.skin.chameleon = ( function() {
 
     DNDHover.prototype._onDragstart = function(event) {
         if (event.target.tagName !== 'IMG') {
-            event.dataTransfer.setData(this._labelPrevented, '1');
+            event.dataTransfer.setData(this.LABEL_PREVENTED, '1');
         }
     };
 
