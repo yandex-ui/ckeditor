@@ -165,6 +165,6 @@ var CKBUILDER_CONFIG = {
         templates: 0,
         toolbar: 1,
         undo: 1,
-        wysiwygarea: 1
+        wysiwygarea: 0
     }
 };
