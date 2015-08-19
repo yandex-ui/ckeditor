@@ -60,7 +60,7 @@ if ( !window.CKEDITOR ) {
 			 *
 			 *		alert( CKEDITOR.revision ); // e.g. '3975'
 			 */
-			revision: '4e14fdb',
+			revision: '60ba981',
 
 			/**
 			 * A 3-digit random integer, valid for the entire life of the CKEDITOR object.
@@ -31972,6 +31972,11 @@ CKEDITOR.skin.chameleon = ( function() {
             this._wrapper = this._editor._imgresizeWrapper.clone(true);
             this._wrapper.replace(this._element);
             this._element.appendTo(this._wrapper);
+        }
+
+        var align = this._element.getStyle('float') || this._element.getAttribute('align');
+        if (align) {
+            this._wrapper.setStyles({ 'float': align });
         }
 
         selection.selectElement(this._wrapper);
