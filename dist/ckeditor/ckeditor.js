@@ -58,7 +58,7 @@ if ( !window.CKEDITOR ) {
 			 *
 			 *		alert( CKEDITOR.revision ); // e.g. '3975'
 			 */
-			revision: '673ae43',
+			revision: 'da8c143',
 
 			/**
 			 * A 3-digit random integer, valid for the entire life of the CKEDITOR object.
@@ -31210,8 +31210,6 @@ CKEDITOR.skin.chameleon = ( function() {
 
     ClipboardDataIterator.prototype.REG_BREAK_TYPE = /text\/(rtf|plain)/;
 
-    ClipboardDataIterator.prototype.REG_TEXT_TYPE = /text\/(rtf|plain|html)/;
-
     /**
      * Поиск файлов/картинок
      * @returns {{ inline: boolean, file: boolean }}
@@ -31265,7 +31263,7 @@ CKEDITOR.skin.chameleon = ( function() {
             if (CKEDITOR.fileTools.isTypeSupported(item, this.REG_IMAGE_TYPE)) {
                 data.inline = true;
 
-            } else if (!CKEDITOR.fileTools.isTypeSupported(item, this.REG_TEXT_TYPE)) {
+            } else if (item.kind === 'file') {
                 data.file = true;
             }
 
