@@ -40,6 +40,7 @@ CKEDITOR.STYLE_OBJECT = 3;
 
 ( function() {
 	var REG_STYLE_SPLIT = /\s*,\s*/;
+	var REG_STYLE_FONT_CLEAN = /['"]/g;
 
 	var blockElements = {
 			address: 1, div: 1, h1: 1, h2: 1, h3: 1, h4: 1, h5: 1, h6: 1, p: 1,
@@ -403,7 +404,7 @@ CKEDITOR.STYLE_OBJECT = 3;
 				name = element.getName();
 
 			// If the element name is the same as the style name.
-			if ( typeof this.element == 'string' ? name == this.element : name in this.element ) {
+			if (def.ignoreElement || ( typeof this.element == 'string' ? name == this.element : name in this.element ) ) {
 				// If no attributes are defined in the element.
 				if ( !fullMatch && !element.hasAttributes() )
 					return true;
@@ -445,7 +446,7 @@ CKEDITOR.STYLE_OBJECT = 3;
 	            name = element.getName();
 
 	        // If the element name is the same as the style name.
-	        if ( typeof this.element == 'string' ? name == this.element : name in this.element ) {
+	        if (def.ignoreElement || ( typeof this.element == 'string' ? name == this.element : name in this.element ) ) {
 	            // If no attributes are defined in the element.
 	            if ( !fullMatch && !element.hasAttributes() )
 	                return true;
@@ -1884,12 +1885,12 @@ CKEDITOR.STYLE_OBJECT = 3;
             var compare = styleCompare;
 
             if (name === 'font-family') {
-                sourceValue = sourceValue.split(REG_STYLE_SPLIT);
-                targetValue = targetValue.split(REG_STYLE_SPLIT);
+                sourceValue = sourceValue.toLowerCase().replace(REG_STYLE_FONT_CLEAN, '').split(REG_STYLE_SPLIT);
+                targetValue = targetValue.toLowerCase().replace(REG_STYLE_FONT_CLEAN, '').split(REG_STYLE_SPLIT);
                 compare = arrayStyleCompare;
             }
 
-            if (!compare(source[ name ], target[ name ])) {
+            if (!compare(sourceValue, targetValue)) {
                 return false;
             }
         }
