@@ -9,7 +9,7 @@
 	url = git@github.com:Katochimoto/ckeditor-openlink.git
 [submodule "plugins/xss"]
 	path = plugins/xss
-	url = git@github.com:Katochimoto/ckeditor-xss.git
+    url = https://github.com/yandex-ui/ckeditor-xss.git
 [submodule "plugins/exbutton"]
 	path = plugins/exbutton
 	url = git@github.com:Katochimoto/ckeditor-exbutton.git
