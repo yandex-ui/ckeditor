@@ -3,25 +3,25 @@
     url = https://github.com/yandex-ui/ckeditor-imgresize.git
 [submodule "plugins/autolink2"]
     path = plugins/autolink2
-    url = git@github.com:Katochimoto/ckeditor-autolink2.git
+    url = https://github.com/yandex-ui/ckeditor-autolink2.git
 [submodule "plugins/openlink"]
     path = plugins/openlink
-    url = git@github.com:Katochimoto/ckeditor-openlink.git
+    url = https://github.com/yandex-ui/ckeditor-openlink.git
 [submodule "plugins/xss"]
     path = plugins/xss
     url = https://github.com/yandex-ui/ckeditor-xss.git
 [submodule "plugins/exbutton"]
     path = plugins/exbutton
-    url = git@github.com:Katochimoto/ckeditor-exbutton.git
+    url = https://github.com/yandex-ui/ckeditor-exbutton.git
 [submodule "plugins/divareasb"]
     path = plugins/divareasb
-    url = git@github.com:Katochimoto/ckeditor-divareasb.git
+    url = https://github.com/Katochimoto/ckeditor-divareasb.git
 [submodule "plugins/pastefile"]
     path = plugins/pastefile
-    url = git@github.com:Katochimoto/ckeditor-pastefile.git
+    url = https://github.com/yandex-ui/ckeditor-pastefile.git
 [submodule "plugins/quotebreak"]
     path = plugins/quotebreak
-    url = git@github.com:Katochimoto/ckeditor-quotebreak.git
+    url = https://github.com/yandex-ui/ckeditor-quotebreak.git
 [submodule "plugins/prettydrop"]
     path = plugins/prettydrop
-    url = git@github.com:Katochimoto/ckeditor-prettydrop.git
+    url = https://github.com/yandex-ui/ckeditor-prettydrop.git
