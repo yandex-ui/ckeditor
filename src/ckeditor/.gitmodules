@@ -22,3 +22,6 @@
 [submodule "plugins/quotebreak"]
 	path = plugins/quotebreak
 	url = git@github.com:Katochimoto/ckeditor-quotebreak.git
+[submodule "plugins/prettydrop"]
+	path = plugins/prettydrop
+	url = git@github.com:Katochimoto/ckeditor-prettydrop.git
