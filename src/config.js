@@ -4,18 +4,19 @@
         'alt',
         'bgcolor',
         'border',
-        'rowspan',
-        'colspan',
         'cellpadding',
         'cellspacing',
         'cite',
         'class',
         'color',
+        'colspan',
         'face',
+        'height',
         'href',
         'lang',
         'link',
         'noshade',
+        'rowspan',
         'size',
         'src',
         'style',
@@ -24,8 +25,7 @@
         'type',
         'valign',
         'vlink',
-        'width',
-        'height'
+        'width'
     ];
 
     var validTags = [
@@ -33,22 +33,24 @@
         'b',
         'blockquote',
         'br',
+        'code',
         'div',
         'em',
         'font',
-        'hr',
         'h1',
         'h2',
         'h3',
         'h4',
         'h5',
         'h6',
+        'hr',
         'i',
         'img',
         'li',
         'ol',
         'p',
         'pre',
+        's',
         'span',
         'strong',
         'table',
@@ -56,8 +58,7 @@
         'td',
         'tr',
         'u',
-        'ul',
-        's'
+        'ul'
     ];
 
     var allowFilter = validTags.join(' ') + '; *[' + validAttrs.join(',') + ']; *{*}';
