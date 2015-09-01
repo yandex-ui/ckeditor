@@ -25,7 +25,15 @@
         "autoprefixer": "5.2.0",
         "stylus": "0.52.0",
         "stylobate": "0.25.x",
-        "stylobate-islands": "0.28.x"
+        "stylobate-islands": "0.28.x",
+        "gulp-filelog": "~0.4.1",
+        "del": "~1.1.0",
+        "grunt": "~0.4.5",
+        "svg_fallback": "git://github.com/kizu/svg-fallback.git#my-master",
+        "load-grunt-tasks": "~1.0.0",
+        "gulp": "~3.8.10",
+        "gulp-grunt": "~0.5.2",
+        "gulp-replace": "~0.5.2"
     },
     "engines": {
         "node": ">=0.6.0"

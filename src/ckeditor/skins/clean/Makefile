@@ -8,6 +8,7 @@ MAKEFLAGS+=-j 4
 dir=-C $*
 
 all: node_modules \
+	icons \
 	editor.css
 
 node_modules: package.json
@@ -20,6 +21,10 @@ editor.css: editor.styl $(src_styl) node_modules
 
 editor.min.css: editor.css
 	$(NPM_BIN)/stylus --compress < $< > $@
+
+icons: node_modules
+	$(NPM_BIN)/gulp grunt-svg_fallback
+	for x in $$(find out -name '*.svg'); do (printf ":::" && cat "$$x" && printf ":::") > "$$x".yate; done
 
 clean:
 	find . -type f -name "*.css" -exec rm -f {} \;
