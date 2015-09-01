@@ -8,9 +8,9 @@ var gruntTasks = gulpGrunt.tasks();
 gulpGrunt(gulp);
 
 var SRC = {
-    icons_dir: './src/'
+    icons_dir: './src/',
+    icons: './src/*.svg'
 };
-SRC.icons = SRC.icons_dir + '*.svg'
 
 var DEST = './out/';
 var DEST_ICONS = DEST;
@@ -18,9 +18,7 @@ var DEST_SVG_ICONS = DEST_ICONS + '*/*.svg';
 var DEST_SVG_ICONS_YATE_SAFE = DEST_ICONS + 'yate_safe/';
 
 gulp.task('clean', function(cb) {
-    del([
-        'out/**'
-    ], cb);
+    del([ 'out/**' ], cb);
 });
 
 /**

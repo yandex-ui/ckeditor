@@ -1,7 +1,7 @@
 NPM_BIN=$(CURDIR)/node_modules/.bin
 export NPM_BIN
 
-src_styl := $(shell find src -type f -name "*.styl")
+src_styl := $(shell find . -type f -name "*.styl" ! -path "*node_modules*")
 
 MAKEFLAGS+=-j 4
 

@@ -9,7 +9,9 @@ clean:
 	git clean -fdx
 
 gulp: node_modules
-	$(NPM_BIN)/gulp grunt-svg_fallback
+	$(NPM_BIN)/gulp grunt-svg_fallback && make yate
+
+yate:
 	for x in $$(find out -name '*.svg'); do (printf ":::" && cat "$$x" && printf ":::") > "$$x".yate; done
 
 node_modules:
