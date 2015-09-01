@@ -1,0 +1,33 @@
+{
+    "name": "ckeditor-skin-clean",
+    "description": "",
+    "version": "0.0.1",
+    "keywords": [
+        "ckeditor",
+        "skin",
+        "clean"
+    ],
+    "author": {
+        "name": "Rikishi",
+        "email": "bufpost@yandex.ru",
+        "url": "https://github.com/Katochimoto"
+    },
+    "bugs": {
+        "url": "https://github.com/Katochimoto/ckeditor-skin-clean/issues",
+        "email": "bufpost@yandex.ru"
+    },
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:Katochimoto/ckeditor-skin-clean.git"
+    },
+    "devDependencies": {
+        "autoprefixer": "5.2.0",
+        "stylus": "0.52.0",
+        "stylobate": "0.25.x",
+        "stylobate-islands": "0.28.x"
+    },
+    "engines": {
+        "node": ">=0.6.0"
+    }
+}
