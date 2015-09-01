@@ -23,8 +23,7 @@ editor.min.css: editor.css
 	$(NPM_BIN)/stylus --compress < $< > $@
 
 icons: node_modules
-	$(NPM_BIN)/gulp grunt-svg_fallback
-	for x in $$(find out -name '*.svg'); do (printf ":::" && cat "$$x" && printf ":::") > "$$x".yate; done
+	$(MAKE) -C $@
 
 clean:
 	find . -type f -name "*.css" -exec rm -f {} \;

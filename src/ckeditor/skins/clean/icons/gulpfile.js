@@ -8,7 +8,7 @@ var gruntTasks = gulpGrunt.tasks();
 gulpGrunt(gulp);
 
 var SRC = {
-    icons_dir: './'
+    icons_dir: './src/'
 };
 SRC.icons = SRC.icons_dir + '*.svg'
 
