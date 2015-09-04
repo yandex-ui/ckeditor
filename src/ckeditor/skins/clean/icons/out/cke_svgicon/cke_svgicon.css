@@ -1,198 +1,198 @@
-.editor {
+.cke_svgicon {
     display: inline-block;
-    background-image: url(editor.png);
+    background-image: url(cke_svgicon.png);
     /* This hides bg-image in modern browsers except IE9 */
     background: -webkit-linear-gradient(transparent, transparent);
     background: linear-gradient(transparent, transparent);
     /* This hides bg-image in IE9 */
     background-position: -1000vh 0 !important;
     }
-.editor--maximize {
+.cke_svgicon--maximize {
     width: 16px;
     height: 16px;
     background-position: 0 0;
     }
-.editor--attachment {
+.cke_svgicon--attachment {
     width: 16px;
     height: 16px;
     background-position: -26px 0;
     }
-.editor--blockquote {
+.cke_svgicon--blockquote {
     width: 16px;
     height: 16px;
     background-position: 0 -26px;
     }
-.editor--bold-en {
+.cke_svgicon--bold-en {
     width: 16px;
     height: 16px;
     background-position: -26px -26px;
     }
-.editor--bold-ru {
+.cke_svgicon--bold-ru {
     width: 16px;
     height: 16px;
     background-position: -52px 0;
     }
-.editor--bulletedlist {
+.cke_svgicon--bulletedlist {
     width: 16px;
     height: 16px;
     background-position: -52px -26px;
     }
-.editor--codesnippet {
+.cke_svgicon--codesnippet {
     width: 16px;
     height: 16px;
     background-position: 0 -52px;
     }
-.editor--emoticons {
+.cke_svgicon--emoticons {
     width: 16px;
     height: 16px;
     background-position: -26px -52px;
     }
-.editor--italic-en {
+.cke_svgicon--italic-en {
     width: 16px;
     height: 16px;
     background-position: -52px -52px;
     }
-.editor--italic-ru {
+.cke_svgicon--italic-ru {
     width: 16px;
     height: 16px;
     background-position: -78px 0;
     }
-.editor--justifyblock {
+.cke_svgicon--justifyblock {
     width: 16px;
     height: 16px;
     background-position: -78px -26px;
     }
-.editor--justifycenter {
+.cke_svgicon--justifycenter {
     width: 16px;
     height: 16px;
     background-position: -78px -52px;
     }
-.editor--justifyleft {
+.cke_svgicon--justifyleft {
     width: 16px;
     height: 16px;
     background-position: 0 -78px;
     }
-.editor--justifyright {
+.cke_svgicon--justifyright {
     width: 16px;
     height: 16px;
     background-position: -26px -78px;
     }
-.editor--link {
+.cke_svgicon--link {
     width: 16px;
     height: 16px;
     background-position: -52px -78px;
     }
-.editor--mailbgcolor {
+.cke_svgicon--mailbgcolor {
     width: 16px;
     height: 16px;
     background-position: -78px -78px;
     }
-.editor--mailfont {
+.cke_svgicon--mailfont {
     width: 16px;
     height: 16px;
     background-position: -104px 0;
     }
-.editor--mailfontsize {
+.cke_svgicon--mailfontsize {
     width: 16px;
     height: 16px;
     background-position: -104px -26px;
     }
-.editor--mailtextcolor {
+.cke_svgicon--mailtextcolor {
     width: 16px;
     height: 16px;
     background-position: -104px -52px;
     }
-.editor--bgcolor {
+.cke_svgicon--bgcolor {
     width: 16px;
     height: 16px;
     background-position: -104px -78px;
     }
-.editor--menualignment {
+.cke_svgicon--menualignment {
     width: 16px;
     height: 16px;
     background-position: 0 -104px;
     }
-.editor--menulist {
+.cke_svgicon--menulist {
     width: 16px;
     height: 16px;
     background-position: -26px -104px;
     }
-.editor--menuselection-en {
+.cke_svgicon--menuselection-en {
     width: 16px;
     height: 16px;
     background-position: -52px -104px;
     }
-.editor--menuselection-ru {
+.cke_svgicon--menuselection-ru {
     width: 16px;
     height: 16px;
     background-position: -78px -104px;
     }
-.editor--numberedlist {
+.cke_svgicon--numberedlist {
     width: 16px;
     height: 16px;
     background-position: -104px -104px;
     }
-.editor--pastefromword {
+.cke_svgicon--pastefromword {
     width: 16px;
     height: 16px;
     background-position: -130px 0;
     }
-.editor--redo {
+.cke_svgicon--redo {
     width: 16px;
     height: 16px;
     background-position: -130px -26px;
     }
-.editor--removeformat {
+.cke_svgicon--removeformat {
     width: 16px;
     height: 16px;
     background-position: -130px -52px;
     }
-.editor--strike-en {
+.cke_svgicon--strike-en {
     width: 16px;
     height: 16px;
     background-position: -130px -78px;
     }
-.editor--strike-ru {
+.cke_svgicon--strike-ru {
     width: 16px;
     height: 16px;
     background-position: -130px -104px;
     }
-.editor--switchmode-off {
+.cke_svgicon--switchmode-off {
     width: 16px;
     height: 16px;
     background-position: 0 -130px;
     }
-.editor--switchmode-on {
+.cke_svgicon--switchmode-on {
     width: 16px;
     height: 16px;
     background-position: -26px -130px;
     }
-.editor--switchmode {
+.cke_svgicon--switchmode {
     width: 16px;
     height: 16px;
     background-position: -52px -130px;
     }
-.editor--textcolor {
+.cke_svgicon--textcolor {
     width: 16px;
     height: 16px;
     background-position: -78px -130px;
     }
-.editor--underline-en {
+.cke_svgicon--underline-en {
     width: 16px;
     height: 16px;
     background-position: -104px -130px;
     }
-.editor--underline-ru {
+.cke_svgicon--underline-ru {
     width: 16px;
     height: 16px;
     background-position: -130px -130px;
     }
-.editor--undo {
+.cke_svgicon--undo {
     width: 16px;
     height: 16px;
     background-position: -156px 0;
     }
-.editor--unlink {
+.cke_svgicon--unlink {
     width: 16px;
     height: 16px;
     background-position: -156px -26px;
