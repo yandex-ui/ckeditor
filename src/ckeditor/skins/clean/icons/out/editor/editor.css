@@ -1,0 +1,199 @@
+.editor {
+    display: inline-block;
+    background-image: url(editor.png);
+    /* This hides bg-image in modern browsers except IE9 */
+    background: -webkit-linear-gradient(transparent, transparent);
+    background: linear-gradient(transparent, transparent);
+    /* This hides bg-image in IE9 */
+    background-position: -1000vh 0 !important;
+    }
+.editor--Wz-maximize {
+    width: 16px;
+    height: 16px;
+    background-position: 0 0;
+    }
+.editor--Wz-attachment {
+    width: 16px;
+    height: 16px;
+    background-position: -26px 0;
+    }
+.editor--Wz-blockquote {
+    width: 16px;
+    height: 16px;
+    background-position: 0 -26px;
+    }
+.editor--Wz-bold-en {
+    width: 16px;
+    height: 16px;
+    background-position: -26px -26px;
+    }
+.editor--Wz-bold-ru {
+    width: 16px;
+    height: 16px;
+    background-position: -52px 0;
+    }
+.editor--Wz-bulletedlist {
+    width: 16px;
+    height: 16px;
+    background-position: -52px -26px;
+    }
+.editor--Wz-codesnippet {
+    width: 16px;
+    height: 16px;
+    background-position: 0 -52px;
+    }
+.editor--Wz-emoticons {
+    width: 16px;
+    height: 16px;
+    background-position: -26px -52px;
+    }
+.editor--Wz-italic-en {
+    width: 16px;
+    height: 16px;
+    background-position: -52px -52px;
+    }
+.editor--Wz-italic-ru {
+    width: 16px;
+    height: 16px;
+    background-position: -78px 0;
+    }
+.editor--Wz-justifyblock {
+    width: 16px;
+    height: 16px;
+    background-position: -78px -26px;
+    }
+.editor--Wz-justifycenter {
+    width: 16px;
+    height: 16px;
+    background-position: -78px -52px;
+    }
+.editor--Wz-justifyleft {
+    width: 16px;
+    height: 16px;
+    background-position: 0 -78px;
+    }
+.editor--Wz-justifyright {
+    width: 16px;
+    height: 16px;
+    background-position: -26px -78px;
+    }
+.editor--Wz-link {
+    width: 16px;
+    height: 16px;
+    background-position: -52px -78px;
+    }
+.editor--Wz-mailbgcolor {
+    width: 16px;
+    height: 16px;
+    background-position: -78px -78px;
+    }
+.editor--Wz-mailfont {
+    width: 16px;
+    height: 16px;
+    background-position: -104px 0;
+    }
+.editor--Wz-mailfontsize {
+    width: 16px;
+    height: 16px;
+    background-position: -104px -26px;
+    }
+.editor--Wz-mailtextcolor {
+    width: 16px;
+    height: 16px;
+    background-position: -104px -52px;
+    }
+.editor--Wz-bgcolor {
+    width: 16px;
+    height: 16px;
+    background-position: -104px -78px;
+    }
+.editor--Wz-menualignment {
+    width: 16px;
+    height: 16px;
+    background-position: 0 -104px;
+    }
+.editor--Wz-menulist {
+    width: 16px;
+    height: 16px;
+    background-position: -26px -104px;
+    }
+.editor--Wz-menuselection-en {
+    width: 16px;
+    height: 16px;
+    background-position: -52px -104px;
+    }
+.editor--Wz-menuselection-ru {
+    width: 16px;
+    height: 16px;
+    background-position: -78px -104px;
+    }
+.editor--Wz-numberedlist {
+    width: 16px;
+    height: 16px;
+    background-position: -104px -104px;
+    }
+.editor--Wz-pastefromword {
+    width: 16px;
+    height: 16px;
+    background-position: -130px 0;
+    }
+.editor--Wz-redo {
+    width: 16px;
+    height: 16px;
+    background-position: -130px -26px;
+    }
+.editor--Wz-removeformat {
+    width: 16px;
+    height: 16px;
+    background-position: -130px -52px;
+    }
+.editor--Wz-strike-en {
+    width: 16px;
+    height: 16px;
+    background-position: -130px -78px;
+    }
+.editor--Wz-strike-ru {
+    width: 16px;
+    height: 16px;
+    background-position: -130px -104px;
+    }
+.editor--Wz-switchmode-off {
+    width: 16px;
+    height: 16px;
+    background-position: 0 -130px;
+    }
+.editor--Wz-switchmode-on {
+    width: 16px;
+    height: 16px;
+    background-position: -26px -130px;
+    }
+.editor--Wz-switchmode {
+    width: 16px;
+    height: 16px;
+    background-position: -52px -130px;
+    }
+.editor--Wz-textcolor {
+    width: 16px;
+    height: 16px;
+    background-position: -78px -130px;
+    }
+.editor--Wz-underline-en {
+    width: 16px;
+    height: 16px;
+    background-position: -104px -130px;
+    }
+.editor--Wz-underline-ru {
+    width: 16px;
+    height: 16px;
+    background-position: -130px -130px;
+    }
+.editor--Wz-undo {
+    width: 16px;
+    height: 16px;
+    background-position: -156px 0;
+    }
+.editor--Wz-unlink {
+    width: 16px;
+    height: 16px;
+    background-position: -156px -26px;
+    }

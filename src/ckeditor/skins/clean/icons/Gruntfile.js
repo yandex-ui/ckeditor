@@ -1,8 +1,8 @@
 module.exports = function(grunt) {
-    grunt.loadNpmTasks('svg_fallback');
+    var config = grunt.file.readJSON(__dirname + '/../package.json');
 
     grunt.initConfig({
-        'pkg': grunt.file.readJSON(__dirname + '/../package.json'),
+        'pkg': config,
         'svg_fallback': {
             'options': {
                 //'debug': true,
@@ -18,4 +18,7 @@ module.exports = function(grunt) {
             }
         }
     });
+
+    grunt.loadTasks(__dirname + '/../node_modules/svg_fallback/tasks');
+    //grunt.loadNpmTasks('svg_fallback');
 };

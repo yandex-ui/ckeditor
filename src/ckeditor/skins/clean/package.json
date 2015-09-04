@@ -31,7 +31,7 @@
         "grunt": "~0.4.5",
         "svg_fallback": "git://github.com/kizu/svg-fallback.git#my-master",
         "load-grunt-tasks": "~1.0.0",
-        "gulp": "~3.8.10",
+        "gulp": "3.9.0",
         "gulp-grunt": "~0.5.2",
         "gulp-replace": "~0.5.2"
     },

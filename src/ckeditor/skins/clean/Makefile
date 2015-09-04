@@ -8,7 +8,7 @@ MAKEFLAGS+=-j 4
 dir=-C $*
 
 all: node_modules \
-	icons \
+	svgicons \
 	clean.css
 
 node_modules: package.json
@@ -22,8 +22,8 @@ clean.css: clean.styl $(src_styl) node_modules
 clean.min.css: clean.css
 	$(NPM_BIN)/stylus --compress < $< > $@
 
-icons: node_modules
-	$(MAKE) -C $@
+svgicons: node_modules
+	$(MAKE) -C $(CURDIR)/icons
 
 clean:
 	find . -type f -name "*.css" ! -path "*/node_modules/*" -exec rm -f {} \;
