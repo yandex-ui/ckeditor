@@ -7,192 +7,192 @@
     /* This hides bg-image in IE9 */
     background-position: -1000vh 0 !important;
     }
-.editor--Wz-maximize {
+.editor--maximize {
     width: 16px;
     height: 16px;
     background-position: 0 0;
     }
-.editor--Wz-attachment {
+.editor--attachment {
     width: 16px;
     height: 16px;
     background-position: -26px 0;
     }
-.editor--Wz-blockquote {
+.editor--blockquote {
     width: 16px;
     height: 16px;
     background-position: 0 -26px;
     }
-.editor--Wz-bold-en {
+.editor--bold-en {
     width: 16px;
     height: 16px;
     background-position: -26px -26px;
     }
-.editor--Wz-bold-ru {
+.editor--bold-ru {
     width: 16px;
     height: 16px;
     background-position: -52px 0;
     }
-.editor--Wz-bulletedlist {
+.editor--bulletedlist {
     width: 16px;
     height: 16px;
     background-position: -52px -26px;
     }
-.editor--Wz-codesnippet {
+.editor--codesnippet {
     width: 16px;
     height: 16px;
     background-position: 0 -52px;
     }
-.editor--Wz-emoticons {
+.editor--emoticons {
     width: 16px;
     height: 16px;
     background-position: -26px -52px;
     }
-.editor--Wz-italic-en {
+.editor--italic-en {
     width: 16px;
     height: 16px;
     background-position: -52px -52px;
     }
-.editor--Wz-italic-ru {
+.editor--italic-ru {
     width: 16px;
     height: 16px;
     background-position: -78px 0;
     }
-.editor--Wz-justifyblock {
+.editor--justifyblock {
     width: 16px;
     height: 16px;
     background-position: -78px -26px;
     }
-.editor--Wz-justifycenter {
+.editor--justifycenter {
     width: 16px;
     height: 16px;
     background-position: -78px -52px;
     }
-.editor--Wz-justifyleft {
+.editor--justifyleft {
     width: 16px;
     height: 16px;
     background-position: 0 -78px;
     }
-.editor--Wz-justifyright {
+.editor--justifyright {
     width: 16px;
     height: 16px;
     background-position: -26px -78px;
     }
-.editor--Wz-link {
+.editor--link {
     width: 16px;
     height: 16px;
     background-position: -52px -78px;
     }
-.editor--Wz-mailbgcolor {
+.editor--mailbgcolor {
     width: 16px;
     height: 16px;
     background-position: -78px -78px;
     }
-.editor--Wz-mailfont {
+.editor--mailfont {
     width: 16px;
     height: 16px;
     background-position: -104px 0;
     }
-.editor--Wz-mailfontsize {
+.editor--mailfontsize {
     width: 16px;
     height: 16px;
     background-position: -104px -26px;
     }
-.editor--Wz-mailtextcolor {
+.editor--mailtextcolor {
     width: 16px;
     height: 16px;
     background-position: -104px -52px;
     }
-.editor--Wz-bgcolor {
+.editor--bgcolor {
     width: 16px;
     height: 16px;
     background-position: -104px -78px;
     }
-.editor--Wz-menualignment {
+.editor--menualignment {
     width: 16px;
     height: 16px;
     background-position: 0 -104px;
     }
-.editor--Wz-menulist {
+.editor--menulist {
     width: 16px;
     height: 16px;
     background-position: -26px -104px;
     }
-.editor--Wz-menuselection-en {
+.editor--menuselection-en {
     width: 16px;
     height: 16px;
     background-position: -52px -104px;
     }
-.editor--Wz-menuselection-ru {
+.editor--menuselection-ru {
     width: 16px;
     height: 16px;
     background-position: -78px -104px;
     }
-.editor--Wz-numberedlist {
+.editor--numberedlist {
     width: 16px;
     height: 16px;
     background-position: -104px -104px;
     }
-.editor--Wz-pastefromword {
+.editor--pastefromword {
     width: 16px;
     height: 16px;
     background-position: -130px 0;
     }
-.editor--Wz-redo {
+.editor--redo {
     width: 16px;
     height: 16px;
     background-position: -130px -26px;
     }
-.editor--Wz-removeformat {
+.editor--removeformat {
     width: 16px;
     height: 16px;
     background-position: -130px -52px;
     }
-.editor--Wz-strike-en {
+.editor--strike-en {
     width: 16px;
     height: 16px;
     background-position: -130px -78px;
     }
-.editor--Wz-strike-ru {
+.editor--strike-ru {
     width: 16px;
     height: 16px;
     background-position: -130px -104px;
     }
-.editor--Wz-switchmode-off {
+.editor--switchmode-off {
     width: 16px;
     height: 16px;
     background-position: 0 -130px;
     }
-.editor--Wz-switchmode-on {
+.editor--switchmode-on {
     width: 16px;
     height: 16px;
     background-position: -26px -130px;
     }
-.editor--Wz-switchmode {
+.editor--switchmode {
     width: 16px;
     height: 16px;
     background-position: -52px -130px;
     }
-.editor--Wz-textcolor {
+.editor--textcolor {
     width: 16px;
     height: 16px;
     background-position: -78px -130px;
     }
-.editor--Wz-underline-en {
+.editor--underline-en {
     width: 16px;
     height: 16px;
     background-position: -104px -130px;
     }
-.editor--Wz-underline-ru {
+.editor--underline-ru {
     width: 16px;
     height: 16px;
     background-position: -130px -130px;
     }
-.editor--Wz-undo {
+.editor--undo {
     width: 16px;
     height: 16px;
     background-position: -156px 0;
     }
-.editor--Wz-unlink {
+.editor--unlink {
     width: 16px;
     height: 16px;
     background-position: -156px -26px;
