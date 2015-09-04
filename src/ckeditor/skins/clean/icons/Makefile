@@ -5,7 +5,7 @@ all: node_modules \
 	gulp
 
 clean:
-	git clean -fdx
+	rm -rf $(CURDIR)/out
 
 node_modules:
 	$(MAKE) -C .. node_modules
