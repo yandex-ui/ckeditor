@@ -20,5 +20,4 @@ module.exports = function(grunt) {
     });
 
     grunt.loadTasks(__dirname + '/../node_modules/svg_fallback/tasks');
-    //grunt.loadNpmTasks('svg_fallback');
 };
