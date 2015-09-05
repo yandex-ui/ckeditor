@@ -537,7 +537,6 @@ a.cke_toolbox_collapser {
       -ms-transform: scale(0.75) rotate(45deg);
        -o-transform: scale(0.75) rotate(45deg);
           transform: scale(0.75) rotate(45deg);
-  margin-top: -0.9em;
 }
 .cke_button_arrow,
 .cke_combo_arrow {
