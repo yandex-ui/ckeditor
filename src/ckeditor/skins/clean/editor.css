@@ -606,7 +606,7 @@ margin: 3px -2px 0 3px {
   display: none;
 }
 span.cke_button_icon {
-  opacity: 0.5;
+  opacity: 0.6;
 }
 .cke_button_disabled > span.cke_button_icon {
   opacity: 0.15;
