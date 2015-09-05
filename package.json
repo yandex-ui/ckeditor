@@ -1,0 +1,30 @@
+{
+    "name": "ckeditor-web",
+    "description": "",
+    "version": "0.2.0",
+    "keywords": [
+        "ckeditor"
+    ],
+    "author": {
+        "name": "Rikishi",
+        "email": "bufpost@yandex.ru",
+        "url": "https://github.com/Katochimoto"
+    },
+    "bugs": {
+        "url": "https://github.com/Katochimoto/ckeditor/issues",
+        "email": "bufpost@yandex.ru"
+    },
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:Katochimoto/ckeditor.git"
+    },
+    "devDependencies": {
+        "vow": "0.4.10",
+        "lodash": "3.10.1"
+    },
+    "engines": {
+        "node": ">=0.6.0"
+    },
+    "main": "dist/ckeditor-full.js"
+}
