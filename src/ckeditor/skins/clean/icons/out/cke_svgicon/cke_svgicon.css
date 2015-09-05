@@ -7,7 +7,7 @@
     /* This hides bg-image in IE9 */
     background-position: -1000vh 0 !important;
     }
-.cke_svgicon--maximize {
+.cke_svgicon--mailtextcolor {
     width: 16px;
     height: 16px;
     background-position: 0 0;
@@ -37,67 +37,67 @@
     height: 16px;
     background-position: -52px -26px;
     }
-.cke_svgicon--codesnippet {
+.cke_svgicon--undo {
     width: 16px;
     height: 16px;
     background-position: 0 -52px;
     }
-.cke_svgicon--emoticons {
+.cke_svgicon--codesnippet {
     width: 16px;
     height: 16px;
     background-position: -26px -52px;
     }
-.cke_svgicon--italic-en {
+.cke_svgicon--emoticons {
     width: 16px;
     height: 16px;
     background-position: -52px -52px;
     }
-.cke_svgicon--italic-ru {
+.cke_svgicon--italic-en {
     width: 16px;
     height: 16px;
     background-position: -78px 0;
     }
-.cke_svgicon--justifyblock {
+.cke_svgicon--italic-ru {
     width: 16px;
     height: 16px;
     background-position: -78px -26px;
     }
-.cke_svgicon--justifycenter {
+.cke_svgicon--justifyblock {
     width: 16px;
     height: 16px;
     background-position: -78px -52px;
     }
-.cke_svgicon--justifyleft {
+.cke_svgicon--justifycenter {
     width: 16px;
     height: 16px;
     background-position: 0 -78px;
     }
-.cke_svgicon--justifyright {
+.cke_svgicon--justifyleft {
     width: 16px;
     height: 16px;
     background-position: -26px -78px;
     }
-.cke_svgicon--link {
+.cke_svgicon--justifyright {
     width: 16px;
     height: 16px;
     background-position: -52px -78px;
     }
-.cke_svgicon--mailbgcolor {
+.cke_svgicon--link {
     width: 16px;
     height: 16px;
     background-position: -78px -78px;
     }
-.cke_svgicon--mailfont {
+.cke_svgicon--mailbgcolor {
     width: 16px;
     height: 16px;
     background-position: -104px 0;
     }
-.cke_svgicon--mailfontsize {
+.cke_svgicon--mailfont {
     width: 16px;
     height: 16px;
     background-position: -104px -26px;
     }
-.cke_svgicon--mailtextcolor {
+.cke_svgicon--mailfontsize {
     width: 16px;
     height: 16px;
     background-position: -104px -52px;
@@ -107,87 +107,87 @@
     height: 16px;
     background-position: -104px -78px;
     }
-.cke_svgicon--menualignment {
+.cke_svgicon--maximize {
     width: 16px;
     height: 16px;
     background-position: 0 -104px;
     }
-.cke_svgicon--menulist {
+.cke_svgicon--menualignment {
     width: 16px;
     height: 16px;
     background-position: -26px -104px;
     }
-.cke_svgicon--menuselection-en {
+.cke_svgicon--menulist {
     width: 16px;
     height: 16px;
     background-position: -52px -104px;
     }
-.cke_svgicon--menuselection-ru {
+.cke_svgicon--menuselection-en {
     width: 16px;
     height: 16px;
     background-position: -78px -104px;
     }
-.cke_svgicon--numberedlist {
+.cke_svgicon--menuselection-ru {
     width: 16px;
     height: 16px;
     background-position: -104px -104px;
     }
-.cke_svgicon--pastefromword {
+.cke_svgicon--numberedlist {
     width: 16px;
     height: 16px;
     background-position: -130px 0;
     }
-.cke_svgicon--redo {
+.cke_svgicon--pastefromword {
     width: 16px;
     height: 16px;
     background-position: -130px -26px;
     }
-.cke_svgicon--removeformat {
+.cke_svgicon--redo {
     width: 16px;
     height: 16px;
     background-position: -130px -52px;
     }
-.cke_svgicon--strike-en {
+.cke_svgicon--removeformat {
     width: 16px;
     height: 16px;
     background-position: -130px -78px;
     }
-.cke_svgicon--strike-ru {
+.cke_svgicon--strike-en {
     width: 16px;
     height: 16px;
     background-position: -130px -104px;
     }
-.cke_svgicon--switchmode-off {
+.cke_svgicon--strike-ru {
     width: 16px;
     height: 16px;
     background-position: 0 -130px;
     }
-.cke_svgicon--switchmode-on {
+.cke_svgicon--switchmode-off {
     width: 16px;
     height: 16px;
     background-position: -26px -130px;
     }
-.cke_svgicon--switchmode {
+.cke_svgicon--switchmode-on {
     width: 16px;
     height: 16px;
     background-position: -52px -130px;
     }
-.cke_svgicon--textcolor {
+.cke_svgicon--switchmode {
     width: 16px;
     height: 16px;
     background-position: -78px -130px;
     }
-.cke_svgicon--underline-en {
+.cke_svgicon--textcolor {
     width: 16px;
     height: 16px;
     background-position: -104px -130px;
     }
-.cke_svgicon--underline-ru {
+.cke_svgicon--underline-en {
     width: 16px;
     height: 16px;
     background-position: -130px -130px;
     }
-.cke_svgicon--undo {
+.cke_svgicon--underline-ru {
     width: 16px;
     height: 16px;
     background-position: -156px 0;
@@ -196,4 +196,9 @@
     width: 16px;
     height: 16px;
     background-position: -156px -26px;
+    }
+.cke_svgicon--close {
+    width: 14px;
+    height: 14px;
+    background-position: -156px -52px;
     }

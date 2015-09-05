@@ -49,7 +49,6 @@ CKEDITOR.skin.chameleon = ( function() {
     //     * Default panel template.
     templates = {
         editor: new CKEDITOR.template(
-            '{id}.cke_chrome [border-color:{defaultBorder};] ' +
             '{id} .cke_top [ ' +
                     '{defaultGradient}' +
                     'border-bottom-color:{defaultBorder};' +
