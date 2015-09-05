@@ -1314,6 +1314,18 @@ legend.cke_voice_label {
 .cke_editable img {
   border: 0;
 }
+.cke_editable img.right {
+  border: 1px solid #ccc;
+  float: right;
+  margin-left: 15px;
+  padding: 5px;
+}
+.cke_editable img.left {
+  border: 1px solid #ccc;
+  float: left;
+  margin-right: 15px;
+  padding: 5px;
+}
 .cke_editable ins {
   border-bottom: 1px solid #008000;
   text-decoration: none;
@@ -1356,4 +1368,24 @@ legend.cke_voice_label {
 .cke_editable a:hover,
 .cke_editable a:visited:hover {
   color: #f00;
+}
+.cke_editable .marker {
+  background-color: Yellow;
+}
+.cke_editable span[lang] {
+  font-style: italic;
+}
+.cke_editable figure {
+  text-align: center;
+  border: solid 1px #ccc;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
+  background: rgba(0,0,0,0.05);
+  padding: 10px;
+  margin: 10px 20px;
+  display: inline-block;
+}
+.cke_editable figure > figcaption {
+  text-align: center;
+  display: block;
 }

@@ -1,74 +1,101 @@
-body {
-  font-family: sans-serif, Arial, Verdana, "Trebuchet MS";
-  font-size: 12px;
-  color: #333;
-  background-color: #fff;
-  margin: 20px;
-}
 .cke_editable {
-  font-size: 13px;
-  line-height: 1.6;
-}
-blockquote {
-  _border: 1px solid #fff;
-  border-left: 1px solid #ccc;
-  margin: 0 0 0 1em;
-  padding-left: 1em;
-}
-a {
-  color: #0782c1;
-}
-a > img {
-  padding: 1px;
-  margin: 1px;
+  font: 14px Arial, sans-serif;
+  line-height: normal;
+  color: #000;
+  background-color: #fff;
+  white-space: pre-wrap;
+  word-wrap: break-word;
   border: none;
-  outline: 1px solid #0782c1;
+  padding: 0;
+  margin: 0;
+  display: block;
 }
-ol,
-ul,
-dl {
-  *margin-right: 0px;
-  padding: 0 40px;
+.cke_maximized .cke_source {
+  padding: 0 10px;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: normal;
-  line-height: 1.2;
+.cke_editable h1 {
+  font-size: 2em;
 }
-hr {
-  border: 0px;
-  border-top: 1px solid #ccc;
+.cke_editable h2 {
+  font-size: 1.5em;
 }
-img.right {
+.cke_editable h3 {
+  font-size: 1.2em;
+}
+.cke_editable h4 {
+  font-size: 1em;
+}
+.cke_editable h5 {
+  font-size: 0.8em;
+}
+.cke_editable h6 {
+  font-size: 0.7em;
+}
+.cke_editable img {
+  border: 0;
+}
+.cke_editable img.right {
   border: 1px solid #ccc;
   float: right;
   margin-left: 15px;
   padding: 5px;
 }
-img.left {
+.cke_editable img.left {
   border: 1px solid #ccc;
   float: left;
   margin-right: 15px;
   padding: 5px;
 }
-pre {
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-     tab-size: 4;
+.cke_editable ins {
+  border-bottom: 1px solid #008000;
+  text-decoration: none;
+  color: #008000;
 }
-.marker {
+.cke_editable del {
+  color: #f00;
+  text-decoration: line-through;
+}
+.cke_editable cite {
+  border-bottom: 1px dashed #00f;
+}
+.cke_editable acronym {
+  border-bottom: 1px dotted #ccc;
+  cursor: help;
+}
+.cke_editable abbr {
+  border-bottom: 1px dashed #ccc;
+  cursor: help;
+}
+.cke_editable blockquote {
+  _border: 1px solid #fff;
+  border-left: 1px solid #ccc;
+  margin: 0 0 0 1em;
+  padding-left: 1em;
+}
+.cke_editable table {
+  cursor: default;
+}
+.cke_editable pre {
+  white-space: pre-line;
+}
+.cke_editable a:link {
+  cursor: pointer;
+  color: #00e;
+}
+.cke_editable a:visited {
+  color: #609;
+}
+.cke_editable a:hover,
+.cke_editable a:visited:hover {
+  color: #f00;
+}
+.cke_editable .marker {
   background-color: Yellow;
 }
-span[lang] {
+.cke_editable span[lang] {
   font-style: italic;
 }
-figure {
+.cke_editable figure {
   text-align: center;
   border: solid 1px #ccc;
   -webkit-border-radius: 2px;
@@ -78,7 +105,7 @@ figure {
   margin: 10px 20px;
   display: inline-block;
 }
-figure > figcaption {
+.cke_editable figure > figcaption {
   text-align: center;
   display: block;
 }

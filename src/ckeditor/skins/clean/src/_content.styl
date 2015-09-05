@@ -36,6 +36,18 @@
   & img
     border: 0
 
+    &.right
+      border: 1px solid #ccc
+      float: right
+      margin-left: 15px
+      padding: 5px
+
+    &.left
+      border: 1px solid #ccc
+      float: left
+      margin-right: 15px
+      padding: 5px
+
   & ins
     border-bottom: 1px solid green
     text-decoration: none
@@ -79,3 +91,22 @@
     &:hover,
     &:visited:hover
       color: #f00
+
+  & .marker
+    background-color: Yellow
+
+  & span[lang]
+    font-style: italic
+
+  & figure
+    text-align: center
+    border: solid 1px #ccc
+    border-radius: 2px
+    background: rgba(#000, 0.05)
+    padding: 10px
+    margin: 10px 20px
+    display: inline-block
+
+    & > figcaption
+      text-align: center
+      display: block
