@@ -4,8 +4,11 @@
   visibility: visible
   overflow: hidden
   outline: none
-  width: 120px
-  height: 100px
+  width: 150px
+  height: 170px
+
+.cke_panel_block
+  outline: none
 
 .cke_menu_panel
   padding: 0
@@ -30,54 +33,39 @@
   overflow-x: hidden
 
 .cke_panel_list
-  list-style-type: none
-  margin: 3px
-  padding: 0
   white-space: nowrap
+  margin: 0
+  padding: 0
+  list-style: none
+  outline: 0
 
 .cke_panel_listItem
-  margin: 0
-  padding-bottom: 1px
+  skin: menu-item
 
-  & a
-    font-family: Arial, sans-serif
-    padding: 3px 4px
+  outline: none
+  line-height: 16px
+  font: 13px/1.5 Arial,sans-serif
+
+  &.cke_selected
+    skin: menu-item_hover
+
+  & > a
+    outline: none
     display: block
-    border: 1px solid #fff
     color: inherit !important
     text-decoration: none
     overflow: hidden
     text-overflow: ellipsis
-    border-radius: 2px
-
-  &.cke_selected
-    & a
-      border: 1px solid #dedede
-      background-color: #f2f2f2
-      box-shadow: 0 0 2px rgba(#000, .1) inset
-
-.cke_panel_listItem
-  & a
-    border-style: none
-
-    &:hover,
-    &:focus,
-    &:active
-      border-color: #dedede
-      background-color: #f2f2f2
-      box-shadow: 0 0 2px rgba(#000,.1) inset
-
-      .cke_hc &
-        border: 2px solid
-        padding: 1px 2px
 
 .cke_panel_grouptitle
+  padding: 5px 16px
+  outline: none
   cursor: default
-  font: 11px/1 Arial, sans-serif
+  line-height: 16px
+  font: 13px/1.5 Arial,sans-serif
   white-space: nowrap
-  margin: 0
-  padding: 4px 6px
   border-bottom: 1px solid #b6b6b6
+  margin: 0
 
 .cke_panel_listItem
   & p,
