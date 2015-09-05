@@ -11,7 +11,7 @@ MAKEFLAGS+=-j 4
 dir=-C $*
 
 all: node_modules \
-	svgicons \
+	svgimages \
 	$(out_css) \
 	$(out_min_css)
 
@@ -26,11 +26,14 @@ $(out_css): %.css: %.styl $(src_styl) node_modules
 $(out_min_css): %.min.css: %.css node_modules
 	$(NPM_BIN)/stylus --compress < $< > $@
 
-svgicons: node_modules
-	$(MAKE) -C $(CURDIR)/icons
+svgimages_gulp: node_modules
+	$(NPM_BIN)/gulp grunt-svg_fallback
+
+svgimages: svgimages_gulp
+	for x in $$(find images -name '*.svg'); do (printf ":::" && cat "$$x" && printf ":::") > "$$x".yate; done
 
 clean:
 	find . -maxdepth 1 -type f -name "*.css" -exec rm -f {} \;
-	$(MAKE) -C $(CURDIR)/icons clean
+	rm -rf $(CURDIR)/images
 
 .PHONY: all clean

@@ -5,13 +5,13 @@ var replace = require('gulp-replace');
 require('gulp-grunt')(gulp);
 
 var SRC = {
-    'icons_dir': __dirname + '/src/',
-    'icons': __dirname + '/src/*/*.svg'
+    'icons_dir': __dirname + '/src-images/',
+    'icons': __dirname + '/src-images/*/*.svg'
 };
 
 gulp.task('clean', function(cb) {
     del([
-        __dirname + '/out/**'
+        __dirname + '/images/**'
     ], cb);
 });
 
