@@ -23,13 +23,13 @@ set-skin-namespace("islands");
   a
     &.cke_btn_reset
       float right
-      background url(images/refresh.png) top left no-repeat
+      background url("src-images/cke_svgicon/refresh.svg") top left no-repeat
       width 16px
       height 16px
       border 1px none
       font-size 1px
     &.cke_btn_locked
-      background-image url(images/lock.png)
+      background-image url("src-images/cke_svgicon/lock.svg")
       .cke_icon
         display none
     &.cke_btn_unlocked
@@ -124,13 +124,6 @@ set-skin-namespace("islands");
   border-left 2px solid rgba(102, 102, 102, 1)
   animation dialog_spinner 1s infinite linear
 
-.cke_browser_ie8 .cke_dialog_spinner,
-.cke_browser_ie9 .cke_dialog_spinner
-  background url(images/spinner.gif) center top no-repeat
-  width 16px
-  height 16px
-  border 0
-
 @keyframes dialog_spinner {
   0% {
     transform rotate(0deg)
@@ -214,18 +207,20 @@ a
   &.cke_dialog_tab_disabled
     color #bababa
     cursor default
+
   &.cke_dialog_close_button
-    background-image url(images/close.png)
-    background-repeat no-repeat
-    background-position 50%
-    position absolute
-    cursor pointer
-    text-align center
-    height 20px
-    width 20px
-    top 4px
-    z-index 5
-    opacity 0.8
+    background-image: url("src-images/cke_svgicon/close.svg")
+    background-repeat: no-repeat
+    background-position: 50%
+    position: absolute
+    cursor: pointer
+    text-align: center
+    height: 20px
+    width: 20px
+    top: 4px
+    z-index: 5
+    opacity: 0.8
+
   &.cke_dialog_ui_button
     display inline-block
     *display inline
@@ -309,19 +304,6 @@ a.cke_dialog_tab_selected:focus,
   span
     display none
 
-.cke_hidpi
-  .cke_dialog_close_button
-    background-image url(images/hidpi/close.png)
-    background-size 16px
-  .cke_dialog
-    a
-      &.cke_btn_reset
-        background-size 16px
-        background-image url(images/hidpi/refresh.png)
-      &.cke_btn_locked
-        background-image url(images/hidpi/lock.png)
-      &.cke_btn_unlocked
-        background-image url(images/hidpi/lock-open.png)
 
 .cke_ltr
   .cke_dialog_close_button
