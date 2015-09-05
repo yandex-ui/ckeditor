@@ -4,7 +4,7 @@
 
 /* exported CKBUILDER_CONFIG */
 var CKBUILDER_CONFIG = {
-    skin: 'moono',
+    skin: 'clean',
     ignore: [
         '.bender',
         '.DS_Store',
@@ -107,6 +107,8 @@ var CKBUILDER_CONFIG = {
         sourcearea: 1, // показать исходный документ
         specialchar: 0, // специальные символы
         stylescombo: 0, // добавляит кнопку выбора специальных стилей
+        svgicons: 1, // svg иконки для темы clean
+        switchmode: 1, // переключение режима оформления
         tab: 1, // обработка навигации по табам
         table: 1,
         tableresize: 0,

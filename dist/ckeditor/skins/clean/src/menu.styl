@@ -1,0 +1,71 @@
+.cke_menubutton
+  display block
+
+.cke_menuitem
+  span
+    cursor default
+
+.cke_menubutton:hover,
+.cke_menubutton:focus,
+.cke_menubutton:active
+  background-color #D3D3D3
+  display block
+  background-color #EFF0EF
+
+.cke_menubutton_inner
+  display table-row
+
+.cke_menubutton_icon,
+.cke_menubutton_label,
+.cke_menuarrow
+  display table-cell
+
+.cke_menubutton_icon
+  background-color #D7D8D7
+  opacity 0.70
+  padding 4px
+
+.cke_menubutton:hover .cke_menubutton_icon,
+.cke_menubutton:focus .cke_menubutton_icon,
+.cke_menubutton:active .cke_menubutton_icon
+  background-color #D0D2D0
+
+.cke_menubutton_disabled:hover .cke_menubutton_icon,
+.cke_menubutton_disabled:focus .cke_menubutton_icon,
+.cke_menubutton_disabled:active .cke_menubutton_icon
+  opacity 0.3
+
+.cke_menubutton_label
+  padding 0 5px
+  background-color transparent
+  width 100%
+  vertical-align middle
+
+.cke_menubutton_disabled
+  .cke_menubutton_label
+    opacity 0.3
+
+.cke_menubutton_on
+  border 1px solid #dedede
+  background-color #f2f2f2
+  box-shadow 0 0 2px rgba(0,0,0,.1) inset
+  .cke_menubutton_icon
+    padding-right 3px
+
+.cke_menuseparator
+  background-color: #D3D3D3
+  height: 1px
+  opacity: 0.70
+
+.cke_menuarrow
+  background-image: url(images/arrow.png)
+  background-position: 0 10px
+  background-repeat: no-repeat
+  padding: 0 5px
+
+  & span
+    display: none
+
+  .cke_rtl &
+    background-position: 5px -13px
+    background-repeat: no-repeat

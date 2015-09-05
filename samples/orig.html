@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+        window.CKEDITOR_BASEPATH = 'ckeditor/';
+    </script>
+    <script src="ckeditor/ckeditor.js"></script>
+    <script src="ckeditor/config.js"></script>
+</head>
+<body>
+    <table width="100%">
+        <tr>
+            <td width="100%"><textarea id="editor1"></textarea></td>
+        </tr>
+        <tr>
+            <td width="100%"><textarea id="editor2"></textarea></td>
+        </tr>
+    </table>
+<script>
+var content = '<h4>Открыть ссылку в новом окне</h4>' +
+    '<div><a href="http://ya.ru">http://ya.ru</a></div>' +
+    '<div><a href="http://ya.ru"><span style="color:#ff0000;">цветная ссылка</span></a></div>' +
+    '<div><br/></div>' +
+    '<h4>Ресайз картинки</h4>' +
+    '<div><img src="http://placehold.it/200x150" /></div>' +
+    '<div><br/></div>' +
+    '<h4>Разрыв вложенных цитат</h4>' +
+    '<blockquote><blockquote><blockquote>1<br/>2</blockquote></blockquote></blockquote>' +
+    '<div><br/></div>' +
+    '<table class="cke_show_borders" cellpadding="0" cellspacing="0" border="0">' +
+    '    <tr>' +
+    '        <td>1</td>' +
+    '        <td>2</td>' +
+    '    </tr>' +
+    '</table>';
+
+(function() {
+    var config = {
+        'themeResetAll': false,
+        'language': 'ru',
+        'enableHotkeys': true,
+        'title': '',
+        'svgicons': true,
+        'removePlugins': 'wysiwygarea',
+        'height': 500,
+        'on': {
+            'instanceReady': function() {
+                this.setData(content);
+            }
+        }
+    };
+
+    CKEDITOR.editorConfig(config);
+
+    CKEDITOR.replace('editor1', config);
+}());
+
+(function() {
+    var config = {
+        'themeResetAll': false,
+        'language': 'ru',
+        'enableHotkeys': true,
+        'title': '',
+        'height': 500,
+        'removePlugins': 'divarea',
+        'on': {
+            'instanceReady': function() {
+                this.setData(content);
+            }
+        }
+    };
+
+    CKEDITOR.editorConfig(config);
+
+    CKEDITOR.replace('editor2', config);
+}());
+</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+.cke_panel
+  skin: popup
+
+  visibility: visible
+  overflow: hidden
+  outline: none
+  width: 150px
+  height: 170px
+
+.cke_panel_block
+  outline: none
+
+.cke_menu_panel
+  padding: 0
+  margin: 0
+
+.cke_combopanel
+  width: 150px
+  height: 170px
+
+.cke_panel_frame
+  width: 100%
+  height: 100%
+  font-size: 12px
+  overflow: auto
+  overflow-x: hidden
+
+  & .cke_menubutton_label
+    display: none
+
+.cke_panel_container
+  overflow-y: auto
+  overflow-x: hidden
+
+.cke_panel_list
+  white-space: nowrap
+  margin: 0
+  padding: 0
+  list-style: none
+  outline: 0
+
+.cke_panel_listItem
+  skin: menu-item
+
+  outline: none
+  line-height: 16px
+  font: $islands_text_s/1.5 $fontFamily
+
+  &.cke_selected
+    skin: menu-item_hover
+
+  & > a
+    outline: none
+    display: block
+    color: inherit !important
+    text-decoration: none
+    overflow: hidden
+    text-overflow: ellipsis
+
+.cke_panel_grouptitle
+  padding: 5px 16px
+  outline: none
+  cursor: default
+  line-height: 16px
+  font: $islands_text_s/1.5 $fontFamily
+  white-space: nowrap
+  border-bottom: 1px solid #b6b6b6
+  margin: 0
+
+.cke_panel_listItem
+  & p,
+  & h1,
+  & h2,
+  & h3,
+  & h4,
+  & h5,
+  & h6,
+  & pre
+    margin-top: 0px
+    margin-bottom: 0px
