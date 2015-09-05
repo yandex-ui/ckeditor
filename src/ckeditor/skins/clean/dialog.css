@@ -1,3 +1,50 @@
+a.cke_dialog_ui_button,
+select.cke_dialog_ui_input_select {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  -moz-appearance: none;
+  font: inherit;
+}
+a.cke_dialog_ui_button::-moz-focus-inner,
+select.cke_dialog_ui_input_select::-moz-focus-inner {
+  padding: 0;
+  border: none;
+}
+input.cke_dialog_ui_input_text,
+input.cke_dialog_ui_input_password,
+textarea.cke_dialog_ui_input_textarea {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  font: inherit;
+}
+input.cke_dialog_ui_input_text:focus,
+input.cke_dialog_ui_input_password:focus,
+textarea.cke_dialog_ui_input_textarea:focus {
+  outline: none;
+}
+a.cke_dialog_close_button {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -0.2em;
+  background: 50% no-repeat;
+}
+a.cke_dialog_close_button {
+  width: 16px;
+  height: 16px;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik04IDEuMjA5Yy0zLjc1MSAwLTYuNzkxIDMuMDQtNi43OTEgNi43OTEgMCAzLjc0OSAzLjA0IDYuNzg5IDYuNzkxIDYuNzg5IDMuNzQ5IDAgNi43ODktMy4wNCA2Ljc4OS02Ljc4OSAwLTMuNzUxLTMuMDQtNi43OTEtNi43ODktNi43OTF6bTMuOTkgOS4zNTVsLTEuNDI2IDEuNDI2LTIuNTY0LTIuNTY0LTIuNTY0IDIuNTY0LTEuNDI2LTEuNDI2IDIuNTY0LTIuNTY0LTIuNTY0LTIuNTY0IDEuNDI2LTEuNDI2IDIuNTY0IDIuNTY0IDIuNTY0LTIuNTY0IDEuNDI2IDEuNDI2LTIuNTY0IDIuNTY0IDIuNTY0IDIuNTY0eiIvPjwvc3ZnPg==");
+}
+a.cke_dialog_close_button {
+  cursor: pointer;
+  opacity: 0.2;
+}
+a.cke_dialog_close_button:hover {
+  opacity: 1;
+}
 .cke_dialog {
   visibility: visible;
 }
@@ -5,7 +52,7 @@
   font-weight: bold;
 }
 .cke_dialog .cke_resizer {
-  margin-top: 22px;
+  margin-top: 33px;
 }
 .cke_dialog .cke_resizer_rtl {
   margin-left: 5px;
@@ -95,14 +142,10 @@
   cursor: pointer;
 }
 .cke_dialog_body {
+  background: #fff;
+  -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,0.15), 0 8px 30px -5px rgba(0,0,0,0.5);
+          box-shadow: 0 0 0 1px rgba(0,0,0,0.15), 0 8px 30px -5px rgba(0,0,0,0.5);
   z-index: 1;
-  background: #eaeaea;
-  border: 1px solid #b2b2b2;
-  border-bottom-color: #999;
-  -webkit-border-radius: 3px;
-          border-radius: 3px;
-  -webkit-box-shadow: 0 0 3px rgba(0,0,0,0.15);
-          box-shadow: 0 0 3px rgba(0,0,0,0.15);
 }
 .cke_dialog_body .cke_label {
   display: none;
@@ -116,24 +159,14 @@
   font-weight: bold;
 }
 .cke_dialog_title {
-  font-weight: bold;
-  font-size: 13px;
+  font: 1.25em/1.125em Arial, sans-serif;
+  padding: 10px;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   cursor: move;
   position: relative;
-  color: #474747;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.75);
-  border-bottom: 1px solid #999;
-  padding: 6px 10px;
-  -webkit-border-radius: 2px 2px 0 0;
-          border-radius: 2px 2px 0 0;
-  -webkit-box-shadow: 0 1px 0 #fff inset;
-          box-shadow: 0 1px 0 #fff inset;
-  background: #cfd1cf;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#cfd1cf));
-  background-image: -webkit-linear-gradient(top, #f5f5f5, #cfd1cf);
-  background-image: -moz-linear-gradient(top, #f5f5f5, #cfd1cf);
-  background-image: -o-linear-gradient(top, #f5f5f5, #cfd1cf);
-  background-image: linear-gradient(to bottom, #f5f5f5, #cfd1cf);
 }
 .cke_dialog_spinner {
   -webkit-border-radius: 50%;
@@ -152,34 +185,31 @@
           animation: dialog_spinner 1s infinite linear;
 }
 .cke_dialog_contents {
-  background-color: #fff;
   overflow: auto;
   padding: 15px 10px 5px 10px;
   margin-top: 30px;
   border-top: 1px solid #bfbfbf;
-  -webkit-border-radius: 0 0 3px 3px;
-          border-radius: 0 0 3px 3px;
 }
 .cke_dialog_contents_body {
+  display: block;
+  padding: 0 20px 0 20px;
   overflow: auto;
-  padding: 17px 10px 5px 10px;
-  margin-top: 22px;
+}
+.cke_dialog_contents_body:before {
+  content: "";
+  display: table;
+  margin-bottom: 16px;
+}
+.cke_dialog_contents_body:after {
+  content: "";
+  display: table;
+  clear: both;
+  margin-top: 16px;
 }
 .cke_dialog_footer {
   text-align: right;
   position: relative;
   border: none;
-  outline: 1px solid #bfbfbf;
-  -webkit-box-shadow: 0 1px 0 #fff inset;
-          box-shadow: 0 1px 0 #fff inset;
-  -webkit-border-radius: 0 0 2px 2px;
-          border-radius: 0 0 2px 2px;
-  background: #cfd1cf;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#ebebeb), to(#cfd1cf));
-  background-image: -webkit-linear-gradient(top, #ebebeb, #cfd1cf);
-  background-image: -moz-linear-gradient(top, #ebebeb, #cfd1cf);
-  background-image: -o-linear-gradient(top, #ebebeb, #cfd1cf);
-  background-image: linear-gradient(to bottom, #ebebeb, #cfd1cf);
 }
 .cke_rtl .cke_dialog_footer {
   text-align: left;
@@ -190,9 +220,6 @@
 .cke_rtl a.cke_dialog_tab {
   margin-right: 0;
   margin-left: 3px;
-}
-.cke_rtl .cke_dialog_close_button {
-  left: 6px;
 }
 .cke_rtl .cke_dialog a.cke_btn_reset {
   float: left;
@@ -238,88 +265,240 @@ a.cke_dialog_tab_disabled {
   cursor: default;
 }
 a.cke_dialog_close_button {
-  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE3LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHdpZHRoPSIxNHB4IiBoZWlnaHQ9IjE0cHgiIHZpZXdCb3g9IjAgMCAxNCAxNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMTQgMTQ7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHBhdGggZmlsbD0iY3VycmVudENvbG9yIiBkPSJNMTQsMC43TDEzLjMsMEw3LDYuM0wwLjcsMEwwLDAuN0w2LjMsN0wwLDEzLjNMMC43LDE0TDcsNy43bDYuMyw2LjNsMC43LTAuN0w3LjcsN0wxNCwwLjd6Ii8+Cjwvc3ZnPgo=");
-  background-repeat: no-repeat;
-  background-position: 50%;
   position: absolute;
-  cursor: pointer;
-  text-align: center;
-  height: 20px;
-  width: 20px;
-  top: 4px;
-  z-index: 5;
-  opacity: 0.8;
+  top: 5px;
+  right: 5px;
+  margin-top: 0;
+  width: 24px;
+  height: 24px;
+  top: 2px;
+  right: 2px;
 }
 a.cke_dialog_ui_button {
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
-  padding: 4px 0;
-  margin: 0;
-  text-align: center;
-  color: #333;
-  vertical-align: middle;
-  cursor: pointer;
-  border: 1px solid #b6b6b6;
-  border-bottom-color: #999;
+  font-size: 15px;
+  line-height: 22px;
+  font-family: Arial, sans-serif;
+  position: relative;
+  vertical-align: baseline;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: #000;
   -webkit-border-radius: 3px;
           border-radius: 3px;
-  -webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.5), 0 0 2px rgba(255,255,255,0.15) inset, 0 1px 0 rgba(255,255,255,0.15) inset;
-          box-shadow: 0 1px 0 rgba(255,255,255,0.5), 0 0 2px rgba(255,255,255,0.15) inset, 0 1px 0 rgba(255,255,255,0.15) inset;
-  background: #e4e4e4;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#e4e4e4));
-  background-image: -webkit-linear-gradient(top, #fff, #e4e4e4);
-  background-image: -moz-linear-gradient(top, #fff, #e4e4e4);
-  background-image: -o-linear-gradient(top, #fff, #e4e4e4);
-  background-image: linear-gradient(to bottom, #fff, #e4e4e4);
+  -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.07);
+          box-shadow: 0 1px 0 rgba(0,0,0,0.07);
+  font-size: 13px;
+  line-height: 18px;
+  padding: 5px 13px;
+  background: rgba(0,0,0,0.3);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.2)), to(rgba(0,0,0,0.4)));
+  background: -webkit-linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4));
+  background: -moz-linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4));
+  background: -o-linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4));
+  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4));
+  position: relative;
+  text-align: center;
 }
+a.cke_dialog_ui_button,
+select.cke_dialog_ui_input_select {
+  display: inline-block;
+  white-space: nowrap;
+  text-decoration: none;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  vertical-align: baseline;
+}
+a.cke_dialog_ui_button:before {
+  content: "";
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
+  left: 1px;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
+}
+a.cke_dialog_ui_button .button-content {
+  position: relative;
+  display: block;
+}
+input[type=file]:active + a.cke_dialog_ui_button,
+a.cke_dialog_ui_button:active {
+  -webkit-box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.2);
+          box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.2);
+}
+input[type=file]:active + a.cke_dialog_ui_button:before,
+a.cke_dialog_ui_button:active:before {
+  -webkit-box-shadow: inset 0 1px 3px -1px rgba(0,0,0,0.5);
+          box-shadow: inset 0 1px 3px -1px rgba(0,0,0,0.5);
+}
+input[type=file]:active + a.cke_dialog_ui_button .button-content,
+a.cke_dialog_ui_button:active .button-content {
+  top: 1px;
+}
+a.cke_dialog_ui_button:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+input[type=file]:focus + a.cke_dialog_ui_button,
+a.cke_dialog_ui_button:focus {
+  outline: 0;
+}
+input[type=file]:focus + a.cke_dialog_ui_button:after,
+a.cke_dialog_ui_button:focus:after {
+  z-index: 9;
+  -webkit-box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
+          box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
+  -webkit-border-radius: inherit;
+          border-radius: inherit;
+}
+a.cke_dialog_ui_button:before {
+  background: #f7f7f7;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee));
+  background: -webkit-linear-gradient(#fff, #eee);
+  background: -moz-linear-gradient(#fff, #eee);
+  background: -o-linear-gradient(#fff, #eee);
+  background: linear-gradient(#fff, #eee);
+}
+input[type=file]:hover + a.cke_dialog_ui_button,
 a.cke_dialog_ui_button:hover {
-  border-color: #9e9e9e;
-  background: #ccc;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#ccc));
-  background-image: -webkit-linear-gradient(top, #f2f2f2, #ccc);
-  background-image: -moz-linear-gradient(top, #f2f2f2, #ccc);
-  background-image: -o-linear-gradient(top, #f2f2f2, #ccc);
-  background-image: linear-gradient(to bottom, #f2f2f2, #ccc);
+  background: rgba(0,0,0,0.31);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.22)), to(rgba(0,0,0,0.4)));
+  background: -webkit-linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.4));
+  background: -moz-linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.4));
+  background: -o-linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.4));
+  background: linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.4));
 }
-a.cke_dialog_ui_button span {
-  text-shadow: 0 1px 0 #fff;
+input[type=file]:hover + a.cke_dialog_ui_button:before,
+a.cke_dialog_ui_button:hover:before {
+  background: #fbfaf9;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#f6f5f3));
+  background: -webkit-linear-gradient(#fff, #f6f5f3);
+  background: -moz-linear-gradient(#fff, #f6f5f3);
+  background: -o-linear-gradient(#fff, #f6f5f3);
+  background: linear-gradient(#fff, #f6f5f3);
+}
+a.cke_dialog_ui_button > span {
+  position: relative;
+}
+a.cke_dialog_ui_button.cke_disabled {
+  cursor: default !important;
+  opacity: 0.4;
+  pointer-events: none;
+}
+a.cke_dialog_ui_button.cke_disabled a.cke_dialog_ui_button.cke_disabled {
+  opacity: 1;
 }
 a.cke_dialog_ui_button_ok {
-  color: #fff;
-  text-shadow: 0 -1px 0 #55830c;
-  border-color: #62a60a #62a60a #4d9200;
-  background: #69b10b;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#9ad717), to(#69b10b));
-  background-image: -webkit-linear-gradient(top, #9ad717, #69b10b);
-  background-image: -moz-linear-gradient(top, #9ad717, #69b10b);
-  background-image: -o-linear-gradient(top, #9ad717, #69b10b);
-  background-image: linear-gradient(to bottom, #9ad717, #69b10b);
+  font-size: 15px;
+  line-height: 22px;
+  font-family: Arial, sans-serif;
+  position: relative;
+  vertical-align: baseline;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: #000;
+  -webkit-border-radius: 3px;
+          border-radius: 3px;
+  -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.07);
+          box-shadow: 0 1px 0 rgba(0,0,0,0.07);
+  font-size: 13px;
+  line-height: 18px;
+  padding: 5px 13px;
+  background: rgba(83,56,0,0.47);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(96,64,0,0.4)), to(rgba(70,47,0,0.54)));
+  background: -webkit-linear-gradient(rgba(96,64,0,0.4), rgba(70,47,0,0.54));
+  background: -moz-linear-gradient(rgba(96,64,0,0.4), rgba(70,47,0,0.54));
+  background: -o-linear-gradient(rgba(96,64,0,0.4), rgba(70,47,0,0.54));
+  background: linear-gradient(rgba(96,64,0,0.4), rgba(70,47,0,0.54));
 }
+a.cke_dialog_ui_button_ok:before {
+  content: "";
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
+  left: 1px;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
+}
+a.cke_dialog_ui_button_ok .button-content {
+  position: relative;
+  display: block;
+}
+input[type=file]:active + a.cke_dialog_ui_button_ok,
+a.cke_dialog_ui_button_ok:active {
+  -webkit-box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.2);
+          box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.2);
+}
+input[type=file]:active + a.cke_dialog_ui_button_ok:before,
+a.cke_dialog_ui_button_ok:active:before {
+  -webkit-box-shadow: inset 0 1px 3px -1px rgba(0,0,0,0.5);
+          box-shadow: inset 0 1px 3px -1px rgba(0,0,0,0.5);
+}
+input[type=file]:active + a.cke_dialog_ui_button_ok .button-content,
+a.cke_dialog_ui_button_ok:active .button-content {
+  top: 1px;
+}
+a.cke_dialog_ui_button_ok:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+input[type=file]:focus + a.cke_dialog_ui_button_ok,
+a.cke_dialog_ui_button_ok:focus {
+  outline: 0;
+}
+input[type=file]:focus + a.cke_dialog_ui_button_ok:after,
+a.cke_dialog_ui_button_ok:focus:after {
+  z-index: 9;
+  -webkit-box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
+          box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
+  -webkit-border-radius: inherit;
+          border-radius: inherit;
+}
+a.cke_dialog_ui_button_ok:before {
+  background: #ffd630;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffdf60), to(#fc0));
+  background: -webkit-linear-gradient(#ffdf60, #fc0);
+  background: -moz-linear-gradient(#ffdf60, #fc0);
+  background: -o-linear-gradient(#ffdf60, #fc0);
+  background: linear-gradient(#ffdf60, #fc0);
+}
+input[type=file]:hover + a.cke_dialog_ui_button_ok,
 a.cke_dialog_ui_button_ok:hover {
-  border-color: #5b9909 #5b9909 #478500;
-  background: #88be14;
-  background: -webkit-gradient(linear, left top, left bottom, from(#88be14), to(#5d9c0a));
-  background: -webkit-linear-gradient(top, #88be14 0%, #5d9c0a 100%);
-  background: -moz-linear-gradient(top, #88be14 0%, #5d9c0a 100%);
-  background: -o-linear-gradient(top, #88be14 0%, #5d9c0a 100%);
-  background: linear-gradient(to bottom, #88be14 0%, #5d9c0a 100%);
+  background: rgba(0,0,0,0.31);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.22)), to(rgba(0,0,0,0.4)));
+  background: -webkit-linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.4));
+  background: -moz-linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.4));
+  background: -o-linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.4));
+  background: linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.4));
 }
-a.cke_dialog_ui_button_ok.cke_disabled {
-  border-color: #7d9f51;
-  background: #8dad62;
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#b3d271), to(#8dad62));
-  background-image: -webkit-linear-gradient(top, #b3d271, #8dad62);
-  background-image: -o-linear-gradient(top, #b3d271, #8dad62);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#b3d271), to(#8dad62));
-  background-image: linear-gradient(to bottom, #b3d271, #8dad62);
-  background-image: -moz-linear-gradient(top, #b3d271, #8dad62);
-}
-a.cke_dialog_ui_button_ok.cke_disabled span {
-  color: #e0e8d1;
-}
-a.cke_dialog_ui_button_ok span {
-  text-shadow: 0 -1px 0 #55830c;
+input[type=file]:hover + a.cke_dialog_ui_button_ok:before,
+a.cke_dialog_ui_button_ok:hover:before {
+  background: #fd5;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffe681), to(#ffd428));
+  background: -webkit-linear-gradient(#ffe681, #ffd428);
+  background: -moz-linear-gradient(#ffe681, #ffd428);
+  background: -o-linear-gradient(#ffe681, #ffd428);
+  background: linear-gradient(#ffe681, #ffd428);
 }
 a.cke_smile {
   overflow: hidden;
@@ -363,18 +542,6 @@ background #ededed {
   margin-top: 0;
   border-top: none;
 }
-.cke_dialog_close_button {
-  top: 4px;
-}
-.cke_dialog_close_button:hover {
-  opacity: 1;
-}
-.cke_dialog_close_button span {
-  display: none;
-}
-.cke_ltr .cke_dialog_close_button {
-  right: 5px;
-}
 div.cke_disabled .cke_dialog_ui_labeled_content div * {
   background-color: #ddd;
   cursor: default;
@@ -414,100 +581,127 @@ div.cke_dialog_ui_input_select {
   padding-left: 5px;
   padding-right: 0;
 }
+input.cke_dialog_ui_input_text,
+input.cke_dialog_ui_input_password,
 textarea.cke_dialog_ui_input_textarea {
-  overflow: auto;
+  width: 400px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid transparent;
+  padding: 5px 10px;
+  line-height: 16px;
+  min-height: 28px;
+  font-size: 13px;
+  border-color: rgba(0,0,0,0.27);
+  border-top-color: rgba(0,0,0,0.38);
+  border-bottom-color: rgba(0,0,0,0.16);
+  background: #fff /* ie fallback */;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff));
+  background: -webkit-linear-gradient(#fff, #fff);
+  background: -moz-linear-gradient(#fff, #fff);
+  background: -o-linear-gradient(#fff, #fff);
+  background: linear-gradient(#fff, #fff);
+  background-clip: padding-box;
+  background-size: 16px 16px;
+  -webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.2), inset 0 1px 1px rgba(0,0,0,0.1);
+          box-shadow: 0 1px 0 rgba(255,255,255,0.2), inset 0 1px 1px rgba(0,0,0,0.1);
+  -webkit-appearance: none /* override for <input type="search"> */;
+  font-family: Arial, sans-serif;
+  -webkit-appearance: textfield;
+  width: 100%;
+  *width: 95%;
   resize: none;
 }
 input.cke_dialog_ui_input_text,
 input.cke_dialog_ui_input_password,
 textarea.cke_dialog_ui_input_textarea {
-  background-color: #fff;
-  border: 1px solid #c9cccf;
-  border-top-color: #aeb3b9;
-  padding: 4px 6px;
-  outline: none;
-  width: 100%;
-  *width: 95%;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
-  -webkit-border-radius: 3px;
-          border-radius: 3px;
-  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.15) inset;
-          box-shadow: 0 1px 2px rgba(0,0,0,0.15) inset;
-}
-input.cke_dialog_ui_input_text:hover,
-input.cke_dialog_ui_input_password:hover,
-textarea.cke_dialog_ui_input_textarea:hover {
-  border: 1px solid #aeb3b9;
-  border-top-color: #a0a6ad;
+  max-width: 100%;
+  cursor: text;
+  vertical-align: baseline;
 }
 input.cke_dialog_ui_input_text:focus,
 input.cke_dialog_ui_input_password:focus,
-textarea.cke_dialog_ui_input_textarea:focus,
+textarea.cke_dialog_ui_input_textarea:focus {
+  outline: none;
+  border-color: rgba(94,76,2,0.42);
+  border-top-color: rgba(78,62,2,0.515);
+  border-bottom-color: rgba(117,93,0,0.335);
+  -webkit-box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), 0 1px 0 rgba(255,255,255,0.2), inset 0 1px 1px rgba(0,0,0,0.1);
+          box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), 0 1px 0 rgba(255,255,255,0.2), inset 0 1px 1px rgba(0,0,0,0.1);
+}
+input.cke_dialog_ui_input_text:focus,
+input.cke_dialog_ui_input_password:focus,
+textarea.cke_dialog_ui_input_textarea:focus {
+  z-index: 9;
+}
+select.cke_dialog_ui_input_select {
+  font-size: 15px;
+  line-height: 22px;
+  font-family: Arial, sans-serif;
+  position: relative;
+  vertical-align: baseline;
+  color: #000;
+  -webkit-border-radius: 3px;
+          border-radius: 3px;
+  -webkit-box-shadow: inset 0 0 0 1px rgba(0,0,0,0.2);
+          box-shadow: inset 0 0 0 1px rgba(0,0,0,0.2);
+  font-size: 13px;
+  line-height: 18px;
+  padding: 3px 10px;
+  min-height: 28px;
+  height: 28px;
+}
+select.cke_dialog_ui_input_select:before {
+  content: "";
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
+  left: 1px;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
+}
+select.cke_dialog_ui_input_select:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+select.cke_dialog_ui_input_select .button-content {
+  position: relative;
+  display: block;
+}
+select.cke_dialog_ui_input_select:hover {
+  -webkit-box-shadow: inset 0 0 0 1px rgba(0,0,0,0.35);
+          box-shadow: inset 0 0 0 1px rgba(0,0,0,0.35);
+}
 select.cke_dialog_ui_input_select:focus {
-  outline: none;
-  border: 1px solid #139ff7;
-  border-top-color: #1392e9;
+  -webkit-box-shadow: inset 0 0 0 1px rgba(0,0,0,0.35);
+          box-shadow: inset 0 0 0 1px rgba(0,0,0,0.35);
+  outline: 0;
 }
-span.cke_dialog_ui_button {
-  padding: 0 10px;
-  cursor: pointer;
-}
-a.cke_dialog_ui_button:focus,
-a.cke_dialog_ui_button:active {
-  border-color: #969696;
-  outline: none;
-  -webkit-box-shadow: 0 0 6px rgba(0,0,0,0.4) inset;
-          box-shadow: 0 0 6px rgba(0,0,0,0.4) inset;
+select.cke_dialog_ui_input_select:focus:after {
+  z-index: 9;
+  -webkit-box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
+          box-shadow: 0 0 6px 2px rgba(255,204,0,0.7), inset 0 0 0 1px rgba(193,154,0,0.2);
+  -webkit-border-radius: inherit;
+          border-radius: inherit;
 }
 .cke_dialog_footer_buttons {
   display: inline-table;
-  margin: 5px;
+  margin: 10px 5px;
   width: auto;
   position: relative;
   vertical-align: middle;
-}
-.cke_dialog_footer_buttons a.cke_dialog_ui_button span {
-  color: inherit;
-  font-size: 12px;
-  font-weight: bold;
-  line-height: 18px;
-  padding: 0 12px;
-}
-a.cke_dialog_ui_button_ok:focus,
-a.cke_dialog_ui_button_ok:active,
-a.cke_dialog_ui_button_cancel:focus,
-a.cke_dialog_ui_button_cancel:active {
-  border-width: 2px;
-  padding: 3px 0;
-}
-a.cke_dialog_ui_button_ok:focus,
-a.cke_dialog_ui_button_ok:active {
-  border-color: #568c0a;
-}
-a.cke_dialog_ui_button_ok.cke_disabled:focus,
-a.cke_dialog_ui_button_ok.cke_disabled:active {
-  border-color: #6f8c49;
-}
-a.cke_dialog_ui_button_ok:focus span,
-a.cke_dialog_ui_button_ok:active span,
-a.cke_dialog_ui_button_cancel:focus span,
-a.cke_dialog_ui_button_cancel:active span {
-  padding: 0 11px;
-}
-select.cke_dialog_ui_input_select {
-  height: 25px;
-  line-height: 25px;
-  background-color: #fff;
-  border: 1px solid #c9cccf;
-  border-top-color: #aeb3b9;
-  padding: 3px 3px 3px 6px;
-  outline: none;
-  -webkit-border-radius: 3px;
-          border-radius: 3px;
-  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.15) inset;
-          box-shadow: 0 1px 2px rgba(0,0,0,0.15) inset;
 }
 .cke_dialog_ui_input_file {
   width: 100%;

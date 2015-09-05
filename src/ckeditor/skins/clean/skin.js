@@ -49,45 +49,6 @@ CKEDITOR.skin.chameleon = ( function() {
     //     * Default panel template.
     templates = {
         editor: new CKEDITOR.template(
-            '{id} .cke_top [ ' +
-                    '{defaultGradient}' +
-                    'border-bottom-color:{defaultBorder};' +
-                '] ' +
-            '{id} .cke_bottom [' +
-                    '{defaultGradient}' +
-                    'border-top-color:{defaultBorder};' +
-                '] ' +
-            '{id} .cke_resizer [border-right-color:{ckeResizer}] ' +
-
-            // Dialogs.
-            '{id} .cke_dialog_title [' +
-                    '{defaultGradient}' +
-                    'border-bottom-color:{defaultBorder};' +
-                '] ' +
-            '{id} .cke_dialog_footer [' +
-                    '{defaultGradient}' +
-                    'outline-color:{defaultBorder};' +
-                    'border-top-color:{defaultBorder};' +    // IE7 doesn't use outline.
-                '] ' +
-            '{id} .cke_dialog_tab [' +
-                    '{lightGradient}' +
-                    'border-color:{defaultBorder};' +
-                '] ' +
-            '{id} .cke_dialog_tab:hover [' +
-                    '{mediumGradient}' +
-                '] ' +
-            '{id} .cke_dialog_contents [' +
-                    'border-top-color:{defaultBorder};' +
-                '] ' +
-            '{id} .cke_dialog_tab_selected, {id} .cke_dialog_tab_selected:hover [' +
-                    'background:{dialogTabSelected};' +
-                    'border-bottom-color:{dialogTabSelectedBorder};' +
-                '] ' +
-            '{id} .cke_dialog_body [' +
-                    'background:{dialogBody};' +
-                    'border-color:{defaultBorder};' +
-                '] ' +
-
             // Toolbars, buttons.
             '{id} .cke_toolgroup [' +
                     '{lightGradient}' +
