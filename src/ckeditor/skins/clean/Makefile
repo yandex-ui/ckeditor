@@ -30,7 +30,7 @@ svgicons: node_modules
 	$(MAKE) -C $(CURDIR)/icons
 
 clean:
-	find . -type f -name "*.css" ! -path "*/node_modules/*" ! -path "*/icons/*" -exec rm -f {} \;
+	find . -maxdepth 1 -type f -name "*.css" -exec rm -f {} \;
 	$(MAKE) -C $(CURDIR)/icons clean
 
 .PHONY: all clean
