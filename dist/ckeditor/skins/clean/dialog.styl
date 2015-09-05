@@ -1,0 +1,394 @@
+@require "node_modules/stylobate"
+rem = rem_px;
+
+@require "node_modules/stylobate-islands"
+set-skin-namespace("islands");
+
+@require "src/_globals"
+
+
+
+.cke_dialog
+  visibility visible
+  strong
+    font-weight: bold
+
+  .cke_resizer
+    margin-top: 33px
+
+  .cke_resizer_rtl
+    margin-left: 5px
+
+  .cke_resizer_ltr
+    margin-right: 5px
+
+  .cke_dark_background
+    background-color: #DEDEDE
+
+  .cke_light_background
+    background-color: #EBEBEB
+
+  .cke_centered
+    text-align: center
+
+  a
+    &.cke_btn_reset
+      float right
+      background url("src-images/cke_svgicon/refresh.svg") top left no-repeat
+      width 16px
+      height 16px
+      border 1px none
+      font-size 1px
+    &.cke_btn_locked
+      background-image url("src-images/cke_svgicon/lock.svg")
+      .cke_icon
+        display none
+    &.cke_btn_unlocked
+      background-image url(images/lock-open.png)
+  .cke_btn_over
+    border outset 1px
+    cursor pointer
+  .ImagePreviewBox
+    border 2px ridge black
+    overflow scroll
+    height 200px
+    width 300px
+    padding 2px
+    background-color white
+    table
+      td
+        white-space normal
+  .ImagePreviewLoader
+    position absolute
+    white-space normal
+    overflow hidden
+    height 160px
+    width 230px
+    margin 2px
+    padding 2px
+    opacity 0.9
+    background-color #e4e4e4
+  .FlashPreviewBox
+    white-space normal
+    border 2px ridge black
+    overflow auto
+    height 160px
+    width 390px
+    padding 2px
+    background-color white
+  .cke_pastetext
+    width 346px
+    height 170px
+    textarea
+      width 340px
+      height 170px
+      resize none
+  iframe
+    &.cke_pasteframe
+      width 346px
+      height 130px
+      background-color white
+      border 1px solid #aeb3b9
+      border-radius 3px
+  .cke_hand
+    cursor pointer
+
+.cke_dialog_body
+  skin: popup
+  z-index: 1
+
+  .cke_label
+    display none
+  label
+    display inline
+    margin-bottom auto
+    cursor default
+    &.cke_required
+      font-weight bold
+
+.cke_dialog_title
+  font: $font-h3
+  padding: $islands_s
+  display: block
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+  cursor: move
+  position: relative
+
+.cke_dialog_spinner
+  border-radius 50%
+  width 12px
+  height 12px
+  overflow hidden
+  text-indent -9999em
+  border-top 2px solid rgba(102, 102, 102, 0.2)
+  border-right 2px solid rgba(102, 102, 102, 0.2)
+  border-bottom 2px solid rgba(102, 102, 102, 0.2)
+  border-left 2px solid rgba(102, 102, 102, 1)
+  animation dialog_spinner 1s infinite linear
+
+@keyframes dialog_spinner {
+  0% {
+    transform rotate(0deg)
+  }
+  100% {
+    transform rotate(360deg)
+  }
+}
+
+.cke_dialog_contents
+  overflow: auto
+  padding: 15px 10px 5px 10px
+  margin-top: 30px
+  border-top: 1px solid #bfbfbf
+
+.cke_dialog_contents_body
+  skin: popup-content
+  overflow: auto
+
+.cke_dialog_footer
+  text-align: right
+  position: relative
+  border: none
+
+.cke_rtl
+  .cke_dialog_footer
+    text-align left
+  .cke_dialog_tabs
+    right 10px
+  a
+    &.cke_dialog_tab
+      margin-right 0
+      margin-left 3px
+
+  .cke_dialog
+    a
+      &.cke_btn_reset
+        float left
+  .cke_dialog_contents
+    a
+      &.colorChooser
+        margin-right 10px
+
+
+.cke_dialog_tabs
+  height 24px
+  display inline-block
+  margin 5px 0 0
+  position absolute
+  z-index 2
+  left 10px
+
+a
+  &.cke_dialog_tab
+    height 16px
+    padding 4px 8px
+    margin-right 3px
+    display inline-block
+    cursor pointer
+    line-height 16px
+    outline none
+    color #595959
+    border 1px solid #bfbfbf
+    border-radius 3px 3px 0 0
+    background #d4d4d4
+    background-image linear-gradient(to bottom, #fafafa, #ededed)
+  &.cke_dialog_tab_selected
+    background #fff
+    color #383838
+    border-bottom-color #fff
+    cursor default
+
+  &.cke_dialog_tab_disabled
+    color #bababa
+    cursor default
+
+  &.cke_dialog_close_button
+    skin: popup-close
+    width: 24px
+    height: 24px
+    top: 2px
+    right: 2px
+
+  &.cke_dialog_ui_button
+    kind: button
+    skin: button small
+    position: relative
+    text-align: center
+
+    & > span
+      position: relative
+
+    &.cke_disabled
+      kind: disabled 0.4
+
+  &.cke_dialog_ui_button_ok
+    skin: action-button small
+
+  &.cke_smile
+    overflow hidden
+    display block
+    text-align center
+    padding 0.3em 0
+    img
+      vertical-align middle
+  &.cke_specialchar
+    cursor inherit
+    display block
+    height 1.25em
+    padding 0.2em 0.3em
+    text-align center
+
+a.cke_dialog_tab:hover,
+a.cke_dialog_tab:focus
+  background #ebebeb
+  background linear-gradient(to bottom, #ebebeb 0%,#dfdfdf 100%)
+
+a.cke_dialog_tab_selected:hover,
+a.cke_dialog_tab_selected:focus,
+  background #ededed
+  background linear-gradient(to bottom, #ededed 0%,#ffffff 100%)
+
+.cke_single_page
+  .cke_dialog_tabs
+    display none
+  .cke_dialog_contents
+    padding-top 5px
+    margin-top 0
+    border-top none
+
+div
+  &.cke_disabled
+    .cke_dialog_ui_labeled_content
+      div
+        *
+          background-color #ddd
+          cursor default
+  &.cke_dialog_ui_input_select
+    display table
+
+.cke_dialog_ui_vbox table,
+.cke_dialog_ui_hbox table
+  margin auto
+
+.cke_dialog_ui_vbox_child
+  padding 5px 0px
+
+.cke_dialog_ui_hbox
+  width 100%
+
+.cke_dialog_ui_hbox_first,
+.cke_dialog_ui_hbox_child,
+.cke_dialog_ui_hbox_last
+  vertical-align top
+
+.cke_ltr .cke_dialog_ui_hbox_first,
+.cke_ltr .cke_dialog_ui_hbox_child
+  padding-right 10px
+
+.cke_rtl .cke_dialog_ui_hbox_first,
+.cke_rtl .cke_dialog_ui_hbox_child
+  padding-left 10px
+
+.cke_ltr .cke_dialog_footer_buttons .cke_dialog_ui_hbox_first,
+.cke_ltr .cke_dialog_footer_buttons .cke_dialog_ui_hbox_child
+  padding-right 5px
+
+.cke_rtl .cke_dialog_footer_buttons .cke_dialog_ui_hbox_first,
+.cke_rtl .cke_dialog_footer_buttons .cke_dialog_ui_hbox_child
+  padding-left 5px
+  padding-right 0
+
+input.cke_dialog_ui_input_text,
+input.cke_dialog_ui_input_password,
+textarea.cke_dialog_ui_input_textarea
+  kind: input
+  skin: input small
+  font-family: $fontFamily
+  -webkit-appearance: textfield
+  width: 100%
+  *width: 95%
+  resize: none
+
+select.cke_dialog_ui_input_select
+  min-height: 28px
+  height: 28px
+  border: 1px solid rgba(#000, .27)
+
+.cke_dialog_footer_buttons
+  display: inline-table
+  margin: 10px 5px
+  width: auto
+  position: relative
+  vertical-align: middle
+
+.cke_dialog_ui_input_file
+  width 100%
+  height 25px
+
+.cke_dialog a.cke_btn_locked,
+.cke_dialog a.cke_btn_unlocked
+  float left
+  width 16px
+  height 16px
+  background-repeat no-repeat
+  border none 1px
+  font-size 1px
+
+.cke_rtl .cke_dialog a.cke_btn_locked,
+.cke_rtl .cke_dialog a.cke_btn_unlocked
+  float right
+
+.cke_hidpi .cke_dialog a.cke_btn_unlocked,
+.cke_hidpi .cke_dialog a.cke_btn_locked
+  background-size 16px
+
+.cke_disabled
+  color #a0a0a0
+
+a.cke_smile,
+a.cke_specialchar
+  border 1px solid transparent
+
+a.cke_smile:hover,
+a.cke_smile:focus,
+a.cke_smile:active,
+a.cke_specialchar:hover,
+a.cke_specialchar:focus,
+a.cke_specialchar:active
+  background #fff
+  outline 0
+
+a.cke_smile:hover,
+a.cke_specialchar:hover
+  border-color #888
+
+a.cke_smile:focus,
+a.cke_smile:active,
+a.cke_specialchar:focus,
+a.cke_specialchar:active
+  border-color #139FF7
+
+.cke_dialog_contents
+  a
+    &.colorChooser
+      display block
+      margin-top 6px
+      margin-left 10px
+      width 80px
+
+.cke_dialog_ui_checkbox_input:focus,
+.cke_dialog_ui_radio_input:focus,
+.cke_btn_over
+  outline 1px dotted #696969
+
+.cke_iframe_shim
+  display block
+  position absolute
+  top 0
+  left 0
+  z-index -1
+  opacity: 0
+  width 100%
+  height 100%

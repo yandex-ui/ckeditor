@@ -84,7 +84,7 @@
 
         config.toolbar = [
             { 'name': 'attachment', 'items': [ 'Attachment' ] },
-            { 'name': 'clipboard', 'items': [ 'Undo', 'Redo', 'PasteFromWord' ] },
+            { 'name': 'clipboard', 'items': [ 'Undo', 'Redo' ] }, // 'PasteFromWord'
             { 'name': 'basicstyles', 'items': [ 'Bold', 'Italic', 'Underline', 'Strike' ] },
             { 'name': 'links', 'items': [ 'Link', 'Unlink' ] },
             { 'name': 'blockquote', 'items': [ 'Blockquote' ] },
@@ -109,6 +109,49 @@
                 'text-decoration': 'line-through'
             }
         };
+
+        config.fontSize_style = {
+            'ignoreReadonly': true,
+            'element': 'span',
+            'styles': { 'font-size': '#(size)' },
+            'overrides': [
+                {
+                    'element': 'font',
+                    'attributes': { 'size': null }
+                }
+            ]
+        };
+
+        config.fontSize_sizes = '8/8px;9/9px;10/10px;11/11px;12/12px;14/14px;16/16px;18/18px;20/20px;22/22px;24/24px;26/26px;28/28px;36/36px;48/48px;72/72px';
+
+        config.font_style = {
+            'ignoreReadonly': true,
+            'element': 'span',
+            'styles': { 'font-family': '#(family)' },
+            'overrides': [
+                {
+                    'element': 'font',
+                    'attributes': { 'face': null }
+                }
+            ]
+        };
+
+        config.font_names =
+            'Andale Mono/andale mono,times;' +
+            'Arial/arial,sans-serif;' +
+            'Arial Black/arial black,avant garde;' +
+            'Book Antiqua/book antiqua,palatino;' +
+            'Comic Sans MS/comic sans ms,sans-serif;' +
+            'Courier New/Courier New, monospace;' +
+            'Georgia/georgia,palatino;' +
+            'Helvetica/helvetica;' +
+            'Impact/impact,chicago;' +
+            'Symbol/symbol;' +
+            'Tahoma/tahoma,geneva,sans-serif;' +
+            'Terminal/terminal,monaco;' +
+            'Times New Roman/times new roman,times;' +
+            'Trebuchet MS/trebuchet ms,geneva;' +
+            'Verdana/verdana,geneva';
 
         return config;
     };

@@ -1,0 +1,224 @@
+.cke_svgicon {
+    display: inline-block;
+    background-image: url(cke_svgicon.png);
+    /* This hides bg-image in modern browsers except IE9 */
+    background: -webkit-linear-gradient(transparent, transparent);
+    background: linear-gradient(transparent, transparent);
+    /* This hides bg-image in IE9 */
+    background-position: -1000vh 0 !important;
+    }
+.cke_svgicon--lock {
+    width: 18px;
+    height: 18px;
+    background-position: 0 0;
+    }
+.cke_svgicon--refresh {
+    width: 18px;
+    height: 18px;
+    background-position: -28px 0;
+    }
+.cke_svgicon--mailfontsize {
+    width: 16px;
+    height: 16px;
+    background-position: 0 -28px;
+    }
+.cke_svgicon--bold-en {
+    width: 16px;
+    height: 16px;
+    background-position: -26px -28px;
+    }
+.cke_svgicon--bold-ru {
+    width: 16px;
+    height: 16px;
+    background-position: -56px 0;
+    }
+.cke_svgicon--bulletedlist {
+    width: 16px;
+    height: 16px;
+    background-position: -56px -26px;
+    }
+.cke_svgicon--undo {
+    width: 16px;
+    height: 16px;
+    background-position: 0 -54px;
+    }
+.cke_svgicon--codesnippet {
+    width: 16px;
+    height: 16px;
+    background-position: -26px -54px;
+    }
+.cke_svgicon--emoticons {
+    width: 16px;
+    height: 16px;
+    background-position: -52px -54px;
+    }
+.cke_svgicon--font {
+    width: 16px;
+    height: 16px;
+    background-position: -82px 0;
+    }
+.cke_svgicon--fontsize {
+    width: 16px;
+    height: 16px;
+    background-position: -82px -26px;
+    }
+.cke_svgicon--italic-en {
+    width: 16px;
+    height: 16px;
+    background-position: -82px -52px;
+    }
+.cke_svgicon--italic-ru {
+    width: 16px;
+    height: 16px;
+    background-position: 0 -80px;
+    }
+.cke_svgicon--justifyblock {
+    width: 16px;
+    height: 16px;
+    background-position: -26px -80px;
+    }
+.cke_svgicon--justifycenter {
+    width: 16px;
+    height: 16px;
+    background-position: -52px -80px;
+    }
+.cke_svgicon--justifyleft {
+    width: 16px;
+    height: 16px;
+    background-position: -78px -80px;
+    }
+.cke_svgicon--justifyright {
+    width: 16px;
+    height: 16px;
+    background-position: -108px 0;
+    }
+.cke_svgicon--link {
+    width: 16px;
+    height: 16px;
+    background-position: -108px -26px;
+    }
+.cke_svgicon--attachment {
+    width: 16px;
+    height: 16px;
+    background-position: -108px -52px;
+    }
+.cke_svgicon--mailbgcolor {
+    width: 16px;
+    height: 16px;
+    background-position: -108px -78px;
+    }
+.cke_svgicon--mailfont {
+    width: 16px;
+    height: 16px;
+    background-position: 0 -106px;
+    }
+.cke_svgicon--bgcolor {
+    width: 16px;
+    height: 16px;
+    background-position: -26px -106px;
+    }
+.cke_svgicon--mailtextcolor {
+    width: 16px;
+    height: 16px;
+    background-position: -52px -106px;
+    }
+.cke_svgicon--maximize {
+    width: 16px;
+    height: 16px;
+    background-position: -78px -106px;
+    }
+.cke_svgicon--menualignment {
+    width: 16px;
+    height: 16px;
+    background-position: -104px -106px;
+    }
+.cke_svgicon--menulist {
+    width: 16px;
+    height: 16px;
+    background-position: -134px 0;
+    }
+.cke_svgicon--menuselection-en {
+    width: 16px;
+    height: 16px;
+    background-position: -134px -26px;
+    }
+.cke_svgicon--menuselection-ru {
+    width: 16px;
+    height: 16px;
+    background-position: -134px -52px;
+    }
+.cke_svgicon--numberedlist {
+    width: 16px;
+    height: 16px;
+    background-position: -134px -78px;
+    }
+.cke_svgicon--pastefromword {
+    width: 16px;
+    height: 16px;
+    background-position: -134px -104px;
+    }
+.cke_svgicon--redo {
+    width: 16px;
+    height: 16px;
+    background-position: 0 -132px;
+    }
+.cke_svgicon--blockquote {
+    width: 16px;
+    height: 16px;
+    background-position: -26px -132px;
+    }
+.cke_svgicon--removeformat {
+    width: 16px;
+    height: 16px;
+    background-position: -52px -132px;
+    }
+.cke_svgicon--strike-en {
+    width: 16px;
+    height: 16px;
+    background-position: -78px -132px;
+    }
+.cke_svgicon--strike-ru {
+    width: 16px;
+    height: 16px;
+    background-position: -104px -132px;
+    }
+.cke_svgicon--switchmode-off {
+    width: 16px;
+    height: 16px;
+    background-position: -130px -132px;
+    }
+.cke_svgicon--switchmode-on {
+    width: 16px;
+    height: 16px;
+    background-position: -160px 0;
+    }
+.cke_svgicon--switchmode {
+    width: 16px;
+    height: 16px;
+    background-position: -160px -26px;
+    }
+.cke_svgicon--textcolor {
+    width: 16px;
+    height: 16px;
+    background-position: -160px -52px;
+    }
+.cke_svgicon--underline-en {
+    width: 16px;
+    height: 16px;
+    background-position: -160px -78px;
+    }
+.cke_svgicon--underline-ru {
+    width: 16px;
+    height: 16px;
+    background-position: -160px -104px;
+    }
+.cke_svgicon--unlink {
+    width: 16px;
+    height: 16px;
+    background-position: -160px -130px;
+    }
+.cke_svgicon--close {
+    width: 14px;
+    height: 14px;
+    background-position: 0 -158px;
+    }
