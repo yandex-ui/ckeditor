@@ -126,12 +126,6 @@ CKEDITOR.skin.chameleon = ( function() {
             '] '
         ),
         panel: new CKEDITOR.template(
-            // Panel drop-downs.
-            '.cke_panel_grouptitle [' +
-                    '{lightGradient}' +
-                    'border-color:{defaultBorder};' +
-                '] ' +
-
             // Context menus.
             '.cke_menubutton_icon [' +
                     'background-color:{menubuttonIcon};' +
