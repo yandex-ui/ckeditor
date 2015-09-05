@@ -579,8 +579,6 @@ margin: 3px -2px 0 3px {
   vertical-align: middle;
   float: left;
   cursor: default;
-  color: #474747;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.5);
 }
 .cke_rtl .cke_button_label {
   padding-right: 3px;
@@ -606,6 +604,12 @@ margin: 3px -2px 0 3px {
 }
 .cke_hc .cke_button_icon {
   display: none;
+}
+span.cke_button_icon {
+  opacity: 0.5;
+}
+.cke_button_disabled > span.cke_button_icon {
+  opacity: 0.15;
 }
 .cke_button_disabled,
 .cke_combo_disabled > .cke_combo_button {

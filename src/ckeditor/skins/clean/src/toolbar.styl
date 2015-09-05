@@ -143,8 +143,6 @@ a
   vertical-align: middle
   float: left
   cursor: default
-  color: #474747
-  text-shadow: 0 1px 0 rgba(255,255,255,.5)
 
   .cke_rtl &
     padding-right: 3px
@@ -169,7 +167,13 @@ a
     float: right
 
   .cke_hc &
-    display: none;
+    display: none
+
+span.cke_button_icon
+  opacity: .5
+
+  .cke_button_disabled > &
+    opacity: .15
 
 .cke_button_disabled,
 .cke_combo_disabled > .cke_combo_button
