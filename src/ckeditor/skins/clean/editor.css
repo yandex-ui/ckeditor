@@ -106,7 +106,7 @@
 .cke_notification_message {
   position: relative;
   margin: 4px 23px 3px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
   font-size: 12px;
   line-height: 18px;
   z-index: 4;
@@ -201,7 +201,7 @@
 .cke_colorblock {
   padding: 3px;
   font-size: 11px;
-  font-family: 'Microsoft Sans Serif', Tahoma, Arial, Verdana, Sans-Serif;
+  font-family: Arial, sans-serif;
 }
 .cke_colorblock,
 .cke_colorblock a {
