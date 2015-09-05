@@ -93,12 +93,6 @@ CKEDITOR.skin.chameleon = ( function() {
                     '{lightGradient}' +
                     'border-color:{defaultBorder};' +
                 '] ' +
-            '{id} a.cke_button_off:hover, {id} a.cke_button_off:focus, {id} a.cke_button_off:active [' +
-                    '{mediumGradient}' +
-                '] ' +
-            '{id} .cke_button_on [' +
-                    '{ckeButtonOn}' +
-                '] ' +
             '{id} .cke_toolbar_separator [' +
                     'background-color: {ckeToolbarSeparator};' +
                 '] ' +
@@ -168,7 +162,6 @@ CKEDITOR.skin.chameleon = ( function() {
                 mediumGradient: verticalGradient( colorBrightness( uiColor, 0.8 ), colorBrightness( uiColor, 0.5 ) ),
 
                 // These are for specific UI elements.
-                ckeButtonOn: verticalGradient( colorBrightness( uiColor, 0.6 ), colorBrightness( uiColor, 0.7 ) ),
                 ckeResizer: colorBrightness( uiColor, -0.4 ),
                 ckeToolbarSeparator: colorBrightness( uiColor, 0.5 ),
                 ckeColorauto: colorBrightness( uiColor, 0.8 ),

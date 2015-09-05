@@ -437,6 +437,9 @@ a.cke_button {
 a.cke_button:hover {
   color: #000;
 }
+a.cke_button:hover > span.cke_button_icon {
+  opacity: 1;
+}
 .cke_rtl a.cke_button {
   float: right;
 }
