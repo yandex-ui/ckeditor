@@ -82,33 +82,6 @@
                 if (data.canShow) {
                     return _openDialog.apply(this, arguments);
                 }
-            },
-
-            /**
-             * Установка фокуса с повторением
-             * @param {function} [callback] проверка необходимости повторной попытки
-             */
-            retryFocus: function(callback) {
-                if (typeof(callback) !== 'function') {
-                    callback = function() { return true; };
-                }
-
-                var that = this;
-                var retry = 0;
-                var _retryFocus = function() {
-                    if (retry > 200 || that.status !== 'ready' || !callback()) {
-                        return;
-                    }
-
-                    retry++;
-                    that.focus();
-
-                    if (!that.editable().hasFocus) {
-                        window.setTimeout(_retryFocus, 10);
-                    }
-                };
-
-                _retryFocus();
             }
         }, true);
     }());

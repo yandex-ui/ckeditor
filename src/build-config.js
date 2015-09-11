@@ -64,6 +64,7 @@ var CKBUILDER_CONFIG = {
         enterkey: 1, // реализует настройку enterMode - какой тег будет подставлен по клику на Enter
         entities: 1, // экранирование HTML
         exbutton: 1, // дополнение прототипа кнопок
+        exselection: 1, // дополнительный функции работы с фокусом и выделением
         filebrowser: 0,
         filetools: 1,
         find: 0, // поиск и замена
