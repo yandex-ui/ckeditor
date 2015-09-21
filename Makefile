@@ -13,9 +13,7 @@ all: node_modules \
 
 clean:
 	rm -rf $(CURDIR)/src/ckeditor/dev/builder/release/ckeditor
-	rm -rf $(CURDIR)/dist/ckeditor-full.js
-	rm -rf $(CURDIR)/dist/ckeditor-full.min.js
-	rm -rf $(CURDIR)/dist/ckeditor
+	rm -rf $(CURDIR)/dist
 
 node_modules: package.json
 	npm install
