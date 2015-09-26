@@ -641,6 +641,7 @@ textarea.cke_dialog_ui_input_textarea:focus {
 select.cke_dialog_ui_input_select {
   min-height: 28px;
   height: 28px;
+  border: 1px solid rgba(0,0,0,0.27);
 }
 .cke_dialog_footer_buttons {
   display: inline-table;
