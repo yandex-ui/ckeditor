@@ -540,33 +540,27 @@ a.cke_toolbox_collapser {
       -ms-transform: scale(0.75) rotate(45deg);
        -o-transform: scale(0.75) rotate(45deg);
           transform: scale(0.75) rotate(45deg);
+  margin-left: 2px;
 }
 .cke_button_arrow,
 .cke_combo_arrow {
   width: 8px;
   height: 8px;
 }
-.cke_button_arrow {
-  margin-left: 2px;
-}
-.cke_rtl .cke_button_arrow {
+.cke_rtl .cke_button_arrow,
+.cke_rtl .cke_combo_arrow {
   margin-right: 5px;
   margin-left: 0;
 }
-.cke_hc .cke_button_arrow {
+.cke_hc .cke_button_arrow,
+.cke_hc .cke_combo_arrow {
   font-size: 10px;
 }
 margin: 3px -2px 0 3px {
   width: auto;
   border: 0;
 }
-.cke_button_on .cke_button_arrow {
-  -webkit-transform: translateY(4px) scale(0.75) rotate(-135deg);
-     -moz-transform: translateY(4px) scale(0.75) rotate(-135deg);
-      -ms-transform: translateY(4px) scale(0.75) rotate(-135deg);
-       -o-transform: translateY(4px) scale(0.75) rotate(-135deg);
-          transform: translateY(4px) scale(0.75) rotate(-135deg);
-}
+.cke_button_on .cke_button_arrow,
 .cke_combo_on .cke_combo_arrow {
   -webkit-transform: translateY(4px) scale(0.75) rotate(-135deg);
      -moz-transform: translateY(4px) scale(0.75) rotate(-135deg);
@@ -581,7 +575,7 @@ margin: 3px -2px 0 3px {
   line-height: 17px;
   vertical-align: middle;
   float: left;
-  cursor: default;
+  cursor: pointer;
 }
 .cke_rtl .cke_button_label {
   padding-right: 3px;
@@ -631,7 +625,9 @@ a.cke_combo_button {
   cursor: pointer;
   display: inline-block;
   float: left;
-  margin: 0 6px 5px 0;
+  padding: 2px;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
 }
 a.cke_combo_button:hover {
   color: #000;
@@ -811,6 +807,7 @@ a.cke_combo_button:hover {
 .cke_combo {
   display: inline-block;
   float: left;
+  margin: 0 6px 5px 0;
 }
 .cke_rtl .cke_combo {
   float: right;
@@ -828,7 +825,7 @@ a.cke_combo_button:hover {
   margin-right: 0;
 }
 .cke_combo_text {
-  line-height: 24px;
+  line-height: 17px;
   padding-left: 8px;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -836,6 +833,11 @@ a.cke_combo_button:hover {
   cursor: pointer;
   max-width: 70px;
   white-space: nowrap;
+  vertical-align: middle;
+  margin-top: 1px;
+}
+.cke_button_icon + .cke_combo_text {
+  padding-left: 3px;
 }
 .cke_rtl .cke_combo_text {
   float: right;

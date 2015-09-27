@@ -116,8 +116,6 @@ a
   skin: icon _arrow \
         (width 1px) (size 8px) \
         with-transition
-
-.cke_button_arrow
   margin-left: 2px
 
   .cke_rtl &
@@ -130,12 +128,8 @@ a
 	width: auto
 	border: 0
 
-.cke_button_on
-  & .cke_button_arrow
-    skin: icon_arrow-direction top (offset-y 4px)
-
-.cke_combo_on
-  & .cke_combo_arrow
+.cke_button_on .cke_button_arrow,
+.cke_combo_on .cke_combo_arrow
     skin: icon_arrow-direction top (offset-y 4px)
 
 .cke_button_label
@@ -145,7 +139,7 @@ a
   line-height: 17px
   vertical-align: middle
   float: left
-  cursor: default
+  cursor: pointer
 
   .cke_rtl &
     padding-right: 3px
@@ -195,7 +189,8 @@ a.cke_combo_button
   cursor: pointer
   display: inline-block
   float: left
-  margin: 0 6px 5px 0
+  padding: 2px
+  border-radius: 2px
 
   &:hover
     color: #000
