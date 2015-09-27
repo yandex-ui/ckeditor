@@ -425,7 +425,6 @@ a.cke_path_item:active {
 a.cke_button {
   color: rgba(0,0,0,0.5);
   display: inline-block;
-  height: 16px;
   padding: 2px;
   outline: none;
   cursor: pointer;
