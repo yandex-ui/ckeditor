@@ -443,7 +443,8 @@ a.cke_button:hover > span.cke_button_icon {
 .cke_rtl a.cke_button {
   float: right;
 }
-a.cke_button_on {
+a.cke_button_on,
+a.cke_combo_on {
   -webkit-box-shadow: inset 30px 30px 0px 30px #ffeba0;
           box-shadow: inset 30px 30px 0px 30px #ffeba0;
   background: #ffeba0;
@@ -614,8 +615,11 @@ span.cke_button_icon {
   pointer-events: none;
 }
 a.cke_button_on:hover,
+a.cke_combo_on:hover,
 a.cke_button_on:focus,
-a.cke_button_on:active {
+a.cke_combo_on:focus,
+a.cke_button_on:active,
+a.cke_combo_on:active {
   -webkit-box-shadow: inset 30px 30px 0px 30px #ffeba0;
           box-shadow: inset 30px 30px 0px 30px #ffeba0;
   background: #ffeba0;

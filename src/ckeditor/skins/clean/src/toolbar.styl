@@ -18,45 +18,45 @@
     margin-right: 10px
     margin-bottom: 10px
 
-a
-  &.cke_button
-    color: rgba(#000, 0.5)
-    display: inline-block
-    height: 16px
-    padding: 2px
-    outline: none
-    cursor: pointer
-    float: left
-    border: 0
-    border-radius: 2px
+a.cke_button
+  color: rgba(#000, 0.5)
+  display: inline-block
+  height: 16px
+  padding: 2px
+  outline: none
+  cursor: pointer
+  float: left
+  border: 0
+  border-radius: 2px
 
-    &:hover
-      color: #000
+  &:hover
+    color: #000
 
-      & > span.cke_button_icon
-        opacity: 1
+    & > span.cke_button_icon
+      opacity: 1
 
-    .cke_rtl &
-      float: right
-
-  &.cke_button_on
-    box-shadow: inset 30px 30px 0px 30px #ffeba0
-    background: #ffeba0
-
-  &.cke_toolbox_collapser
-    width: 12px
-    height: 11px
+  .cke_rtl &
     float: right
-    margin: 11px 0 0
-    font-size: 0
-    cursor: default
-    text-align: center
-    border: 1px solid #a6a6a6
-    border-bottom-color: #979797
-    border-radius: 3px
-    box-shadow: 0 1px 0 rgba(255,255,255,.5), 0 0 2px rgba(255,255,255,.15) inset, 0 1px 0 rgba(255,255,255,.15) inset
-    background: #e4e4e4
-    background-image: linear-gradient(to bottom, #ffffff, #e4e4e4)
+
+a.cke_button_on,
+a.cke_combo_on
+  box-shadow: inset 30px 30px 0px 30px #ffeba0
+  background: #ffeba0
+
+a.cke_toolbox_collapser
+  width: 12px
+  height: 11px
+  float: right
+  margin: 11px 0 0
+  font-size: 0
+  cursor: default
+  text-align: center
+  border: 1px solid #a6a6a6
+  border-bottom-color: #979797
+  border-radius: 3px
+  box-shadow: 0 1px 0 rgba(255,255,255,.5), 0 0 2px rgba(255,255,255,.15) inset, 0 1px 0 rgba(255,255,255,.15) inset
+  background: #e4e4e4
+  background-image: linear-gradient(to bottom, #ffffff, #e4e4e4)
 
 .cke_toolbox_collapser
   &:hover
@@ -177,7 +177,8 @@ span.cke_button_icon
   color: rgba(#000, 0.15) !important
   pointer-events: none
 
-a.cke_button_on
+a.cke_button_on,
+a.cke_combo_on
   &:hover,
   &:focus,
   &:active
