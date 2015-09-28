@@ -3,12 +3,18 @@
   line-height: normal
   color: #000
   background-color: #fff
-  white-space: pre-wrap
-  word-wrap: break-word
   border: none
   padding: 0
   margin: 0
   display: block
+
+  /**
+   * plain текст в safari вставляет как текст, а не как html
+   * @see DARIA-52670
+   */
+  &:not(#cke_pastebin)
+    white-space: pre-wrap
+    word-wrap: break-word
 
 .cke_maximized
   & .cke_source
