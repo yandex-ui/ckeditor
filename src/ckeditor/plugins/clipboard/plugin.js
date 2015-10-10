@@ -146,6 +146,7 @@
 			CKEDITOR.dialog.add( 'paste', CKEDITOR.getUrl( this.path + 'dialogs/paste.js' ) );
 
 			editor.on( 'paste', function( evt ) {
+
 				// Init `dataTransfer` if `paste` event was fired without it, so it will be always available.
 				if ( !evt.data.dataTransfer ) {
 					evt.data.dataTransfer = new CKEDITOR.plugins.clipboard.dataTransfer();
@@ -1119,32 +1120,42 @@
 	// pasting plain text into editable element (see clipboard/paste.html TCs
 	// for more info) into correct HTML (similar to that produced by text2Html).
 	function htmlifiedTextHtmlification( config, data ) {
-		function repeatParagraphs( repeats ) {
-			// Repeat blocks floor((n+1)/2) times.
-			// Even number of repeats - add <br> at the beginning of last <p>.
-			return CKEDITOR.tools.repeat( '</p><p>', ~~( repeats / 2 ) ) + ( repeats % 2 == 1 ? '<br>' : '' );
+		function repeatParagraphs( repeats, tagName ) {
+			tagName = tagName || 'p';
+			var breakHtml = (tagName === 'p' ? '&nbsp;' : '<br>');
+
+			return (
+				'</' + tagName + '>' +
+					CKEDITOR.tools.repeat('<' + tagName + '>' + breakHtml + '</' + tagName + '>', repeats) +
+				'<' + tagName + '>'
+			);
 		}
 
+		data = data
 			// Replace adjacent white-spaces (EOLs too - Fx sometimes keeps them) with one space.
-		data = data.replace( /\s+/g, ' ' )
+			.replace( /\s+/g, ' ' )
 			// Remove spaces from between tags.
 			.replace( /> +</g, '><' )
 			// Normalize XHTML syntax and upper cased <br> tags.
-			.replace( /<br ?\/>/gi, '<br>' );
-
-		// IE - lower cased tags.
-		data = data.replace( /<\/?[A-Z]+>/g, function( match ) {
-			return match.toLowerCase();
-		} );
+			.replace( /<br ?\/>/gi, '<br>' )
+			// IE - lower cased tags.
+			.replace( /<\/?[A-Z]+>/g, function( match ) {
+				return match.toLowerCase();
+			} );
 
 		// Don't touch single lines (no <br|p|div>) - nothing to do here.
-		if ( data.match( /^[^<]$/ ) )
+		if ( data.match( /^[^<]$/ ) ) {
 			return data;
+		}
 
 		// Webkit.
-		if ( CKEDITOR.env.webkit && data.indexOf( '<div>' ) > -1 ) {
+		if (CKEDITOR.env.webkit &&
+			config.enterMode != CKEDITOR.ENTER_DIV &&
+			data.indexOf( '<div>' ) > -1) {
+
+			data = data
 				// One line break at the beginning - insert <br>
-			data = data.replace( /^(<div>(<br>|)<\/div>)(?!$|(<div>(<br>|)<\/div>))/g, '<br>' )
+				.replace( /^(<div>(<br>|)<\/div>)(?!$|(<div>(<br>|)<\/div>))/g, '<br>' )
 				// Two or more - reduce number of new lines by one.
 				.replace( /^(<div>(<br>|)<\/div>){2}(?!$)/g, '<div></div>' );
 
@@ -1163,20 +1174,27 @@
 		}
 
 		// Opera and Firefox and enterMode != BR.
-		if ( CKEDITOR.env.gecko && config.enterMode != CKEDITOR.ENTER_BR ) {
+		if (CKEDITOR.env.gecko &&
+			config.enterMode != CKEDITOR.ENTER_BR) {
+
 			// Remove bogus <br> - Fx generates two <brs> for one line break.
 			// For two line breaks it still produces two <brs>, but it's better to ignore this case than the first one.
-			if ( CKEDITOR.env.gecko )
-				data = data.replace( /^<br><br>$/, '<br>' );
+			data = data.replace( /^<br><br>$/, '<br>' );
 
 			// This line satisfy edge case when for Opera we have two line breaks
 			//data = data.replace( /)
 
-			if ( data.indexOf( '<br><br>' ) > -1 ) {
-				// Two line breaks create one paragraph, three - 2, four - 3, etc.
-				data = '<p>' + data.replace( /(<br>){2,}/g, function( match ) {
-					return repeatParagraphs( match.length / 4 );
-				} ) + '</p>';
+			if ( /(<br>)+/.test(data) ) {
+				if ( config.enterMode == CKEDITOR.ENTER_P ) {
+					data = '<p>' + data.replace( /(<br>)+/g, function( match ) {
+						return repeatParagraphs( Math.max(match.split('br').length - 2, 0) );
+					} ) + '</p>';
+
+				} else if ( config.enterMode == CKEDITOR.ENTER_DIV ) {
+					data = '<div>' + data.replace( /(<br>)+/g, function( match ) {
+						return repeatParagraphs( Math.max(match.split('br').length - 2, 0), 'div' );
+					} ) + '</div>';
+				}
 			}
 		}
 
