@@ -1,41 +1,42 @@
 {
-    "name": "ckeditor-skin-clean",
-    "description": "",
-    "version": "0.0.1",
-    "keywords": [
-        "ckeditor",
-        "skin",
-        "clean"
-    ],
-    "author": {
-        "name": "Rikishi",
-        "email": "bufpost@yandex.ru",
-        "url": "https://github.com/Katochimoto"
-    },
-    "bugs": {
-        "url": "https://github.com/Katochimoto/ckeditor-skin-clean/issues",
-        "email": "bufpost@yandex.ru"
-    },
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "git@github.com:Katochimoto/ckeditor-skin-clean.git"
-    },
-    "devDependencies": {
-        "autoprefixer": "5.2.0",
-        "stylus": "0.52.0",
-        "stylobate": "0.25.x",
-        "stylobate-islands": "0.28.x",
-        "gulp-filelog": "~0.4.1",
-        "del": "~1.1.0",
-        "grunt": "~0.4.5",
-        "svg_fallback": "git://github.com/kizu/svg-fallback.git#my-master",
-        "load-grunt-tasks": "~1.0.0",
-        "gulp": "3.9.0",
-        "gulp-grunt": "~0.5.2",
-        "gulp-replace": "~0.5.2"
-    },
-    "engines": {
-        "node": ">=0.6.0"
-    }
+  "name": "ckeditor-skin-clean",
+  "description": "",
+  "version": "0.0.1",
+  "keywords": [
+    "ckeditor",
+    "skin",
+    "clean"
+  ],
+  "author": {
+    "name": "Rikishi",
+    "email": "bufpost@yandex.ru",
+    "url": "https://github.com/Katochimoto"
+  },
+  "bugs": {
+    "url": "https://github.com/Katochimoto/ckeditor-skin-clean/issues",
+    "email": "bufpost@yandex.ru"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Katochimoto/ckeditor-skin-clean.git"
+  },
+  "devDependencies": {
+    "auto": "^0.1.2",
+    "autoprefixer": "5.2.0",
+    "del": "~1.1.0",
+    "grunt": "~0.4.5",
+    "gulp": "3.9.0",
+    "gulp-filelog": "~0.4.1",
+    "gulp-grunt": "~0.5.2",
+    "gulp-replace": "~0.5.2",
+    "load-grunt-tasks": "~1.0.0",
+    "stylobate": "0.25.x",
+    "stylobate-islands": "0.28.x",
+    "stylus": "0.52.0",
+    "svg_fallback": "git://github.com/Katochimoto/svg-fallback.git#my-master"
+  },
+  "engines": {
+    "node": ">=0.6.0"
+  }
 }

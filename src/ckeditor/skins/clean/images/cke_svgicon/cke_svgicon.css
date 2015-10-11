@@ -7,20 +7,20 @@
     /* This hides bg-image in IE9 */
     background-position: -1000vh 0 !important;
     }
-.cke_svgicon--lock {
-    width: 18px;
-    height: 18px;
-    background-position: 0 0;
-    }
-.cke_svgicon--refresh {
-    width: 18px;
-    height: 18px;
-    background-position: -28px 0;
-    }
-.cke_svgicon--mailfontsize {
+.cke_svgicon--attachment {
     width: 16px;
     height: 16px;
-    background-position: 0 -28px;
+    background-position: -108px -52px;
+    }
+.cke_svgicon--bgcolor {
+    width: 16px;
+    height: 16px;
+    background-position: -26px -106px;
+    }
+.cke_svgicon--blockquote {
+    width: 16px;
+    height: 16px;
+    background-position: -26px -132px;
     }
 .cke_svgicon--bold-en {
     width: 16px;
@@ -37,10 +37,10 @@
     height: 16px;
     background-position: -56px -26px;
     }
-.cke_svgicon--undo {
-    width: 16px;
-    height: 16px;
-    background-position: 0 -54px;
+.cke_svgicon--close {
+    width: 14px;
+    height: 14px;
+    background-position: 0 -158px;
     }
 .cke_svgicon--codesnippet {
     width: 16px;
@@ -97,10 +97,10 @@
     height: 16px;
     background-position: -108px -26px;
     }
-.cke_svgicon--attachment {
-    width: 16px;
-    height: 16px;
-    background-position: -108px -52px;
+.cke_svgicon--lock {
+    width: 18px;
+    height: 18px;
+    background-position: 0 0;
     }
 .cke_svgicon--mailbgcolor {
     width: 16px;
@@ -112,10 +112,10 @@
     height: 16px;
     background-position: 0 -106px;
     }
-.cke_svgicon--bgcolor {
+.cke_svgicon--mailfontsize {
     width: 16px;
     height: 16px;
-    background-position: -26px -106px;
+    background-position: 0 -28px;
     }
 .cke_svgicon--mailtextcolor {
     width: 16px;
@@ -162,10 +162,10 @@
     height: 16px;
     background-position: 0 -132px;
     }
-.cke_svgicon--blockquote {
-    width: 16px;
-    height: 16px;
-    background-position: -26px -132px;
+.cke_svgicon--refresh {
+    width: 18px;
+    height: 18px;
+    background-position: -28px 0;
     }
 .cke_svgicon--removeformat {
     width: 16px;
@@ -212,13 +212,13 @@
     height: 16px;
     background-position: -160px -104px;
     }
+.cke_svgicon--undo {
+    width: 16px;
+    height: 16px;
+    background-position: 0 -54px;
+    }
 .cke_svgicon--unlink {
     width: 16px;
     height: 16px;
     background-position: -160px -130px;
-    }
-.cke_svgicon--close {
-    width: 14px;
-    height: 14px;
-    background-position: 0 -158px;
     }
