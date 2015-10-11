@@ -44,6 +44,7 @@ if ( !window.CKEDITOR ) {
 			// (Base 36 value of each component of YYMMDDHH - 4 chars total - e.g. 87bm == 08071122)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			timestamp: 'FBOF',
 =======
 			timestamp: 'F9BE',
@@ -51,6 +52,9 @@ if ( !window.CKEDITOR ) {
 =======
 			timestamp: 'F9BH',
 >>>>>>> 89219c8... up slin
+=======
+			timestamp: 'F9BI',
+>>>>>>> 70a8f0b... up ckin
 
 			/**
 			 * Contains the CKEditor version number.
@@ -68,6 +72,7 @@ if ( !window.CKEDITOR ) {
 			 */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			revision: '658aa5f',
 =======
 			revision: '2805b33',
@@ -75,6 +80,9 @@ if ( !window.CKEDITOR ) {
 =======
 			revision: '25e8ac2',
 >>>>>>> 89219c8... up slin
+=======
+			revision: '834ddb3',
+>>>>>>> 70a8f0b... up ckin
 
 			/**
 			 * A 3-digit random integer, valid for the entire life of the CKEDITOR object.
