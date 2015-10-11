@@ -1,6 +1,7 @@
 ﻿module.exports = function(grunt) {
     var config = grunt.file.readJSON(__dirname + '/package.json');
 
+
     grunt.initConfig({
         'pkg': config,
         'svg_fallback': {
@@ -8,7 +9,7 @@
                 //'debug': true,
                 'svgclass': 'cke_svgicon',
                 'closetags': false,
-                'movestyles': true,
+                'movestyles': true
                 //'usei8class': true,
                 //'svgstyle': 'pointer-events: none; visibility: hidden;'
             },
