@@ -432,6 +432,7 @@ a.cke_button {
   border: 0;
   -webkit-border-radius: 2px;
           border-radius: 2px;
+  height: 16px;
 }
 a.cke_button:hover {
   color: #000;
@@ -589,7 +590,6 @@ margin: 3px -2px 0 3px {
 .cke_button_icon {
   cursor: inherit;
   background-repeat: no-repeat;
-  margin-top: 1px;
   width: 16px;
   height: 16px;
   float: left;
