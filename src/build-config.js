@@ -59,7 +59,6 @@ var CKBUILDER_CONFIG = {
         dialogadvtab: 1, // вкладки для диалоговых окон
         div: 0, // кнопка создать div контейнер
         divarea: 1, // замена iframe на div
-        divareasb: 0, // песочница для divarea, превентит некоторые события
         elementspath: 0, // вывод пути вложенности элементов в подвале редактора
         enterkey: 1, // реализует настройку enterMode - какой тег будет подставлен по клику на Enter
         entities: 1, // экранирование HTML
