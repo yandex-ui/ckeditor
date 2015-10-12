@@ -145,7 +145,7 @@
   z-index: 1;
 }
 .cke_notification_close {
-  background-image: url("images/close.png");
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAApVBMVEXd3d3e3t7g4ODi4uLj4+Pk5OTl5eXr6+vt7e3u7u7v7+/y8vL19fX29vb39/f4+Pj8/Pz9/f3+/v7///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAHBwcBAQEODg4AAAAAAAAAAAAAAAAVFRUnJycUFBQZGRkdHR0gICAnJydTU1M9PT1ERERPT09YWFhZWVlbW1tCQkJLS0tRUVFVVVVcXFxjY2NlZWVVeueMAAAAMHRSTlMAAAAAAAAAAAAAAAAAAAAAAAAAAAJXWFteX2JiZWeTnOHn6ez8/Pz8/P3+/v7+/v5vtAXPAAAArklEQVQYGV3BUXKDMAxAwSfJQFwCyfT+Z2xCZ1qwwFL/uwv/CCCQgECCIKKaPRGTiMyCDB/K7oyV+D2zoHXRnzpQdI7sUUSsfI4blMf6ZSKGDtzu4vp8ts09DNKuMmtdj1fbrzRAso91PF9780ABxT3THQUMnaayzt5vckr2NOxu6+LvY6ic5mFSpmX1d7vOoUY7w5BpvL7dO569HVGIXSSPRrDlHhhE0FpkD5onf+3KZv29r87PAAAAAElFTkSuQmCC");
   background-repeat: no-repeat;
   background-position: 50%;
   position: absolute;
@@ -702,7 +702,7 @@ a.cke_combo_button:hover {
   opacity: 0.7;
 }
 .cke_menuarrow {
-  background-image: url("images/arrow.png");
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAeBAMAAAD9Z3KNAAAAKlBMVEUAAAA5OTn///85OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTnrfVW9AAAADXRSTlMAAAAJDCotY2afotj2i0cZjwAAADdJREFUCNdj0DQUYtDdCsR3ioC4iUF3mxCDlqMQg6IgdkwyYJ7AwBB9gYH97AUGDiBmyAZilgUASlUOV46PUdQAAAAASUVORK5CYII=");
   background-position: 0 10px;
   background-repeat: no-repeat;
   padding: 0 5px;

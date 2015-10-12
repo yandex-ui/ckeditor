@@ -82,7 +82,7 @@ a.cke_dialog_close_button:hover {
   display: none;
 }
 .cke_dialog a.cke_btn_unlocked {
-  background-image: url("images/lock-open.png");
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAABJElEQVQoz13Qzy4DARDH8e/Nof5EiMMSkV4aEnEUB5IKaUnbWKR4Ak/Tp3HpI3gIu1a3GkpsInEola9Dq1nyu818MjMZIkaJSejSo0ePLgnxuD5pd8hwkozOmIxBwivCATdk3FKVjCQPHniHHe44ZnHherZDVVLi/IQ+X5MF89fcyuMvGJ33xCtvZHwgTJcG0ichhoiEF75zB4rsKvJCAhEpQ2j/FSci7SEpxHSRZU+99GqcSy8MXVa6v2DLmmee27Rp03NPrbmVB+tWbBi62ZoKNluhDSuu50HJQ+uGFgIpBKF1Dy3lQdGyRzacaRHMtBoeWbaYB4Hb7rnvhnNuuO+e2wYjEJEygPaSgSuuuuaqKwYuSXtAChH3PPP571Einzxzzw+UAvaic4IMLwAAAABJRU5ErkJggg==");
 }
 .cke_dialog .cke_btn_over {
   border: outset 1px;
