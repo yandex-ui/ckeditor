@@ -45,6 +45,7 @@ if ( !window.CKEDITOR ) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			timestamp: 'FBOF',
 =======
 			timestamp: 'F9BE',
@@ -55,6 +56,9 @@ if ( !window.CKEDITOR ) {
 =======
 			timestamp: 'F9BI',
 >>>>>>> 70a8f0b... up ckin
+=======
+			timestamp: 'F9CD',
+>>>>>>> bd6cce6... картинки темы
 
 			/**
 			 * Contains the CKEditor version number.
@@ -73,6 +77,7 @@ if ( !window.CKEDITOR ) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			revision: '658aa5f',
 =======
 			revision: '2805b33',
@@ -83,6 +88,9 @@ if ( !window.CKEDITOR ) {
 =======
 			revision: '834ddb3',
 >>>>>>> 70a8f0b... up ckin
+=======
+			revision: '479e12c',
+>>>>>>> bd6cce6... картинки темы
 
 			/**
 			 * A 3-digit random integer, valid for the entire life of the CKEDITOR object.
