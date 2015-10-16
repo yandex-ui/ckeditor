@@ -47,6 +47,7 @@ if ( !window.CKEDITOR ) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			timestamp: 'FBOF',
 =======
 			timestamp: 'F9BE',
@@ -63,6 +64,9 @@ if ( !window.CKEDITOR ) {
 =======
 			timestamp: 'F9CE',
 >>>>>>> a903bf2... up slin
+=======
+			timestamp: 'F9G8',
+>>>>>>> 695a6db... тег th добавлен в разрешенные
 
 			/**
 			 * Contains the CKEditor version number.
