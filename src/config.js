@@ -56,6 +56,7 @@
         'table',
         'tbody',
         'td',
+        'th',
         'tr',
         'u',
         'ul'
