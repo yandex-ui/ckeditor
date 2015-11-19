@@ -48,6 +48,7 @@ var CKBUILDER_CONFIG = {
     plugins: {
         a11yhelp: 0,
         about: 0,
+        autogrow: 1, // авторазмер по содержимому
         autolink2: 1, // автосоздание ссылок по Enter
         basicstyles: 1, // базовые операции редакторования текста: жирн, курсив и проч
         bidi: 1, // ???

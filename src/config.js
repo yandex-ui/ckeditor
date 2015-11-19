@@ -56,6 +56,8 @@
         'table',
         'tbody',
         'td',
+        'th',
+        'thead',
         'tr',
         'u',
         'ul'
