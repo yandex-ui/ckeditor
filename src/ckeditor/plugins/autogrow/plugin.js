@@ -17,12 +17,14 @@
 				return;
 
 			editor.on( 'instanceReady', function() {
-				// Simply set auto height with div wysiwyg.
-				if ( editor.editable().isInline() )
-					editor.ui.space( 'contents' ).setStyle( 'height', 'auto' );
-				// For classic (`iframe`-based) wysiwyg we need to resize the editor.
-				else
-					initIframeAutogrow( editor );
+				if (editor.config.autoGrow_enable) {
+					// Simply set auto height with div wysiwyg.
+					if ( editor.editable().isInline() )
+						editor.ui.space( 'contents' ).setStyle( 'height', 'auto' );
+					// For classic (`iframe`-based) wysiwyg we need to resize the editor.
+					else
+						initIframeAutogrow( editor );
+				}
 			} );
 		}
 	} );
