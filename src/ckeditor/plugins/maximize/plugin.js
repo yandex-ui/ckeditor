@@ -329,6 +329,7 @@
 				if (this.state === CKEDITOR.TRISTATE_OFF) {
 					var evt = CKEDITOR.document.$.createEvent('Event');
 					evt.initEvent('resize', true, true);
+					evt.data = { 'custom': true };
 					CKEDITOR.document.getWindow().$.dispatchEvent(evt)
 				}
 			});
