@@ -28,3 +28,6 @@
 [submodule "plugins/exselection"]
 	path = plugins/exselection
 	url = https://github.com/yandex-ui/ckeditor-exselection.git
+[submodule "plugins/htmlplaceholder"]
+	path = plugins/htmlplaceholder
+	url = https://github.com/yandex-ui/ckeditor-htmlplaceholder.git
