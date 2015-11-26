@@ -75,6 +75,7 @@ var CKBUILDER_CONFIG = {
         format: 1,
         forms: 0, // добавление элементов формы
         horizontalrule: 0, // кнопка вставки hr
+        htmlplaceholder: 1, // html плейсхолдер
         htmlwriter: 1, // возможности форматирования html
         iframe: 0,
         image: 0, // вставка/изменение изображения через окно
