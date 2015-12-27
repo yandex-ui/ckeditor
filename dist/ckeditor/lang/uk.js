@@ -108,7 +108,7 @@ CKEDITOR.lang['uk'] = {
     },
     removeformat : 
     {
-    	toolbar : 'Очистити форматування'
+    	toolbar : 'Видалити форматування'
     },
     pastefromword : 
     {
@@ -231,13 +231,13 @@ CKEDITOR.lang['uk'] = {
     },
     filetools : 
     {
-    	loadError : 'Error occurred during file read.',
-    	networkError : 'Network error occurred during file upload.',
-    	httpError404 : 'HTTP error occurred during file upload (404: File not found).',
-    	httpError403 : 'HTTP error occurred during file upload (403: Forbidden).',
-    	httpError : 'HTTP error occurred during file upload (error status: %1).',
-    	noUrlError : 'Upload URL is not defined.',
-    	responseError : 'Incorrect server response.'
+    	loadError : 'Виникла помилка під час читання файлу',
+    	networkError : 'Під час завантаження файлу виникла помилка мережі.',
+    	httpError404 : 'Під час завантаження файлу виникла помилка HTTP (404: Файл не знайдено).',
+    	httpError403 : 'Під час завантаження файлу виникла помилка HTTP (403: Доступ заборонено).',
+    	httpError : 'Під час завантаження файлу виникла помилка (статус помилки: %1).',
+    	noUrlError : 'URL завантаження не визначений.',
+    	responseError : 'Невірна відповідь сервера.'
     },
     fakeobjects : 
     {

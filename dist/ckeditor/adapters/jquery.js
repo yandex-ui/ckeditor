@@ -34,6 +34,8 @@
 	 * This configuration option is global and is executed during the loading of the jQuery Adapter.
 	 * It cannot be customized across editor instances.
 	 *
+	 * Read more in the [documentation](#!/guide/dev_jquery).
+	 *
 	 *		<script>
 	 *			CKEDITOR.config.jqueryOverrideVal = true;
 	 *		</script>
