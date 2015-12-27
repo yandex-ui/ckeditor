@@ -34,3 +34,6 @@
 [submodule "plugins/switchmode"]
 	path = plugins/switchmode
 	url = https://github.com/yandex-ui/ckeditor-switchmode.git
+[submodule "plugins/htmlplaceholder"]
+	path = plugins/htmlplaceholder
+	url = https://github.com/yandex-ui/ckeditor-htmlplaceholder.git
