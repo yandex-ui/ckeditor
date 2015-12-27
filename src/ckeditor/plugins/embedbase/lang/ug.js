@@ -5,11 +5,7 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 CKEDITOR.plugins.setLang( 'embedbase', 'ug', {
 	pathName: 'ۋاسىتە ئوبيېكتى',
 	title: 'سىڭدۈرمە ۋاسىتە',
-<<<<<<< HEAD
 	button: 'سىڭدۈرمە ۋاسىتە قىستۇر',
-=======
-	button: 'Insert Media Embed', // MISSING
->>>>>>> 144e2c2... Updated language files.
 	unsupportedUrlGiven: 'The specified URL is not supported.', // MISSING
 	unsupportedUrl: 'The URL {url} is not supported by Media Embed.', // MISSING
 	fetchingFailedGiven: 'Failed to fetch content for the given URL.', // MISSING
