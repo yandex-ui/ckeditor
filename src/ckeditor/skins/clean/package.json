@@ -34,7 +34,7 @@
     "stylobate": "0.25.x",
     "stylobate-islands": "0.28.x",
     "stylus": "0.52.0",
-    "svg_fallback": "git://github.com/Katochimoto/svg-fallback.git#my-master"
+    "svg_fallback": "https://github.com/Katochimoto/svg-fallback.git#my-master"
   },
   "engines": {
     "node": ">=0.6.0"
