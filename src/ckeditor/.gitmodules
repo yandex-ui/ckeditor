@@ -13,9 +13,6 @@
 [submodule "plugins/exbutton"]
     path = plugins/exbutton
     url = https://github.com/yandex-ui/ckeditor-exbutton.git
-[submodule "plugins/divareasb"]
-    path = plugins/divareasb
-    url = https://github.com/Katochimoto/ckeditor-divareasb.git
 [submodule "plugins/pastefile"]
     path = plugins/pastefile
     url = https://github.com/yandex-ui/ckeditor-pastefile.git
