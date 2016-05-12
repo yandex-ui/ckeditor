@@ -37,3 +37,6 @@
 [submodule "plugins/htmlplaceholder"]
 	path = plugins/htmlplaceholder
 	url = https://github.com/yandex-ui/ckeditor-htmlplaceholder.git
+[submodule "plugins/translate"]
+	path = plugins/translate
+	url = https://github.com/yandex-ui/ckeditor-translate.git
