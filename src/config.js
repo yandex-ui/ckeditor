@@ -95,7 +95,8 @@
             { 'name': 'align', 'items': [ 'JustifyLeft', 'JustifyCenter', 'JustifyRight' ] },
             { 'name': 'tools', 'items': [ 'Maximize' ] },
             { 'name': 'removeformat', 'items': [ 'RemoveFormat' ] },
-            { 'name': 'switchmode', 'items': [ 'SwitchMode' ] }
+            { 'name': 'switchmode', 'items': [ 'SwitchMode' ] },
+            { 'name': 'translate', 'items': [ 'Translate' ] }
         ];
 
         // если оставить тег "s"

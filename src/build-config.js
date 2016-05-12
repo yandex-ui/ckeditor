@@ -116,6 +116,7 @@ var CKBUILDER_CONFIG = {
         tabletools: 0, // зависит от contextmenu
         templates: 0, // диалог выбора шаблонов
         toolbar: 1,
+        translate: 1, // интерфейс переводчика
         undo: 1,
         wysiwygarea: 1,
         xss: 1 // набор фильтров против xss
