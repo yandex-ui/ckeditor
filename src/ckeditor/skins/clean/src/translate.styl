@@ -10,13 +10,19 @@
 
 .cke_contents_wrap_translate
   & > .cke_contents
-    flex-basis: 50%
+    flex-grow: 1
+    flex-shrink: 0
+    flex-basis: 0
     padding-right: 15px
 
   & > .cke_translate_wrap
-    flex-basis: 50%
-    padding-left: 15px
+    flex-grow: 1
+    flex-shrink: 0
+    flex-basis: 0
     position: relative
+    overflow-y: auto
+    overflow-x: hidden
+    padding-left: 15px
 
     &:before
       content: ""
@@ -26,6 +32,15 @@
       left: 0
       bottom: 25%
       border-left: 1px solid #ccc
+
+  & .cke_translate_content
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    margin-left: 15px
+    opacity: 0.5
 
 .cke_translate_header
   position: relative
@@ -44,12 +59,16 @@
     color: #000
 
 .cke_translate_header_from
-  flex-basis: 50%
+  flex-grow: 1
+  flex-shrink: 0
+  flex-basis: 0
   text-align: right
   margin-right: 15px
 
 .cke_translate_header_to
-  flex-basis: 50%
+  flex-grow: 1
+  flex-shrink: 0
+  flex-basis: 0
   margin-left: 15px
 
 .cke_translate_lang
