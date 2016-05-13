@@ -1417,6 +1417,7 @@ legend.cke_voice_label {
   overflow-y: auto;
   overflow-x: hidden;
   padding-left: 15px;
+  background-color: #fff;
 }
 .cke_contents_wrap_translate > .cke_translate_wrap:before {
   content: "";
@@ -1433,8 +1434,16 @@ legend.cke_voice_label {
   right: 0;
   bottom: 0;
   left: 0;
-  margin-left: 15px;
   opacity: 0.5;
+  font: 14px Arial, sans-serif;
+  line-height: normal;
+  color: #000;
+  border: none;
+  padding: 0;
+  margin: 0;
+  margin-left: 15px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 .cke_translate_header {
   position: relative;
@@ -1483,7 +1492,75 @@ legend.cke_voice_label {
 }
 .cke_translate_lang {
   cursor: pointer;
+  padding: 6px 8px;
 }
 .cke_translate_lang:hover {
-  color: #000;
+  background-color: rgba(0,0,0,0.05);
+}
+.cke_translate_spinner > .cke_translate_wrap:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  top: 50%;
+  bottom: 50%;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  text-indent: -9999em;
+  border-top: 2px solid transparent;
+  border-right: 2px solid transparent;
+  border-bottom: 2px solid #ffdc4f;
+  border-left: 2px solid #ffdc4f;
+  -webkit-animation: translate_spinner 1s infinite linear;
+     -moz-animation: translate_spinner 1s infinite linear;
+       -o-animation: translate_spinner 1s infinite linear;
+          animation: translate_spinner 1s infinite linear;
+}
+@-moz-keyframes translate_spinner {
+  0% {
+    -moz-transform: rotate(0deg);
+         transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(360deg);
+         transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes translate_spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@-o-keyframes translate_spinner {
+  0% {
+    -o-transform: rotate(0deg);
+       transform: rotate(0deg);
+  }
+  100% {
+    -o-transform: rotate(360deg);
+       transform: rotate(360deg);
+  }
+}
+@keyframes translate_spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+       -moz-transform: rotate(0deg);
+         -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+       -moz-transform: rotate(360deg);
+         -o-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }

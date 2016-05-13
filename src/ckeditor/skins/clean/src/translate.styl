@@ -23,6 +23,7 @@
     overflow-y: auto
     overflow-x: hidden
     padding-left: 15px
+    background-color: #fff
 
     &:before
       content: ""
@@ -39,8 +40,16 @@
     right: 0
     bottom: 0
     left: 0
-    margin-left: 15px
     opacity: 0.5
+    font: 14px Arial, sans-serif
+    line-height: normal
+    color: #000
+    border: none
+    padding: 0
+    margin: 0
+    margin-left: 15px
+    white-space: pre-wrap
+    word-wrap: break-word
 
 .cke_translate_header
   position: relative
@@ -73,6 +82,36 @@
 
 .cke_translate_lang
   cursor: pointer
+  padding: 6px 8px
 
   &:hover
-    color: #000
+    background-color: rgba(#000, 0.05)
+
+.cke_translate_spinner
+  & > .cke_translate_wrap:after
+    content: ""
+    display: block
+    position: absolute
+    left: 50%
+    right: 50%
+    top: 50%
+    bottom: 50%
+    border-radius 50%
+    width 32px
+    height 32px
+    overflow hidden
+    text-indent -9999em
+    border-top 2px solid transparent
+    border-right 2px solid transparent
+    border-bottom 2px solid #FFDC4F
+    border-left 2px solid #FFDC4F
+    animation translate_spinner 1s infinite linear
+
+@keyframes translate_spinner {
+  0% {
+    transform rotate(0deg)
+  }
+  100% {
+    transform rotate(360deg)
+  }
+}
