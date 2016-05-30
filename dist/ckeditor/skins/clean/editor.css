@@ -315,7 +315,6 @@ a.cke_path_item:active {
   border-bottom-color: #999;
 }
 .cke_top,
-.cke_contents,
 .cke_bottom {
   display: block;
   overflow: hidden;
@@ -361,6 +360,19 @@ a.cke_path_item:active {
 }
 .cke_maximized .cke_wysiwyg_div {
   padding: 0 10px;
+}
+.cke_contents {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+          flex-direction: column;
 }
 .cke_contents_wrap {
   position: relative;
@@ -1280,6 +1292,42 @@ legend.cke_voice_label {
 }
 .cke_maximized .cke_source {
   padding: 0 10px;
+}
+.cke_source::-webkit-input-placeholder {
+  color: #ccc;
+  padding-left: 4px;
+}
+.cke_source::-moz-placeholder {
+  color: #ccc;
+  padding-left: 4px;
+}
+.cke_source::-ms-input-placeholder {
+  color: #ccc;
+  padding-left: 4px;
+}
+.cke_source::-webkit-input-placeholder {
+  color: #ccc;
+  padding-left: 4px;
+}
+.cke_source:-moz-placeholder {
+  color: #ccc;
+  padding-left: 4px;
+}
+.cke_source::-moz-placeholder {
+  color: #ccc;
+  padding-left: 4px;
+}
+.cke_source:-ms-input-placeholder {
+  color: #ccc;
+  padding-left: 4px;
+}
+.cke_source::placeholder {
+  color: #ccc;
+  padding-left: 4px;
+}
+.cke_source:-ms-input-placeholder {
+  color: #ccc !important;
+  padding-left: 4px !important;
 }
 .cke_editable h1 {
   font-size: 2em;
