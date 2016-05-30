@@ -60,7 +60,7 @@ if ( !window.CKEDITOR ) {
 			 *
 			 *		alert( CKEDITOR.revision ); // e.g. '3975'
 			 */
-			revision: '140bc4a',
+			revision: 'edcc4c6',
 
 			/**
 			 * A 3-digit random integer, valid for the entire life of the CKEDITOR object.
@@ -53849,6 +53849,11 @@ CKEDITOR.config.toolbarLocation = 'top';
          */
         onMode: function() {
             this.editable().on('scroll', this.plugins.translate.syncScrollWrap, this);
+
+            var wrap = this.ui.space('translate_wrap');
+            if (wrap) {
+                wrap.$.scrollTop = 0;
+            }
         },
 
         /**
