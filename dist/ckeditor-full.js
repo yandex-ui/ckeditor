@@ -64,7 +64,7 @@ if ( !window.CKEDITOR ) {
 			 *
 			 *		alert( CKEDITOR.revision ); // e.g. '3975'
 			 */
-			revision: '942bdb7',
+			revision: '24aa098',
 
 			/**
 			 * A 3-digit random integer, valid for the entire life of the CKEDITOR object.
@@ -53727,16 +53727,14 @@ CKEDITOR.config.toolbarLocation = 'top';
     /**
      * Начальное обозначение языка, с которого выполняется перевод
      * @type {string}
-     * @default 'ru'
      */
-    CKEDITOR.config.translateFrom = 'ru';
+    CKEDITOR.config.translateFrom = undefined;
 
     /**
      * Начальное обозначение языка, на который выполняется перевод
      * @type {string}
-     * @default 'en'
      */
-    CKEDITOR.config.translateTo = 'en';
+    CKEDITOR.config.translateTo = undefined;
 
     /**
      * Автоматическое включение переводчика после инициализации редактора
@@ -54028,9 +54026,9 @@ CKEDITOR.config.toolbarLocation = 'top';
                 headerId: this.ui.spaceId('translate_header'),
                 clickLangFn: this.fnTranslateLangSelect,
                 langFrom: langFrom,
-                langFromName: this.config.translateLangName.call(this, langFrom),
+                langFromName: this.config.translateLangName.call(this, langFrom) || '...',
                 langTo: langTo,
-                langToName: this.config.translateLangName.call(this, langTo),
+                langToName: this.config.translateLangName.call(this, langTo) || '...',
                 info: this.config.translateInfo && CKEDITOR.getTemplate('translateInfo').output({ href: this.config.translateInfo }) || ''
             });
 
