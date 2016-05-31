@@ -64,7 +64,7 @@ if ( !window.CKEDITOR ) {
 			 *
 			 *		alert( CKEDITOR.revision ); // e.g. '3975'
 			 */
-			revision: '24aa098',
+			revision: 'c018d23',
 
 			/**
 			 * A 3-digit random integer, valid for the entire life of the CKEDITOR object.
@@ -54146,7 +54146,7 @@ CKEDITOR.config.toolbarLocation = 'top';
                 return;
             }
 
-            editor.config.translate.call(this, data, editor.config.translateFrom, editor.config.translateTo).then(function(result) {
+            editor.config.translate.call(editor, data, editor.config.translateFrom, editor.config.translateTo).then(function(result) {
                 eventData.returnValue = result.data;
                 eventData.langFrom = result.langFrom;
                 eventData.langTo = result.langTo;
