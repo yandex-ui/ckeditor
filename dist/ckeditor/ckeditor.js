@@ -62,7 +62,7 @@ if ( !window.CKEDITOR ) {
 			 *
 			 *		alert( CKEDITOR.revision ); // e.g. '3975'
 			 */
-			revision: '600d0cb',
+			revision: '69dc814',
 
 			/**
 			 * A 3-digit random integer, valid for the entire life of the CKEDITOR object.
@@ -53791,6 +53791,12 @@ CKEDITOR.config.toolbarLocation = 'top';
     var CMD_TRANSLATE = 'translate';
 
     /**
+     * Название команды применения перевода
+     * @type {string}
+     */
+    var CMD_TRANSLATE_APPLY = 'translate_apply';
+
+    /**
      * Название класса для враппера содержимого редактора
      * @type {string}
      */
@@ -53895,6 +53901,12 @@ CKEDITOR.config.toolbarLocation = 'top';
                 }
             });
 
+            editor.addCommand(CMD_TRANSLATE_APPLY, {
+                modes: { wysiwyg: 1, source: 1 },
+                editorFocus: false,
+                exec: this.onTranslateApply
+            });
+
             editor.ui.addButton('Translate', {
                 label: editor.lang.translate.translator,
                 title: editor.lang.translate.translator,
@@ -53907,7 +53919,6 @@ CKEDITOR.config.toolbarLocation = 'top';
             editor.on('contentDom', this.onContentDom);
             editor.on('destroy', this.onDestroy);
             editor.on('mode', this.onMode);
-            editor.on('translate:apply', this.onTranslateApply);
             editor.on('translate:cancel', this.onTranslateCancel);
         },
 
@@ -54251,21 +54262,25 @@ CKEDITOR.config.toolbarLocation = 'top';
 
         /**
          * Реакция на внешнее событие применения перевода
-         * @this {Editor}
+         * @param {Editor} editor
+         * @this {CKEDITOR.command}
          */
-        onTranslateApply: function() {
-            var cmdShowTranslator = this.getCommand(CMD_SHOW_TRANSLATOR);
+        onTranslateApply: function(editor) {
+            var cmdShowTranslator = editor.getCommand(CMD_SHOW_TRANSLATOR);
             if (!cmdShowTranslator) {
-                return;
+                return false;
             }
 
-            var data = !this._.translateError && this._.translateData;
+            var data = !editor._.translateError && editor._.translateData;
 
             cmdShowTranslator.setState(CKEDITOR.TRISTATE_OFF);
 
             if (typeof data === 'string') {
-                this.setData(data);
+                editor.setData(data);
+                return true;
             }
+
+            return false;
         },
 
         /**
@@ -54326,7 +54341,7 @@ CKEDITOR.config.toolbarLocation = 'top';
 
         _debounce.cancel = function() {
             clearTimeout(timeout);
-            context = args = null;
+            context = args = timeout = null;
         };
 
         return _debounce;
