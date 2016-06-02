@@ -1435,12 +1435,6 @@ legend.cke_voice_label {
   text-align: center;
   display: block;
 }
-.cke_button__translate_label {
-  display: inline;
-}
-.cke_button__translate_icon {
-  display: none;
-}
 .cke_contents_wrap_translate {
   display: -webkit-box;
   display: -webkit-flex;
