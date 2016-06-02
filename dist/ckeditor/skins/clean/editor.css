@@ -393,8 +393,7 @@ a.cke_path_item:active {
   border-style: dashed solid dashed dashed;
   font-size: 0;
   vertical-align: bottom;
-  margin-top: 8px;
-  margin-bottom: 2px;
+  margin: 0 0 2px;
   -webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.3);
           box-shadow: 0 1px 0 rgba(255,255,255,0.3);
 }
