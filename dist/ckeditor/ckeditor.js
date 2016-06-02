@@ -62,7 +62,7 @@ if ( !window.CKEDITOR ) {
 			 *
 			 *		alert( CKEDITOR.revision ); // e.g. '3975'
 			 */
-			revision: '373196b',
+			revision: 'af79821',
 
 			/**
 			 * A 3-digit random integer, valid for the entire life of the CKEDITOR object.
@@ -54078,7 +54078,7 @@ CKEDITOR.config.toolbarLocation = 'top';
             var element = new CKEDITOR.dom.element(target);
             element.addClass('is-active');
 
-            this.config.translateLangSelect.call(this, currentLang, element, target).then(function(lang) {
+            this.config.translateLangSelect.call(this, currentLang, element, direction).then(function(lang) {
                 if (!this.translateEnabled()) {
                     return;
                 }
