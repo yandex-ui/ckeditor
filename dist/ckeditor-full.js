@@ -64,7 +64,7 @@ if ( !window.CKEDITOR ) {
 			 *
 			 *		alert( CKEDITOR.revision ); // e.g. '3975'
 			 */
-			revision: '1a60a16',
+			revision: '5abb0ff',
 
 			/**
 			 * A 3-digit random integer, valid for the entire life of the CKEDITOR object.
