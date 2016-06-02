@@ -526,6 +526,13 @@ a.cke_toolbox_collapser {
   -webkit-box-shadow: 1px 0 1px rgba(255,255,255,0.5);
           box-shadow: 1px 0 1px rgba(255,255,255,0.5);
 }
+.cke_toolbar_separator_line {
+  float: left;
+  margin: 2px 10px 0;
+  height: 16px;
+  width: 1px;
+  background-color: #cecece;
+}
 .cke_hc .cke_toolbar_separator {
   width: 0;
   border-left: 1px solid;
@@ -585,6 +592,9 @@ margin: 3px -2px 0 3px {
   vertical-align: middle;
   float: left;
   cursor: pointer;
+}
+.cke_button_label__inline {
+  display: inline;
 }
 .cke_rtl .cke_button_label {
   padding-right: 3px;
@@ -838,8 +848,8 @@ a.cke_combo_button:hover {
   margin-right: 0;
 }
 .cke_combo_text {
-  line-height: 17px;
-  padding-left: 8px;
+  line-height: 16px;
+  padding: 0 3px;
   text-overflow: ellipsis;
   overflow: hidden;
   float: left;
