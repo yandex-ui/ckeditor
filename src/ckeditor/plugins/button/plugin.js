@@ -33,7 +33,7 @@
 
 
 	template += '{icoHtml}' +
-		'<span id="{id}_label" class="cke_button_label cke_button__{name}_label" aria-hidden="false">{label}</span>' +
+		'<span id="{id}_label" class="cke_button_label cke_button__{name}_label {clsLabel}" aria-hidden="false">{label}</span>' +
 		'{arrowHtml}' +
 		'</a>';
 
@@ -254,6 +254,17 @@
 			}
 
 			var style = CKEDITOR.skin.getIconStyle( iconName, ( editor.lang.dir == 'rtl' ), this.icon, this.iconOffset );
+			var icoHtml = '';
+			var clsLabel = '';
+
+			if (this.onlyLabel) {
+				clsLabel = 'cke_button_label__inline';
+
+			} else {
+				icoHtml = this.icoTmpl ?
+					this.icoTmpl.output({ id: id, iconName: iconName }) :
+					btnIcoTpl.output({ iconName: iconName, style: style });
+			}
 
 			var params = {
 				id: id,
@@ -261,6 +272,7 @@
 				iconName: iconName,
 				label: this.label,
 				cls: this.className || '',
+				clsLabel: clsLabel,
 				state: stateName,
 				ariaDisabled: stateName == 'disabled' ? 'true' : 'false',
 				title: this.title,
@@ -271,9 +283,7 @@
 				clickFn: clickFn,
 				style: style,
 				arrowHtml: this.hasArrow ? btnArrowTpl.output() : '',
-				icoHtml: this.icoTmpl ?
-					this.icoTmpl.output({ id: id, iconName: iconName }) :
-					btnIcoTpl.output({ iconName: iconName, style: style })
+				icoHtml: icoHtml
 			};
 
 			btnTpl.output( params, output );

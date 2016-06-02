@@ -218,6 +218,11 @@
 						continue;
 					}
 
+					if ( row === '|' ) {
+						output.push( '<span class="cke_toolbar_separator_line"></span>' );
+						continue;
+					}
+
 					items = row.items || row;
 
 					// Create all items defined for this toolbar.
@@ -441,7 +446,7 @@
 				var toolbarGroup = toolbar[ i ];
 
 				// Skip toolbar break.
-				if ( toolbarGroup == '/' )
+				if ( toolbarGroup == '/' || toolbarGroup == '|' )
 					continue;
 				// Handle simply group name item.
 				else if ( typeof toolbarGroup == 'string' )
@@ -511,9 +516,15 @@
 				else
 					toolbarGroup.items = [];
 
-				var item, name;
+				var item, name, onlyLabel;
 				while ( ( item = uiItems.shift() ) ) {
 					name = typeof item == 'string' ? item : item.name;
+					onlyLabel = false;
+
+					if (name && name[0] === '&') {
+						name = name.slice(1);
+						onlyLabel = true;
+					}
 
 					// Ignore items that are configured to be removed.
 					if ( !removeButtons || CKEDITOR.tools.indexOf( removeButtons, name ) == -1 ) {
@@ -524,6 +535,8 @@
 
 						if ( !editor.addFeature( item ) )
 							continue;
+
+						item.onlyLabel = onlyLabel;
 
 						toolbarGroup.items.push( item );
 					}
@@ -539,8 +552,9 @@
 				group = config[ i ];
 				newGroup = {};
 
-				if ( group == '/' )
+				if ( group == '/' || group == '|' ) {
 					toolbar.push( group );
+				}
 				else if ( CKEDITOR.tools.isArray( group ) ) {
 					fillGroup( newGroup, CKEDITOR.tools.clone( group ) );
 					toolbar.push( newGroup );

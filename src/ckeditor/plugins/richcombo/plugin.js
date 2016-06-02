@@ -227,6 +227,11 @@ CKEDITOR.plugins.add( 'richcombo', {
 
 				var name = this.name || this.command;
 				var iconName = name;
+				var icoHtml = '';
+
+				if (!this.onlyLabel) {
+					icoHtml = this.icoTmpl ? this.icoTmpl.output({ id: id, iconName: iconName }) : '';
+				}
 
 				var params = {
 					id: id,
@@ -238,8 +243,8 @@ CKEDITOR.plugins.add( 'richcombo', {
 					keydownFn: keyDownFn,
 					focusFn: focusFn,
 					clickFn: clickFn,
-					icoHtml: this.icoTmpl ? this.icoTmpl.output({ id: id, iconName: iconName }) : '',
-					textHtml: editor.config.richcombo_showText ? btnTextTpl.output({ id: id, label: this.label }) : ''
+					icoHtml: icoHtml,
+					textHtml: (editor.config.richcombo_showText || this.onlyLabel) ? btnTextTpl.output({ id: id, label: this.label }) : ''
 				};
 
 				rcomboTpl.output( params, output );
