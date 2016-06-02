@@ -80,25 +80,24 @@
   &.is-active
     background-color: rgba(#000, 0.05)
 
-.cke_translate_spinner
-  & > .cke_translate_wrap:after
-    content: ""
-    display: block
-    position: absolute
-    left: 50%
-    right: 50%
-    top: 50%
-    bottom: 50%
-    border-radius 50%
-    width 32px
-    height 32px
-    overflow hidden
-    text-indent -9999em
-    border-top 2px solid transparent
-    border-right 2px solid transparent
-    border-bottom 2px solid #FFDC4F
-    border-left 2px solid #FFDC4F
-    animation translate_spinner 1s infinite linear
+.cke_translate_spinner:after
+  content: ""
+  display: block
+  position: absolute
+  left: 72%
+  right: 28%
+  top: 50%
+  bottom: 50%
+  border-radius 50%
+  width 32px
+  height 32px
+  overflow hidden
+  text-indent -9999em
+  border-top 2px solid transparent
+  border-right 2px solid transparent
+  border-bottom 2px solid #FFDC4F
+  border-left 2px solid #FFDC4F
+  animation translate_spinner 1s infinite linear
 
 @keyframes translate_spinner {
   0% {
