@@ -594,6 +594,7 @@ margin: 3px -2px 0 3px {
 }
 .cke_button_label__inline {
   display: inline;
+  padding: 0 6px;
 }
 .cke_rtl .cke_button_label {
   padding-right: 3px;
