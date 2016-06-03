@@ -178,7 +178,7 @@
 
 				var output = [
 					'<span id="', labelId, '" class="cke_voice_label">', editor.lang.toolbar.toolbars, '</span>',
-					'<span id="' + editor.ui.spaceId( 'toolbox' ) + '" class="cke_toolbox" role="group" aria-labelledby="', labelId, '" onmousedown="return false;">'
+					'<span id="' + editor.ui.spaceId( 'toolbox' ) + '"', (editor.config.cspNonce ? ' nonce="' + editor.config.cspNonce + '"' : ''), ' class="cke_toolbox" role="group" aria-labelledby="', labelId, '" onmousedown="return false;">'
 				];
 
 				var expanded = editor.config.toolbarStartupExpanded !== false,
@@ -377,8 +377,13 @@
 					if ( !expanded )
 						output.push( ' cke_toolbox_collapser_min' );
 
-					output.push( '" onclick="CKEDITOR.tools.callFunction(' + collapserFn + ')">', '<span class="cke_arrow">&#9650;</span>', // BLACK UP-POINTING TRIANGLE
-						'</a>' );
+					output.push(
+						'" ',
+						(editor.config.cspNonce ? 'nonce="' + editor.config.cspNonce + '" ' : ''),
+						'onclick="CKEDITOR.tools.callFunction(' + collapserFn + ')">',
+						'<span class="cke_arrow">&#9650;</span>', // BLACK UP-POINTING TRIANGLE
+						'</a>'
+					);
 				}
 
 				output.push( '</span>' );

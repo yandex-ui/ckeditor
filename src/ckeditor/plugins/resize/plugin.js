@@ -87,6 +87,7 @@ CKEDITOR.plugins.add( 'resize', {
 
 					var resizerHtml =
 						'<span' +
+						(editor.config.cspNonce ? ' nonce="' + editor.config.cspNonce + '"' : '') +
 						' id="' + spaceId + '"' +
 						' class="cke_resizer' + direction + ' cke_resizer_' + resizeDir + '"' +
 						' title="' + CKEDITOR.tools.htmlEncode( editor.lang.common.resize ) + '"' +

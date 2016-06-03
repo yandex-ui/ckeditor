@@ -5,6 +5,7 @@
 
 ( function() {
 	var template = '<a id="{id}"' +
+		' {cspNonce}' +
 		' class="cke_button cke_button__{name} cke_button_{state} {cls}"' +
 		( CKEDITOR.env.gecko && !CKEDITOR.env.hc ? '' : ' href="javascript:void(\'{titleJs}\')"' ) +
 		' title="{title}"' +
@@ -283,7 +284,8 @@
 				clickFn: clickFn,
 				style: style,
 				arrowHtml: this.hasArrow ? btnArrowTpl.output() : '',
-				icoHtml: icoHtml
+				icoHtml: icoHtml,
+				cspNonce: editor.config.cspNonce ? 'nonce="' + editor.config.cspNonce + '"' : ''
 			};
 
 			btnTpl.output( params, output );
