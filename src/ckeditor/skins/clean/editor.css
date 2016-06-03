@@ -1546,6 +1546,7 @@ legend.cke_voice_label {
 .cke_translate_lang:hover,
 .cke_translate_lang.is-active {
   background-color: rgba(0,0,0,0.05);
+  color: #000;
 }
 .cke_translate_spinner:after {
   content: "";
