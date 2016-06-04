@@ -401,7 +401,12 @@
 		// Set activeFilter directly to avoid firing event.
 		editor.filter = editor.activeFilter = new CKEDITOR.filter( editor );
 
-		loadSkin( editor );
+		if (editor.config.ignoreLoadSkin) {
+			loadLang( editor );
+
+		} else {
+			loadSkin( editor );
+		}
 	}
 
 	function loadSkin( editor ) {
