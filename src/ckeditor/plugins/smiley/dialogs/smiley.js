@@ -133,6 +133,7 @@ CKEDITOR.dialog.add( 'smiley', function( editor ) {
 		html.push(
 			'<td class="cke_dark_background cke_centered" style="vertical-align: middle;" role="presentation">' +
 			'<a href="javascript:void(0)" role="option"', ' aria-posinset="' + ( i + 1 ) + '"', ' aria-setsize="' + size + '"', ' aria-labelledby="' + smileyLabelId + '"',
+			( config.cspNonce ? ' nonce="' + config.cspNonce + '"' : '' ),
 			' class="cke_smile cke_hand" tabindex="-1" onkeydown="CKEDITOR.tools.callFunction( ', onKeydown, ', event, this );">',
 			'<img class="cke_hand" title="', config.smiley_descriptions[ i ], '"' +
 			' cke_src="', CKEDITOR.tools.htmlEncode( config.smiley_path + images[ i ] ), '" alt="', config.smiley_descriptions[ i ], '"',

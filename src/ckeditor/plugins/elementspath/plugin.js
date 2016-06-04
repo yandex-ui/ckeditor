@@ -41,6 +41,7 @@
 
 	var pathItemTpl = CKEDITOR.addTemplate( 'pathItem', '<a' +
 		' id="{id}"' +
+		' {cspNonce}' +
 		' href="{jsTitle}"' +
 		' tabindex="-1"' +
 		' class="cke_path_item"' +
@@ -200,7 +201,8 @@
 						jsTitle: 'javascript:void(\'' + name + '\')', // jshint ignore:line
 						index: index,
 						keyDownFn: onKeyDownHandler,
-						clickFn: onClickHanlder
+						clickFn: onClickHanlder,
+						cspNonce: editor.config.cspNonce ? 'nonce="' + editor.config.cspNonce + '"' : ''
 					} );
 
 				html.unshift( item );
