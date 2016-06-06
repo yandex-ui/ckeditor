@@ -62,7 +62,7 @@ if ( !window.CKEDITOR ) {
 			 *
 			 *		alert( CKEDITOR.revision ); // e.g. '3975'
 			 */
-			revision: '9b90c48',
+			revision: '02308d9',
 
 			/**
 			 * A 3-digit random integer, valid for the entire life of the CKEDITOR object.
@@ -16126,7 +16126,7 @@ CKEDITOR.event.implementOn( CKEDITOR.ui );
 		if (editor.config.ignoreLoadSkin) {
 			// @see core/_bootstrap устанавливает в hidden до момента загрузки стилей
 			// т.к. стили дополнительно не грузим, то переопределяем .cke
-			CKEDITOR.addCss( '.cke{visibility:inherit;}' );
+			CKEDITOR.document.appendStyleText( '.cke{visibility:inherit;}' );
 			loadLang( editor );
 
 		} else {
