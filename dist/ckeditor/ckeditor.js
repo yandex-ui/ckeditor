@@ -62,7 +62,7 @@ if ( !window.CKEDITOR ) {
 			 *
 			 *		alert( CKEDITOR.revision ); // e.g. '3975'
 			 */
-			revision: '44dd4a5',
+			revision: 'fe933dd',
 
 			/**
 			 * A 3-digit random integer, valid for the entire life of the CKEDITOR object.
@@ -53904,9 +53904,9 @@ CKEDITOR.config.toolbarLocation = 'top';
      */
     CKEDITOR.addTemplate(
         'translateHeader',
-        '<div id="{headerId}" class="cke_translate_header">' +
+        '<div id="{headerId}" class="cke_translate_header" onclick="CKEDITOR.tools.callFunction({clickFocusFn}); return false;">' +
             '<div class="cke_translate_header_from">' +
-                '<span title="{langFromTitle}" class="cke_translate_lang" onclick="CKEDITOR.tools.callFunction({clickLangFn}, \'from\', \'{langFrom}\', this); return false;">' +
+                '<span title="{langFromTitle}" class="cke_translate_lang" onclick="CKEDITOR.tools.callFunction({clickLangFn}, \'from\', \'{langFrom}\', this, event); return false;">' +
                     '{langFromName}' +
                 '</span>' +
             '</div>' +
@@ -53915,7 +53915,7 @@ CKEDITOR.config.toolbarLocation = 'top';
                 '<rect height="100%" width="100%" style="fill: transparent;"></rect>' +
             '</svg>' +
             '<div class="cke_translate_header_to">' +
-                '<span title="{langToTitle}" class="cke_translate_lang" onclick="CKEDITOR.tools.callFunction({clickLangFn}, \'to\', \'{langTo}\', this); return false;">' +
+                '<span title="{langToTitle}" class="cke_translate_lang" onclick="CKEDITOR.tools.callFunction({clickLangFn}, \'to\', \'{langTo}\', this, event); return false;">' +
                     '{langToName}' +
                 '</span>' +
             '</div>' +
@@ -53937,6 +53937,7 @@ CKEDITOR.config.toolbarLocation = 'top';
 
         init: function(editor) {
             editor.fnTranslateLangSelect = CKEDITOR.tools.addFunction(this.onTranslateLangSelect, editor);
+            editor.fnTranslateEditorFocus = CKEDITOR.tools.addFunction(this.onTranslateEditorFocus, editor);
 
             var cmdTranslate = editor.addCommand(CMD_TRANSLATE, {
                 modes: { wysiwyg: 1, source: 1 },
@@ -54030,6 +54031,7 @@ CKEDITOR.config.toolbarLocation = 'top';
         onDestroy: function() {
             this.translateDebounce.cancel();
             CKEDITOR.tools.removeFunction(this.fnTranslateLangSelect);
+            CKEDITOR.tools.removeFunction(this.fnTranslateEditorFocus);
 
             this._.translateData = undefined;
             this._.translateError = false;
@@ -54090,13 +54092,24 @@ CKEDITOR.config.toolbarLocation = 'top';
         },
 
         /**
+         * Фокус в редактор при клике в шапку выбора языков
+         * @this {Editor}
+         */
+        onTranslateEditorFocus: function() {
+            this.focus();
+        },
+
+        /**
          * Выполнение запроса на выбор языка
          * @param {string} direction from|to обозначения языка с какого или на какой выполняется перевод
          * @param {string} currentLang обозначение текущего языка
          * @param {HTMLElement} target
+         * @param {MouseEvent} event
          * @this {Editor}
          */
-        onTranslateLangSelect: function(direction, currentLang, target) {
+        onTranslateLangSelect: function(direction, currentLang, target, event) {
+            event.stopPropagation();
+
             var element = new CKEDITOR.dom.element(target);
             element.addClass('is-active');
 
@@ -54309,6 +54322,7 @@ CKEDITOR.config.toolbarLocation = 'top';
         }
 
         var htmlHeader = CKEDITOR.getTemplate('translateHeader').output({
+            clickFocusFn:   editor.fnTranslateEditorFocus,
             clickLangFn:    editor.fnTranslateLangSelect,
             headerId:       editor.ui.spaceId('translate_header'),
             info:           info,
