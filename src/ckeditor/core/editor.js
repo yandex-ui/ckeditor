@@ -402,6 +402,9 @@
 		editor.filter = editor.activeFilter = new CKEDITOR.filter( editor );
 
 		if (editor.config.ignoreLoadSkin) {
+			// @see core/_bootstrap устанавливает в hidden до момента загрузки стилей
+			// т.к. стили дополнительно не грузим, то переопределяем .cke
+			CKEDITOR.addCss( '.cke{visibility:inherit;}' );
 			loadLang( editor );
 
 		} else {
