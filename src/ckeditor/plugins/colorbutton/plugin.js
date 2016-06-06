@@ -159,7 +159,6 @@ CKEDITOR.plugins.add( 'colorbutton', {
 				// Render the "Automatic" button.
 				output.push( '<a class="cke_colorauto" _cke_focus=1 hidefocus=true' +
 					' title="', lang.auto, '"' +
-					( config.cspNonce ? ' nonce="' + config.cspNonce + '"' : '' ) +
 					' onclick="CKEDITOR.tools.callFunction(', clickFn, ',null,\'', type, '\');return false;"' +
 					' href="javascript:void(\'', lang.auto, '\')"' +
 					' role="option" aria-posinset="1" aria-setsize="', total, '">' +
@@ -194,7 +193,6 @@ CKEDITOR.plugins.add( 'colorbutton', {
 				output.push( '<td>' +
 					'<a class="cke_colorbox" _cke_focus=1 hidefocus=true' +
 						' title="', colorLabel, '"' +
-						( config.cspNonce ? ' nonce="' + config.cspNonce + '"' : '' ) +
 						' onclick="CKEDITOR.tools.callFunction(', clickFn, ',\'', colorName, '\',\'', type, '\'); return false;"' +
 						' href="javascript:void(\'', colorLabel, '\')"' +
 						' role="option" aria-posinset="', ( i + 2 ), '" aria-setsize="', total, '">' +
@@ -209,7 +207,6 @@ CKEDITOR.plugins.add( 'colorbutton', {
 					'<tr>' +
 						'<td colspan=8 align=center>' +
 							'<a class="cke_colormore" _cke_focus=1 hidefocus=true' +
-								( config.cspNonce ? ' nonce="' + config.cspNonce + '"' : '' ) +
 								' title="', lang.more, '"' +
 								' onclick="CKEDITOR.tools.callFunction(', clickFn, ',\'?\',\'', type, '\');return false;"' +
 								' href="javascript:void(\'', lang.more, '\')"', ' role="option" aria-posinset="', total, '" aria-setsize="', total, '">', lang.more, '</a>' +

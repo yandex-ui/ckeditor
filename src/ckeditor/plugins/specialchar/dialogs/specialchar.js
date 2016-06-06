@@ -208,7 +208,6 @@ CKEDITOR.dialog.add( 'specialchar', function( editor ) {
 							' aria-posinset="' + ( i + 1 ) + '"', ' aria-setsize="' + size + '"', ' aria-labelledby="' + charLabelId + '"', ' class="cke_specialchar" title="', CKEDITOR.tools.htmlEncode( charDesc ), '"' +
 							' onkeydown="CKEDITOR.tools.callFunction( ' + onKeydown + ', event, this )"' +
 							' onclick="CKEDITOR.tools.callFunction(' + onClick + ', this); return false;"' +
-							( editor.config.cspNonce ? ' nonce="' + editor.config.cspNonce + '"' : '' ) +
 							' tabindex="-1">' +
 							'<span style="margin: 0 auto;cursor: inherit">' +
 							character +

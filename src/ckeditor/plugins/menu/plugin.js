@@ -82,7 +82,6 @@ CKEDITOR.plugins.add( 'menu', {
 ( function() {
 	var menuItemSource = '<span class="cke_menuitem">' +
 		'<a id="{id}"' +
-		' {cspNonce}' +
 		' class="cke_menubutton cke_menubutton__{name} cke_menubutton_{state} {cls}" href="{href}"' +
 		' title="{title}"' +
 		' tabindex="-1"' +
@@ -497,8 +496,7 @@ CKEDITOR.plugins.add( 'menu', {
 					iconStyle: CKEDITOR.skin.getIconStyle( iconName, ( this.editor.lang.dir == 'rtl' ), iconName == this.icon ? null : this.icon, this.iconOffset ),
 					arrowHtml: hasSubMenu ? menuArrowTpl.output( { label: arrowLabel } ) : '',
 					role: this.role ? this.role : 'menuitem',
-					ariaChecked: ariaChecked,
-					cspNonce: this.editor.config.cspNonce ? 'nonce="' + this.editor.config.cspNonce + '"' : ''
+					ariaChecked: ariaChecked
 				};
 
 				menuItemTpl.output( params, output );

@@ -18,7 +18,7 @@ CKEDITOR.plugins.add( 'richcombo', {
 		' class="cke_combo cke_combo__{name} {cls}"' +
 		' role="presentation">' +
 			'<span id="{id}_label" class="cke_combo_label">{label}</span>' +
-			'<a class="cke_combo_button" title="{title}" tabindex="-1" {cspNonce}' +
+			'<a class="cke_combo_button" title="{title}" tabindex="-1"' +
 			( CKEDITOR.env.gecko && !CKEDITOR.env.hc ? '' : ' href="javascript:void(\'{titleJs}\')"' ) +
 			' hidefocus="true"' +
 			' role="button"' +
@@ -244,8 +244,7 @@ CKEDITOR.plugins.add( 'richcombo', {
 					focusFn: focusFn,
 					clickFn: clickFn,
 					icoHtml: icoHtml,
-					textHtml: (editor.config.richcombo_showText || this.onlyLabel) ? btnTextTpl.output({ id: id, label: this.label }) : '',
-					cspNonce: editor.config.cspNonce ? 'nonce="' + editor.config.cspNonce + '"' : ''
+					textHtml: (editor.config.richcombo_showText || this.onlyLabel) ? btnTextTpl.output({ id: id, label: this.label }) : ''
 				};
 
 				rcomboTpl.output( params, output );
