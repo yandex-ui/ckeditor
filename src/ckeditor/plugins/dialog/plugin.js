@@ -146,7 +146,7 @@ CKEDITOR.DIALOG_STATE_BUSY = 2;
 			'<tr><td role="presentation">' +
 			'<div class="cke_dialog_body" role="presentation">' +
 				'<div id="cke_dialog_title_{id}" class="cke_dialog_title" role="presentation"></div>' +
-				'<a id="cke_dialog_close_button_{id}" {cspNonce} class="cke_dialog_close_button" href="javascript:void(0)" title="{closeTitle}" role="button"><span class="cke_label">X</span></a>' +
+				'<a id="cke_dialog_close_button_{id}" class="cke_dialog_close_button" href="javascript:void(0)" title="{closeTitle}" role="button"><span class="cke_label">X</span></a>' +
 				'<div id="cke_dialog_tabs_{id}" class="cke_dialog_tabs" role="tablist"></div>' +
 				'<table class="cke_dialog_contents" role="presentation">' +
 				'<tr>' +
@@ -169,8 +169,7 @@ CKEDITOR.DIALOG_STATE_BUSY = 2;
 			langCode: editor.langCode,
 			editorDialogClass: 'cke_editor_' + editor.name.replace( /\./g, '\\.' ) + '_dialog',
 			closeTitle: editor.lang.common.close,
-			hidpi: CKEDITOR.env.hidpi ? 'cke_hidpi' : '',
-			cspNonce: editor.config.cspNonce ? ' nonce="' + editor.config.cspNonce + '"' : ''
+			hidpi: CKEDITOR.env.hidpi ? 'cke_hidpi' : ''
 		} ) );
 
 		// TODO: Change this to getById(), so it'll support custom templates.
@@ -186,7 +185,6 @@ CKEDITOR.DIALOG_STATE_BUSY = 2;
 			var src = 'javascript:void(function(){' + encodeURIComponent( 'document.open();(' + CKEDITOR.tools.fixDomain + ')();document.close();' ) + '}())', // jshint ignore:line
 				iframe = CKEDITOR.dom.element.createFromHtml( '<iframe' +
 					' frameBorder="0"' +
-					( editor.config.cspNonce ? ' nonce="' + editor.config.cspNonce + '"' : '' ) +
 					' class="cke_iframe_shim"' +
 					' src="' + src + '"' +
 					' tabIndex="-1"' +
@@ -1169,7 +1167,6 @@ CKEDITOR.DIALOG_STATE_BUSY = 2;
 					( !!contents.hidden ? ' style="display:none"' : '' ),
 					' id="', tabId, '"',
 					env.gecko && !env.hc ? '' : ' href="javascript:void(0)"',
-					( this._.editor.config.cspNonce ? ' nonce="' + this._.editor.config.cspNonce + '"' : '' ),
 					' tabIndex="-1"',
 					' hidefocus="true"',
 					' role="tab">',
@@ -2037,7 +2034,6 @@ CKEDITOR.DIALOG_STATE_BUSY = 2;
 				'<div' +
 				' class="cke_resizer' + direction + ' cke_resizer_' + editor.lang.dir + '"' +
 				' title="' + CKEDITOR.tools.htmlEncode( editor.lang.common.resize ) + '"' +
-				( editor.config.cspNonce ? ' nonce="' + editor.config.cspNonce + '"' : '' ) +
 				' onmousedown="CKEDITOR.tools.callFunction(' + mouseDownFn + ', event )">' +
 				// BLACK LOWER RIGHT TRIANGLE (ltr)
 				// BLACK LOWER LEFT TRIANGLE (rtl)
@@ -2135,7 +2131,6 @@ CKEDITOR.DIALOG_STATE_BUSY = 2;
 					' hidefocus="true"' +
 					' frameborder="0"' +
 					' id="cke_dialog_background_iframe"' +
-					( config.cspNonce ? ' nonce="' + config.cspNonce + '"' : '' ) +
 					' src="javascript:' );
 
 				html.push( 'void((function(){' + encodeURIComponent(
