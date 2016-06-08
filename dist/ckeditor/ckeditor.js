@@ -62,7 +62,7 @@ if ( !window.CKEDITOR ) {
 			 *
 			 *		alert( CKEDITOR.revision ); // e.g. '3975'
 			 */
-			revision: '02db2fc',
+			revision: '5718655',
 
 			/**
 			 * A 3-digit random integer, valid for the entire life of the CKEDITOR object.
@@ -54431,7 +54431,7 @@ CKEDITOR.config.toolbarLocation = 'top';
         }
 
         if (cmdShowTranslator.previousState === CKEDITOR.TRISTATE_OFF) {
-            fireResize(editor);
+            fireResize(this);
             this.fire('translate:enabled');
         }
 
