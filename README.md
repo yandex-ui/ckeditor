@@ -12,7 +12,7 @@
 
 Для этого обязательно должен быть установлен [JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
 
-После в консоли запускаем
+Затем в консоли запускаем
 ```
 $ make
 ```
