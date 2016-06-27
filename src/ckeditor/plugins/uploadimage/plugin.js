@@ -1,5 +1,5 @@
 /**
- * @license Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
+ * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
  * For licensing, see LICENSE.md or http://ckeditor.com/license
  */
 
@@ -27,10 +27,7 @@
 				uploadUrl = fileTools.getUploadUrl( editor.config, 'image' );
 
 			if ( !uploadUrl ) {
-				window.console && window.console.log(
-					'Error: Upload URL for the Upload Image feature was not defined. ' +
-					'For more information see: http://docs.ckeditor.com/#!/guide/dev_file_upload'
-				);
+				CKEDITOR.error( 'uploadimage-config' );
 				return;
 			}
 

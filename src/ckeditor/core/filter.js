@@ -1,5 +1,5 @@
 /**
- * @license Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
+ * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
  * For licensing, see LICENSE.md or http://ckeditor.com/license
  */
 
@@ -1248,22 +1248,20 @@
 			styles = styleDef.styles,
 			attrs = styleDef.attributes || {};
 
-		if ( styles ) {
+		if ( styles && !CKEDITOR.tools.isEmpty( styles ) ) {
 			styles = copy( styles );
 			attrs.style = CKEDITOR.tools.writeCssText( styles, true );
 		} else {
 			styles = {};
 		}
 
-		var el = {
+		return {
 			name: styleDef.element,
 			attributes: attrs,
 			classes: attrs[ 'class' ] ? attrs[ 'class' ].split( /\s+/ ) : [],
 			styles: styles,
 			children: []
 		};
-
-		return el;
 	}
 
 	// Mock hash based on string.
@@ -1689,7 +1687,7 @@
 		switch ( element.name ) {
 			case 'a':
 				// Code borrowed from htmlDataProcessor, so ACF does the same clean up.
-				if ( !( element.children.length || element.attributes.name ) )
+				if ( !( element.children.length || element.attributes.name || element.attributes.id ) )
 					return false;
 				break;
 			case 'img':
@@ -1873,6 +1871,7 @@
 	//
 	// TRANSFORMATIONS --------------------------------------------------------
 	//
+	var transformationsTools;
 
 	// Apply given transformations group to the element.
 	function applyTransformationsGroup( filter, element, group ) {
@@ -2021,7 +2020,7 @@
 	 * @class CKEDITOR.filter.transformationsTools
 	 * @singleton
 	 */
-	var transformationsTools = CKEDITOR.filter.transformationsTools = {
+	transformationsTools = CKEDITOR.filter.transformationsTools = {
 		/**
 		 * Converts `width` and `height` attributes to styles.
 		 *
@@ -2218,6 +2217,9 @@
  * useful when you want to "trim down" the content allowed by default by
  * editor features. To do that, use the {@link #disallowedContent} option.
  *
+ * Read more in the [documentation](#!/guide/dev_acf)
+ * and see the [SDK sample](http://sdk.ckeditor.com/samples/acf.html).
+ *
  * @since 4.1
  * @cfg {CKEDITOR.filter.allowedContentRules/Boolean} [allowedContent=null]
  * @member CKEDITOR.config
@@ -2246,7 +2248,9 @@
  *			}
  *		} );
  *
- * See {@link CKEDITOR.config#allowedContent} for more details.
+ * Read more in the [documentation](#!/guide/dev_acf-section-automatic-mode-and-allow-additional-tags%2Fproperties)
+ * and see the [SDK sample](http://sdk.ckeditor.com/samples/acf.html).
+ * See also {@link CKEDITOR.config#allowedContent} for more details.
  *
  * @since 4.1
  * @cfg {Object/String} extraAllowedContent
@@ -2257,6 +2261,8 @@
  * Disallowed content rules. They have precedence over {@link #allowedContent allowed content rules}.
  * Read more in the [Disallowed Content guide](#!/guide/dev_disallowed_content).
  *
+ * Read more in the [documentation](#!/guide/dev_acf-section-automatic-mode-but-disallow-certain-tags%2Fproperties)
+ * and see the [SDK sample](http://sdk.ckeditor.com/samples/acf.html).
  * See also {@link CKEDITOR.config#allowedContent} and {@link CKEDITOR.config#extraAllowedContent}.
  *
  * @since 4.4

@@ -1,7 +1,9 @@
-﻿/**
- * @license Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
+/**
+ * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
  * For licensing, see LICENSE.md or http://ckeditor.com/license
  */
+
+CKEDITOR.config.richcombo_showText = false;
 
 CKEDITOR.plugins.add( 'richcombo', {
 	requires: 'floatpanel,listblock,button',
@@ -39,17 +41,17 @@ CKEDITOR.plugins.add( 'richcombo', {
 		' onfocus="return CKEDITOR.tools.callFunction({focusFn},event);" ' +
 			( CKEDITOR.env.ie ? 'onclick="return false;" onmouseup' : 'onclick' ) + // #188
 				'="CKEDITOR.tools.callFunction({clickFn},this);return false;">' +
-			'<span id="{id}_text" class="cke_combo_text cke_combo_inlinelabel">{label}</span>' +
-			'<span class="cke_combo_open">' +
-				'<span class="cke_combo_arrow">' +
-				// BLACK DOWN-POINTING TRIANGLE
-	( CKEDITOR.env.hc ? '&#9660;' : CKEDITOR.env.air ? '&nbsp;' : '' ) +
-				'</span>' +
+			'{icoHtml}{textHtml}' +
+			'<span class="cke_combo_arrow">' +
+			// BLACK DOWN-POINTING TRIANGLE
+( CKEDITOR.env.hc ? '&#9660;' : CKEDITOR.env.air ? '&nbsp;' : '' ) +
 			'</span>' +
 		'</a>' +
 		'</span>';
 
 	var rcomboTpl = CKEDITOR.addTemplate( 'combo', template );
+
+	var btnTextTpl = CKEDITOR.addTemplate( 'combo_text', '<span id="{id}_text" class="cke_combo_text cke_combo_inlinelabel">{label}</span>' );
 
 	/**
 	 * Button UI element.
@@ -223,16 +225,26 @@ CKEDITOR.plugins.add( 'richcombo', {
 				// For clean up
 				instance.keyDownFn = keyDownFn;
 
+				var name = this.name || this.command;
+				var iconName = name;
+				var icoHtml = '';
+
+				if (!this.onlyLabel) {
+					icoHtml = this.icoTmpl ? this.icoTmpl.output({ id: id, iconName: iconName }) : '';
+				}
+
 				var params = {
 					id: id,
-					name: this.name || this.command,
+					name: name,
 					label: this.label,
 					title: this.title,
 					cls: this.className || '',
 					titleJs: env.gecko && !env.hc ? '' : ( this.title || '' ).replace( "'", '' ),
 					keydownFn: keyDownFn,
 					focusFn: focusFn,
-					clickFn: clickFn
+					clickFn: clickFn,
+					icoHtml: icoHtml,
+					textHtml: (editor.config.richcombo_showText || this.onlyLabel) ? btnTextTpl.output({ id: id, label: this.label }) : ''
 				};
 
 				rcomboTpl.output( params, output );

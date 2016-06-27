@@ -25,6 +25,18 @@
 [submodule "plugins/exselection"]
 	path = plugins/exselection
 	url = https://github.com/yandex-ui/ckeditor-exselection.git
+[submodule "skins/clean"]
+	path = skins/clean
+	url = https://github.com/yandex-ui/ckeditor-skin-clean.git
+[submodule "plugins/svgicons"]
+	path = plugins/svgicons
+	url = https://github.com/yandex-ui/ckeditor-svgicons.git
+[submodule "plugins/switchmode"]
+	path = plugins/switchmode
+	url = https://github.com/yandex-ui/ckeditor-switchmode.git
 [submodule "plugins/htmlplaceholder"]
 	path = plugins/htmlplaceholder
 	url = https://github.com/yandex-ui/ckeditor-htmlplaceholder.git
+[submodule "plugins/translate"]
+	path = plugins/translate
+	url = https://github.com/yandex-ui/ckeditor-translate.git

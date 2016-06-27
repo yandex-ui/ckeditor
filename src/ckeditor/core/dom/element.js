@@ -1,5 +1,5 @@
 /**
- * @license Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
+ * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
  * For licensing, see LICENSE.md or http://ckeditor.com/license
  */
 
@@ -154,8 +154,8 @@ CKEDITOR.dom.element.clearMarkers = function( database, element, removeFromDatab
 };
 
 ( function() {
-	var testElement = document.createElement( 'span' ),
-		supportsClassLists = !!testElement.classList,
+	var elementsClassList = document.createElement( '_' ).classList,
+		supportsClassLists = typeof elementsClassList !== 'undefined' && String( elementsClassList.add ).match( /\[Native code\]/gi ) !== null,
 		rclass = /[\n\t\r]/g;
 
 	function hasClass( classNames, className ) {
@@ -609,6 +609,28 @@ CKEDITOR.dom.element.clearMarkers = function( database, element, removeFromDatab
 				return standard;
 			}
 		} )(),
+
+		/**
+		 * Gets the values of all element attributes.
+		 *
+		 * @param {Array} exclude The names of attributes to be excluded from the returned object.
+		 * @return {Object} An object containing all element attributes with their values.
+		 */
+		getAttributes: function( exclude ) {
+			var attributes = {},
+				attrDefs = this.$.attributes,
+				i;
+
+			exclude = CKEDITOR.tools.isArray( exclude ) ? exclude : [];
+
+			for ( i = 0; i < attrDefs.length; i++ ) {
+				if ( CKEDITOR.tools.indexOf( exclude, attrDefs[ i ].name ) === -1 ) {
+					attributes[ attrDefs[ i ].name ] = attrDefs[ i ].value;
+				}
+			}
+
+			return attributes;
+		},
 
 		/**
 		 * Gets the nodes list containing all children of this element.
@@ -1292,11 +1314,15 @@ CKEDITOR.dom.element.clearMarkers = function( database, element, removeFromDatab
 		 */
 		removeAttributes: function( attributes ) {
 			if ( CKEDITOR.tools.isArray( attributes ) ) {
-				for ( var i = 0; i < attributes.length; i++ )
+				for ( var i = 0; i < attributes.length; i++ ) {
 					this.removeAttribute( attributes[ i ] );
+				}
 			} else {
-				for ( var attr in attributes )
+				attributes = attributes || this.getAttributes();
+
+				for ( var attr in attributes ) {
 					attributes.hasOwnProperty( attr ) && this.removeAttribute( attr );
+				}
 			}
 		},
 
@@ -1846,11 +1872,15 @@ CKEDITOR.dom.element.clearMarkers = function( database, element, removeFromDatab
 		 * Disables browser's context menu in this element.
 		 */
 		disableContextMenu: function() {
-			this.on( 'contextmenu', function( event ) {
+			this.on( 'contextmenu', function( evt ) {
 				// Cancel the browser context menu.
-				if ( !event.data.getTarget().hasClass( 'cke_enable_context_menu' ) )
-					event.data.preventDefault();
+				if ( !evt.data.getTarget().getAscendant( enablesContextMenu, true ) )
+					evt.data.preventDefault();
 			} );
+
+			function enablesContextMenu( node ) {
+				return node.type == CKEDITOR.NODE_ELEMENT && node.hasClass( 'cke_enable_context_menu' );
+			}
 		},
 
 		/**
