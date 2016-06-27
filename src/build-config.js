@@ -4,7 +4,7 @@
 
 /* exported CKBUILDER_CONFIG */
 var CKBUILDER_CONFIG = {
-    skin: 'moono',
+    skin: 'clean',
     ignore: [
         '.bender',
         '.DS_Store',
@@ -60,7 +60,6 @@ var CKBUILDER_CONFIG = {
         dialogadvtab: 1, // вкладки для диалоговых окон
         div: 0, // кнопка создать div контейнер
         divarea: 1, // замена iframe на div
-        divareasb: 0, // песочница для divarea, превентит некоторые события
         elementspath: 0, // вывод пути вложенности элементов в подвале редактора
         enterkey: 1, // реализует настройку enterMode - какой тег будет подставлен по клику на Enter
         entities: 1, // экранирование HTML
@@ -109,12 +108,15 @@ var CKBUILDER_CONFIG = {
         sourcearea: 1, // показать исходный документ
         specialchar: 0, // специальные символы
         stylescombo: 0, // добавляит кнопку выбора специальных стилей
+        svgicons: 1, // svg иконки для темы clean
+        switchmode: 1, // переключение режима оформления
         tab: 1, // обработка навигации по табам
         table: 1,
         tableresize: 0,
         tabletools: 0, // зависит от contextmenu
         templates: 0, // диалог выбора шаблонов
         toolbar: 1,
+        translate: 1, // интерфейс переводчика
         undo: 1,
         wysiwygarea: 1,
         xss: 1 // набор фильтров против xss

@@ -9,6 +9,7 @@
 .travis.yml
 node_modules
 bower_components
+samples/ckeditor
 src
 test
 coverage
