@@ -1,132 +1,113 @@
-/*
-Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
-For licensing, see LICENSE.md or http://ckeditor.com/license
-*/
-
-body
-{
-	/* Font */
-	font-family: sans-serif, Arial, Verdana, "Trebuchet MS";
-	font-size: 12px;
-
-	/* Text color */
-	color: #333;
-
-	/* Remove the background color to make it transparent */
-	background-color: #fff;
-
-	margin: 20px;
+.cke_editable {
+  font: 14px Arial, sans-serif;
+  line-height: normal;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: block;
 }
-
-.cke_editable
-{
-	font-size: 13px;
-	line-height: 1.6;
+.cke_editable:not(#cke_pastebin) {
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
-
-blockquote
-{
-	font-style: italic;
-	font-family: Georgia, Times, "Times New Roman", serif;
-	padding: 2px 0;
-	border-style: solid;
-	border-color: #ccc;
-	border-width: 0;
+.cke_maximized .cke_source {
+  padding: 0 10px;
 }
-
-.cke_contents_ltr blockquote
-{
-	padding-left: 20px;
-	padding-right: 8px;
-	border-left-width: 5px;
+.cke_editable h1 {
+  font-size: 2em;
 }
-
-.cke_contents_rtl blockquote
-{
-	padding-left: 8px;
-	padding-right: 20px;
-	border-right-width: 5px;
+.cke_editable h2 {
+  font-size: 1.5em;
 }
-
-a
-{
-	color: #0782C1;
+.cke_editable h3 {
+  font-size: 1.2em;
 }
-
-ol,ul,dl
-{
-	/* IE7: reset rtl list margin. (#7334) */
-	*margin-right: 0px;
-	/* preserved spaces for list items with text direction other than the list. (#6249,#8049)*/
-	padding: 0 40px;
+.cke_editable h4 {
+  font-size: 1em;
 }
-
-h1,h2,h3,h4,h5,h6
-{
-	font-weight: normal;
-	line-height: 1.2;
+.cke_editable h5 {
+  font-size: 0.8em;
 }
-
-hr
-{
-	border: 0px;
-	border-top: 1px solid #ccc;
+.cke_editable h6 {
+  font-size: 0.7em;
 }
-
-img.right
-{
-	border: 1px solid #ccc;
-	float: right;
-	margin-left: 15px;
-	padding: 5px;
+.cke_editable img {
+  border: 0;
 }
-
-img.left
-{
-	border: 1px solid #ccc;
-	float: left;
-	margin-right: 15px;
-	padding: 5px;
+.cke_editable img.right {
+  border: 1px solid #ccc;
+  float: right;
+  margin-left: 15px;
+  padding: 5px;
 }
-
-pre
-{
-	white-space: pre-wrap; /* CSS 2.1 */
-	word-wrap: break-word; /* IE7 */
-	-moz-tab-size: 4;
-	tab-size: 4;
+.cke_editable img.left {
+  border: 1px solid #ccc;
+  float: left;
+  margin-right: 15px;
+  padding: 5px;
 }
-
-.marker
-{
-	background-color: Yellow;
+.cke_editable ins {
+  border-bottom: 1px solid #008000;
+  text-decoration: none;
+  color: #008000;
 }
-
-span[lang]
-{
-	font-style: italic;
+.cke_editable del {
+  color: #f00;
+  text-decoration: line-through;
 }
-
-figure
-{
-	text-align: center;
-	border: solid 1px #ccc;
-	border-radius: 2px;
-	background: rgba(0,0,0,0.05);
-	padding: 10px;
-	margin: 10px 20px;
-	display: inline-block;
+.cke_editable cite {
+  border-bottom: 1px dashed #00f;
 }
-
-figure > figcaption
-{
-	text-align: center;
-	display: block; /* For IE8 */
+.cke_editable acronym {
+  border-bottom: 1px dotted #ccc;
+  cursor: help;
 }
-
-a > img {
-	padding: 1px;
-	margin: 1px;
-	border: none;
-	outline: 1px solid #0782C1;
+.cke_editable abbr {
+  border-bottom: 1px dashed #ccc;
+  cursor: help;
+}
+.cke_editable blockquote {
+  _border: 1px solid #fff;
+  border-left: 1px solid #ccc;
+  margin: 0 0 0 1em;
+  padding-left: 1em;
+}
+.cke_editable table {
+  cursor: default;
+}
+.cke_editable pre {
+  white-space: pre-line;
+}
+.cke_editable a:link {
+  cursor: pointer;
+  color: #00e;
+}
+.cke_editable a:visited {
+  color: #609;
+}
+.cke_editable a:hover,
+.cke_editable a:visited:hover {
+  color: #f00;
+}
+.cke_editable .marker {
+  background-color: Yellow;
+}
+.cke_editable span[lang] {
+  font-style: italic;
+}
+.cke_editable figure {
+  text-align: center;
+  border: solid 1px #ccc;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
+  background: rgba(0,0,0,0.05);
+  padding: 10px;
+  margin: 10px 20px;
+  display: inline-block;
+}
+.cke_editable figure > figcaption {
+  text-align: center;
+  display: block;
 }
