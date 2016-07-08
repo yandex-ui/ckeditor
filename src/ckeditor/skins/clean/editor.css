@@ -1404,6 +1404,9 @@ legend.cke_voice_label {
 .cke_editable pre {
   white-space: pre-line;
 }
+.cke_editable code {
+  white-space: pre-wrap;
+}
 .cke_editable a:link {
   cursor: pointer;
   color: #00e;
