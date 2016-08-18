@@ -72,7 +72,7 @@
         config.browserContextMenuOnCtrl = true;
         config.customConfig = '';
         config.disableNativeSpellChecker = false;
-        config.disallowedContent = '*{position,z-index}';
+        config.disallowedContent = '*{position,z-index}; pre code{white-space}';
         config.docType = '<!DOCTYPE html>';
         config.enterMode = CKEDITOR.ENTER_DIV;
         config.pasteFilter = allowFilter;
