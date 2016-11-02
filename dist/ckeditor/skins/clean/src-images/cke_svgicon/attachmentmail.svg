@@ -6,7 +6,7 @@
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Artboard-413" transform="translate(-967.000000, -181.000000)"></g>
-        <g id="Mail-16" fill="#000000">
+        <g id="Mail-16" fill="currentColor">
             <path d="M0,14 L16,14 L16,2 L0,2 L0,14 Z M14,3.79 L14,12 L2,12 L2,3.79 L8,9.156 L14,3.79 Z" id="Shape"></path>
         </g>
     </g>
