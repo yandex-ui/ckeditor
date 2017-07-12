@@ -37,14 +37,14 @@
 		attach();
 
 		function attach() {
-			var element = editor.ui.space( 'contents' ).$.querySelector( 'textarea' );
-			element.removeEventListener( 'input', inputListener );
-
 			if ( editor.mode !== 'source' ) {
 				return;
 			}
 
+			var element = editor.ui.space( 'contents' ).$.querySelector( 'textarea' );
+			element.removeEventListener( 'input', inputListener );
 			element.addEventListener( 'input', inputListener );
+
 			resize( element );
 		}
 
