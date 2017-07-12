@@ -17,10 +17,12 @@
 				return;
 
 			editor.on( 'instanceReady', function() {
-				if (editor.config.autoGrow_enable) {
+				if ( editor.config.autoGrow_enable ) {
 					// Simply set auto height with div wysiwyg.
-					if ( editor.editable().isInline() )
+					if ( editor.editable().isInline() ) {
 						editor.ui.space( 'contents' ).setStyle( 'height', 'auto' );
+						initSourceModeAutogrow( editor );
+					}
 					// For classic (`iframe`-based) wysiwyg we need to resize the editor.
 					else
 						initIframeAutogrow( editor );
@@ -28,6 +30,49 @@
 			} );
 		}
 	} );
+
+	function initSourceModeAutogrow( editor ) {
+
+		editor.on( 'mode', attach );
+		attach();
+
+		function attach() {
+			var element = editor.ui.space( 'contents' ).$.querySelector( 'textarea' );
+			element.removeEventListener( 'input', inputListener );
+
+			if ( editor.mode !== 'source' ) {
+				return;
+			}
+
+			element.addEventListener( 'input', inputListener );
+			resize( element );
+		}
+
+		function inputListener ( event ) {
+			resize( event.target );
+		}
+
+		// Inspired by https://github.com/LeaVerou/stretchy/blob/68202ae3078fb912d6182b00a865f77cc5bae54e/stretchy.js#L35-L146
+		function resize( element ) {
+			var empty;
+
+			if ( !element.value && element.placeholder ) {
+				empty = true;
+				element.value = element.placeholder;
+			}
+
+			element.style.height = '0';
+
+			var cs = getComputedStyle( element );
+			var offset = parseFloat( cs.minHeight || 0 ) - element.clientHeight;
+
+			element.style.height = element.scrollHeight + offset + 'px';
+
+			if ( empty ) {
+				element.value = '';
+			}
+		}
+	}
 
 	function initIframeAutogrow( editor ) {
 		var lastHeight,
