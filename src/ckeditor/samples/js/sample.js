@@ -13,6 +13,8 @@ if ( CKEDITOR.env.ie && CKEDITOR.env.version < 9 )
 CKEDITOR.config.height = 150;
 CKEDITOR.config.width = 'auto';
 
+CKEDITOR.env.nonce = 'EDNnf03nceIOfn39fn3e9h3sdfa';
+
 var initSample = ( function() {
 	var wysiwygareaAvailable = isWysiwygareaAvailable(),
 		isBBCodeBuiltIn = !!CKEDITOR.plugins.get( 'bbcode' );

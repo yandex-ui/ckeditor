@@ -85,7 +85,7 @@ CKEDITOR.plugins.add( 'menu', {
 		' class="cke_menubutton cke_menubutton__{name} cke_menubutton_{state} {cls}" href="{href}"' +
 		' title="{title}"' +
 		' tabindex="-1"' +
-		'_cke_focus=1' +
+		' _cke_focus=1' +
 		' hidefocus="true"' +
 		' role="{role}"' +
 		' aria-haspopup="{hasPopup}"' +
