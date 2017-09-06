@@ -1,6 +1,6 @@
-'use strict';
-
 ( function() {
+	'use strict';
+
 	var JAVASCRIPT_PROTOCOL_EXP = /^\s*javascript\s*:(.*)$/i;
 	var USELESS_JAVASCRIPT_EXP = /^\s*void\s*\(?\s*(?:'[^']*'|"[^"]*"|\d*)\s*\)?\s*;?\s*$/i;
 
@@ -261,9 +261,7 @@
 						}
 
 						if ( name.substring( 0, 2 ) === 'on' ) {
-							if ( !EVENTS_MAP.hasOwnProperty( name ) ) {
-								console.error( 'CKEDITOR.csp: Event "' + name + '" is not found in EVENTS_MAP!' );
-							}
+							console.error( 'CKEDITOR.csp: Event "' + name + '" is not found in EVENTS_MAP!' );
 						}
 
 						if ( svg && name === 'xlink:href' ) {
@@ -355,9 +353,7 @@
 						}
 
 						if ( name.substring( 0, 2 ) === 'on' ) {
-							if ( !EVENTS_MAP.hasOwnProperty( name ) ) {
-								console.error( 'CKEDITOR.csp: Event "' + name + '" is not found in EVENTS_MAP!' );
-							}
+							console.error( 'CKEDITOR.csp: Event "' + name + '" is not found in EVENTS_MAP!' );
 						}
 
 						if ( name === 'class' ) {
