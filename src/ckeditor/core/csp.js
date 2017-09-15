@@ -13,7 +13,8 @@
 		onclick: true,
 		onload: true,
 		onmouseover: true,
-		onmouseout: true
+		onmouseout: true,
+		onmouseup: true
 	};
 
 	var SVG_NS = 'http://www.w3.org/2000/svg';
