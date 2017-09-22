@@ -109,7 +109,7 @@
 			script.text = this._stack.join( '' );
 			this._stack.length = 0;
 
-			head.append( script );
+			head.appendChild( script );
 		}
 
 	} );
