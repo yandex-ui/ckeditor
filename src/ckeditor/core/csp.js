@@ -1,24 +1,8 @@
 ( function() {
 	'use strict';
 
-	var JAVASCRIPT_PROTOCOL_EXP = /^\s*javascript\s*:(.*)$/i;
-	var USELESS_JAVASCRIPT_EXP = /^\s*void\s*\(?\s*(?:'[^']*'|"[^"]*"|\d*)\s*\)?\s*;?\s*$/i;
-
-	var EVENTS_MAP = {
-		onmousedown: true,
-		onkeydown: true,
-		onkeypress: true,
-		onfocus: true,
-		onblur: true,
-		onclick: true,
-		onload: true,
-		onmouseover: true,
-		onmouseout: true,
-		onmouseup: true
-	};
-
-	var SVG_NS = 'http://www.w3.org/2000/svg';
-	var SVG_XLINK_NS = 'http://www.w3.org/1999/xlink';
+	var JS_PROTOCOL_REG_EXP = /^\s*javascript\s*:(.*)$/i;
+	var USELESS_JS_REG_EXP = /^\s*void\s*\(?\s*(?:'[^']*'|"[^"]*"|\d*)\s*\)?\s*;?\s*$/i;
 
 	function TrustScriptInjector() {
 		this._stack = [];
@@ -30,38 +14,12 @@
 
 	CKEDITOR.tools.extend( TrustScriptInjector.prototype, {
 
-		addEventListener: function( element, eventName, body ) {
-			var fn = this.createFunction( body, [ 'event' ] );
-
-			var listener = function( event ) {
-				var result = fn.call( this, event );
-				if ( result === false ) {
-					event.preventDefault();
-				}
-			};
-
-			element.addEventListener( eventName, listener, false );
+		createEventFunction: function( body ) {
+			return this.createFunction( body, [ 'event' ] );
 		},
 
-		addHrefJavascript: function( element, body ) {
-			var match = body.match( JAVASCRIPT_PROTOCOL_EXP );
-			if ( !match ) {
-				return;
-			}
-
-			var fn = null;
-			if ( !USELESS_JAVASCRIPT_EXP.test( match[ 1 ] ) ) {
-				fn = this.createFunction( 'return ' + match[ 1 ] );
-			}
-
-			var listener = function( event ) {
-				event.preventDefault();
-				if ( fn ) {
-					fn();
-				}
-			};
-
-			element.addEventListener( 'click', listener, false );
+		createHrefFunction: function( body ) {
+			return this.createFunction( 'return ' + body );
 		},
 
 		createFunction: function( body, args ) {
@@ -101,19 +59,20 @@
 		_finishFlushPhase: function() {
 			this._flushPhase = false;
 
-			var head = document.querySelector( 'head' );
-			var script = document.createElement( 'script' );
-			script.type = 'text/javascript';
-			script.setAttribute( 'nonce', CKEDITOR.env.nonce );
+			if ( this._stack.length > 0 ) {
+				var head = document.querySelector( 'head' );
+				var script = document.createElement( 'script' );
+				script.type = 'text/javascript';
+				script.setAttribute( 'nonce', CKEDITOR.env.nonce );
 
-			script.text = this._stack.join( '' );
-			this._stack.length = 0;
+				script.text = this._stack.join( '' );
+				this._stack.length = 0;
 
-			head.appendChild( script );
+				head.appendChild( script );
+			}
 		}
 
 	} );
-
 
 
 	function TrustScriptBinderSection() {
@@ -124,13 +83,13 @@
 	CKEDITOR.tools.extend( TrustScriptBinderSection.prototype, {
 
 		addHrefJavascript: function( body ) {
-			var match = body.match( JAVASCRIPT_PROTOCOL_EXP );
+			var match = body.match( JS_PROTOCOL_REG_EXP );
 			if ( !match ) {
 				return;
 			}
 
 			var content = '';
-			if ( !USELESS_JAVASCRIPT_EXP.test( match[ 1 ] ) ) {
+			if ( !USELESS_JS_REG_EXP.test( match[ 1 ] ) ) {
 				content = 'return ' + match[ 1 ] + ';';
 			}
 
@@ -221,6 +180,10 @@
 		this._scriptInjector = new TrustScriptInjector();
 	}
 
+	var TAG_REG_EXP = /<[^>]+>/g;
+	var EVENTS_REG_EXP = /(\s)on(mousedown|mouseover|mouseout|mouseup|keydown|keypress|focus|blur|click)\s*=\s*("[^"]*"|'[^']*')/gi;
+	var HREF_JS_REG_EXP = /(\s)href\s*=\s*(?:(")\s*javascript\s*:([^"]*)"|(')\s*javascript\s*:([^']*)')/gi;
+
 	CKEDITOR.tools.extend( Csp.prototype, {
 
 		trustSetInnerHtml: function( target, html ) {
@@ -230,84 +193,81 @@
 			}
 
 			var scriptInjector = this._scriptInjector;
-			var parser = new CKEDITOR.htmlParser();
-			var fragment = document.createDocumentFragment();
-			var stack = [ fragment ];
-			var svg = false;
 
-			parser.onTagOpen = function( tagName, attributes, selfClosing ) {
-				if ( tagName === 'svg' ) {
-					svg = true;
-				}
+			var output = html
+				.replace( TAG_REG_EXP, function( tag ) {
+					return tag
+						.replace( EVENTS_REG_EXP, function( match, space, eventName, body ) {
+							scriptInjector.createEventFunction( body.slice( 1, -1 ) );
 
-				var element;
-				if ( svg ) {
-					element = document.createElementNS( SVG_NS, tagName );
-				} else {
-					element = document.createElement( tagName );
-				}
+							return space + 'data-cke-csp-event-' + eventName + '=' + body;
+						} )
+						.replace( HREF_JS_REG_EXP, function( match, space, quote, body ) {
+							var prefix = '';
+							if ( USELESS_JS_REG_EXP.test( body ) ) {
+								prefix = 'useless-';
 
-				for ( var name in attributes ) {
-					if ( attributes.hasOwnProperty( name ) ) {
-						var value = attributes[ name ];
+							} else {
+								scriptInjector.createHrefFunction( body );
+							}
 
-						if ( name === 'href' && JAVASCRIPT_PROTOCOL_EXP.test( value ) ) {
-							scriptInjector.addHrefJavascript( element, value );
-							continue;
-						}
+							return space + 'data-cke-csp-href-' + prefix + 'javascript=' + quote + body + quote;
+						} );
+				} );
 
-						if ( EVENTS_MAP.hasOwnProperty( name ) ) {
-							scriptInjector.addEventListener( element, name.slice( 2 ), value );
-							continue;
-						}
+			target.innerHTML = output;
 
-						if ( name.substring( 0, 2 ) === 'on' ) {
-							console.error( 'CKEDITOR.csp: Event "' + name + '" is not found in EVENTS_MAP!' );
-						}
-
-						if ( svg && name === 'xlink:href' ) {
-							element.setAttributeNS( SVG_XLINK_NS, 'href', value );
-							continue;
-						}
-
-						element.setAttribute( name, value );
-					}
-				}
-
-				var container = stack[ stack.length - 1 ];
-				container.appendChild( element );
-
-				if ( !selfClosing ) {
-					stack.push( element );
-				}
-			};
-
-			parser.onTagClose = function( tagName ) {
-				if ( tagName === 'svg' ) {
-					svg = false;
-				}
-
-				stack.pop();
-			};
-
-			parser.onText = function( text ) {
-				var container = stack[ stack.length - 1 ];
-				container.appendChild( document.createTextNode( CKEDITOR.tools.htmlDecode( text ) ) );
-			};
-
-			parser.onComment = function( comment ) {
-				var container = stack[ stack.length - 1 ];
-				container.appendChild( document.createComment( comment ) );
-			};
-
-			parser.parse( html );
-
-			target.innerHTML = '';
-
-			var nodes = Array.prototype.slice.call( fragment.childNodes );
-			nodes.forEach( function( node ) {
-				target.appendChild( node );
+			var eventsUsed = {};
+			output.replace( /data-cke-csp-event-([^\s=]+)[\s=]/gi, function( match, eventName ) {
+				eventsUsed[ eventName ] = true;
 			} );
+
+			Object.keys( eventsUsed ).forEach(function( eventName ) {
+				var dataAttrName = 'data-cke-csp-event-' + eventName;
+				var nodes = target.querySelectorAll( '[' + dataAttrName + ']' );
+
+				[].forEach.call( nodes || [], function( node ) {
+					node.addEventListener( eventName, function( event ) {
+						var node = this;
+						if ( !node.hasAttribute( dataAttrName ) ) {
+							return;
+						}
+						var body = node.getAttribute( dataAttrName );
+						var fn = scriptInjector.createEventFunction( body );
+						var result = fn.call( this, event );
+						if ( result === false ) {
+							event.preventDefault();
+						}
+					} );
+				} );
+			} );
+
+			var jsHrefUsed = /data-cke-csp-href-/i.test( output );
+
+			if ( jsHrefUsed ) {
+				var nodes = target.querySelectorAll(
+					'[data-cke-csp-href-useless-javascript], [data-cke-csp-href-javascript]'
+				);
+
+				[].forEach.call( nodes || [], function( node ) {
+					node.addEventListener( 'click', function( event ) {
+						var node = this;
+						if ( node.hasAttribute( 'data-cke-csp-href-useless-javascript' ) ) {
+							event.preventDefault();
+							return;
+						}
+						var hrefDataName = 'data-cke-csp-href-javascript';
+						if ( !node.hasAttribute( hrefDataName ) ) {
+							return;
+						}
+						event.preventDefault();
+
+						var body = node.getAttribute( hrefDataName );
+						var fn = scriptInjector.createHrefFunction( body );
+						fn();
+					} );
+				} );
+			}
 		},
 
 
@@ -316,6 +276,18 @@
 				return doc.write( html );
 			}
 
+			var EVENTS_MAP = {
+				onmousedown: true,
+				onkeydown: true,
+				onkeypress: true,
+				onfocus: true,
+				onblur: true,
+				onclick: true,
+				onload: true,
+				onmouseover: true,
+				onmouseout: true,
+				onmouseup: true
+			};
 			var binder = new TrustScriptBinder();
 			var parser = new CKEDITOR.htmlParser();
 			var output = [];
@@ -337,7 +309,7 @@
 					if ( attributes.hasOwnProperty( name ) ) {
 						var value = attributes[ name ];
 
-						if ( name === 'href' && JAVASCRIPT_PROTOCOL_EXP.test( value ) ) {
+						if ( name === 'href' && JS_PROTOCOL_REG_EXP.test( value ) ) {
 							if ( !section ) {
 								section = binder.createSection();
 							}
@@ -416,9 +388,9 @@
 
 		trustSetAttribute: function( element, name, value ) {
 			if ( CKEDITOR.env.nonce && name === 'href' ) {
-				var match = String( value ).match( JAVASCRIPT_PROTOCOL_EXP );
+				var match = String( value ).match( JS_PROTOCOL_REG_EXP );
 
-				if ( match && USELESS_JAVASCRIPT_EXP.test( match[ 1 ] ) ) {
+				if ( match && USELESS_JS_REG_EXP.test( match[ 1 ] ) ) {
 					return;
 				}
 			}
