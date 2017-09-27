@@ -2,7 +2,7 @@
 	'use strict';
 
 	var JS_PROTOCOL_REG_EXP = /^\s*javascript\s*:(.*)$/i;
-	var USELESS_JS_REG_EXP = /^\s*void\s*\(?\s*(?:'[^']*'|"[^"]*"|\d*)\s*\)?\s*;?\s*$/i;
+	var USELESS_JS_REG_EXP = /^\s*void\s*\(?\s*(?:((["']).*?\2)|\d*)\s*\)?\s*;?\s*$/i;
 
 	function TrustScriptInjector() {
 		this._stack = [];
@@ -181,8 +181,8 @@
 	}
 
 	var TAG_REG_EXP = /<[^>]+>/g;
-	var EVENTS_REG_EXP = /(\s)on(mousedown|mouseover|mouseout|mouseup|keydown|keypress|focus|blur|click)\s*=\s*("[^"]*"|'[^']*')/gi;
-	var HREF_JS_REG_EXP = /(\s)href\s*=\s*(?:(")\s*javascript\s*:([^"]*)"|(')\s*javascript\s*:([^']*)')/gi;
+	var EVENTS_REG_EXP = /(\s)on(mousedown|mouseover|mouseout|mouseup|keydown|keypress|focus|blur|click)\s*=\s*((["']).*?\4)/gi;
+	var HREF_JS_REG_EXP = /(\s)href\s*=\s*(?:(["'])\s*javascript\s*:(.*?)\2)/gi;
 
 	CKEDITOR.tools.extend( Csp.prototype, {
 
@@ -229,9 +229,6 @@
 				[].forEach.call( nodes || [], function( node ) {
 					node.addEventListener( eventName, function( event ) {
 						var node = this;
-						if ( !node.hasAttribute( dataAttrName ) ) {
-							return;
-						}
 						var body = node.getAttribute( dataAttrName );
 						var fn = scriptInjector.createEventFunction( body );
 						var result = fn.call( this, event );
@@ -256,13 +253,9 @@
 							event.preventDefault();
 							return;
 						}
-						var hrefDataName = 'data-cke-csp-href-javascript';
-						if ( !node.hasAttribute( hrefDataName ) ) {
-							return;
-						}
 						event.preventDefault();
 
-						var body = node.getAttribute( hrefDataName );
+						var body = node.getAttribute( 'data-cke-csp-href-javascript' );
 						var fn = scriptInjector.createHrefFunction( body );
 						fn();
 					} );
