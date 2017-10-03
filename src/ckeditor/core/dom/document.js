@@ -273,7 +273,8 @@ CKEDITOR.tools.extend( CKEDITOR.dom.document.prototype, {
 		if ( CKEDITOR.env.ie )
 			html = html.replace( /(?:^\s*<!DOCTYPE[^>]*?>)|^/i, '$&\n<script data-cke-temp="1">(' + CKEDITOR.tools.fixDomain + ')();</script>' );
 
-		this.$.write( html );
+		CKEDITOR.csp.trustWriteHtml( this.$, html );
+
 		this.$.close();
 	},
 

@@ -495,11 +495,11 @@ CKEDITOR.dom.element.clearMarkers = function( database, element, removeFromDatab
 					// won't affect that detached element. So get document fragment with
 					// all HTML5 elements enabled and set innerHTML while this element is appended to it.
 					if ( this.getParent() )
-						return ( $.innerHTML = html );
+						return CKEDITOR.csp.trustSetInnerHtml( $, html );
 					else {
 						var $frag = this.getDocument()._getHtml5ShivFrag();
 						$frag.appendChild( $ );
-						$.innerHTML = html;
+						CKEDITOR.csp.trustSetInnerHtml( $, html );
 						$frag.removeChild( $ );
 
 						return html;
@@ -509,7 +509,7 @@ CKEDITOR.dom.element.clearMarkers = function( database, element, removeFromDatab
 					this.$.innerHTML = '';
 
 					var temp = new CKEDITOR.dom.element( 'body', this.getDocument() );
-					temp.$.innerHTML = html;
+					CKEDITOR.csp.trustSetInnerHtml( temp.$, html );
 
 					var children = temp.getChildren();
 					while ( children.count() )
@@ -518,7 +518,7 @@ CKEDITOR.dom.element.clearMarkers = function( database, element, removeFromDatab
 					return html;
 				}
 			} : function( html ) {
-				return ( this.$.innerHTML = html );
+				return CKEDITOR.csp.trustSetInnerHtml( this.$, html );
 			},
 
 		/**
@@ -1208,7 +1208,7 @@ CKEDITOR.dom.element.clearMarkers = function( database, element, removeFromDatab
 		 */
 		setAttribute: ( function() {
 			var standard = function( name, value ) {
-					this.$.setAttribute( name, value );
+					CKEDITOR.csp.trustSetAttribute( this.$, name, value );
 					return this;
 				};
 
