@@ -20,6 +20,23 @@ $ make
 
 Коммитим всё что будет измененено после пересборки.
 
+Сборка с нуля:
+```sh
+git clone git@github.com:yandex-ui/ckeditor.git
+cd ckeditor/
+
+git submodule init
+git submodule update --recursive
+
+cd src/ckeditor
+git submodule init
+git submodule update --recursive
+
+cd ../..
+# Скрипту сборки нужен JDK. Если он не установлен - всплывёт окошко установки.
+make
+```
+
 ## Обновление кода ядра или плагинов
 
 Обновление кода ядра или стандартный плагинов выполняется в репозитории [ckeditor-dev](https://github.com/yandex-ui/ckeditor-dev).
