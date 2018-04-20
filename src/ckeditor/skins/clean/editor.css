@@ -334,7 +334,7 @@ a.cke_path_item:active {
      -moz-box-orient: vertical;
      -moz-box-direction: normal;
           flex-direction: column;
-  margin-bottom: 10px;
+  padding-bottom: 10px;
 }
 .cke_maximized .cke_top {
   padding: 6px 8px 2px;
