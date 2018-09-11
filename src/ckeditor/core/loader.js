@@ -30,7 +30,7 @@ if ( !CKEDITOR.loader ) {
 			'ckeditor': [
 				'ckeditor_basic', 'log', 'dom', 'dtd', 'dom/document', 'dom/element', 'dom/iterator', 'editor', 'event',
 				'htmldataprocessor', 'htmlparser', 'htmlparser/element', 'htmlparser/fragment', 'htmlparser/filter',
-				'htmlparser/basicwriter', 'template', 'tools'
+				'htmlparser/basicwriter', 'template', 'tools', 'extensions/element-secure-get-html'
 			],
 			'ckeditor_base': [],
 			'ckeditor_basic': [ 'editor_basic', 'env', 'event' ],
