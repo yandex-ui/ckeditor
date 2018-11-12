@@ -34,16 +34,6 @@
         CKEDITOR.dtd.$removeEmpty[ tagName ] = false;
     });
 
-    /**
-     * Теги, которые не должны быть пустыми
-     */
-    [
-        'blockquote'
-
-    ].forEach(function(tagName) {
-        CKEDITOR.dtd.$removeEmpty[ tagName ] = true;
-    });
-
     CKEDITOR.on('dialogDefinition', function(ev) {
         var dialogName = ev.data.name;
         var dialogDefinition = ev.data.definition;
