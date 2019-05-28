@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+	<path fill-rule="evenodd" clip-rule="evenodd" d="M4.5 8
+		C4.22386 8 4 7.77614 4 7.5
+		V6.5
+		C4 6.22386 4.22386 6 4.5 6
+		H8.5
+		H9.5
+		H13.5
+		C13.7761 6 14 6.22386 14 6.5
+		V7.5
+		C14 7.77614 13.7761 8 13.5 8
+		H10
+		V16.5
+		C10 16.7761 9.77614 17 9.5 17
+		H8.5
+		C8.22386 17 8 16.7761 8 16.5
+		V8
+		H4.5
+		Z" fill="currentColor"/>
+	<rect x="2" y="19" width="14" height="1.5" rx="0.5" />
+</svg>
