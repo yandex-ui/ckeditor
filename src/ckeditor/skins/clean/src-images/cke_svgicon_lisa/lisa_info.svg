@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="currentColor">
+        <g id="Artboard-413" transform="translate(-730.000000, -1093.000000)"></g>
+        <g id="AttensionCircle-16">
+            <path d="M8,0 C3.582,0 0,3.582 0,8 C0,12.418 3.582,16 8,16 C12.418,16 16,12.418 16,8 C16,3.582 12.418,0 8,0 Z M8,1.8 C11.419,1.8 14.2,4.581 14.2,8 C14.2,11.419 11.419,14.2 8,14.2 C4.581,14.2 1.8,11.419 1.8,8 C1.8,4.581 4.581,1.8 8,1.8 Z M9,12 L7,12 L7,7.129 L9,7.129 L9,12 Z M9,5.894 L7,5.894 L7,4 L9,4 L9,5.894 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>
