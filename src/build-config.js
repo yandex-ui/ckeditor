@@ -48,6 +48,7 @@ var CKBUILDER_CONFIG = {
     plugins: {
         a11yhelp: 0,
         about: 0,
+        autocomplete: 1, // автокомплит в композе
         autogrow: 1, // авторазмер по содержимому
         autolink2: 1, // автосоздание ссылок по Enter
         basicstyles: 1, // базовые операции редакторования текста: жирн, курсив и проч
@@ -115,6 +116,8 @@ var CKBUILDER_CONFIG = {
         tableresize: 0,
         tabletools: 0, // зависит от contextmenu
         templates: 0, // диалог выбора шаблонов
+        textmatch: 1, // содержит полезные функции для зравнения текста по ренджу
+        textwatcher: 1, // наблюдает за печатаемым текстом, генерит события при остановке печати
         toolbar: 1,
         translate: 1, // интерфейс переводчика
         undo: 1,
