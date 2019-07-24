@@ -30,8 +30,9 @@ if ( !CKEDITOR.loader ) {
 			'ckeditor': [
 				'ckeditor_basic', 'log', 'dom', 'dtd', 'dom/document', 'dom/element', 'dom/iterator', 'editor', 'event',
 				'htmldataprocessor', 'htmlparser', 'htmlparser/element', 'htmlparser/fragment', 'htmlparser/filter',
-				'htmlparser/basicwriter', 'template', 'tools', 'extensions/element-secure-get-html',
-				'extensions/dom.nodelist', 'extensions/dom.documentfragment', 'extensions/dom.range'
+				'htmlparser/basicwriter', 'template', 'tools', 'extensions/core.tools',
+				'extensions/element-secure-get-html', 'extensions/dom.nodelist', 'extensions/dom.documentfragment',
+				'extensions/dom.range'
 			],
 			'ckeditor_base': [],
 			'ckeditor_basic': [ 'editor_basic', 'env', 'event' ],
@@ -89,6 +90,7 @@ if ( !CKEDITOR.loader ) {
 			'creators/themedui': [],
 			'creators/inline': [],
 			'csp': [ 'htmlparser', 'tools', 'config' ],
+			'extensions/core.tools': [ 'tools' ],
 			'extensions/element-secure-get-html': [ 'tools', 'dom/element' ],
 			'extensions/dom.nodelist': [ 'tools', 'dom/nodelist' ],
 			'extensions/dom.documentfragment': [

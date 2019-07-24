@@ -196,7 +196,7 @@
 		 * @readonly
 		 * @property {CKEDITOR.plugins.textWatcher}
 		 */
-		this.textWatcher = this.getTextWatcher( config.textTestCallback );
+		this.textWatcher = this.getTextWatcher( config.textTestCallback, config );
 
 		/**
 		 * The autocomplete keystrokes used to finish autocompletion with the selected view item.
