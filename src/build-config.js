@@ -116,7 +116,6 @@ var CKBUILDER_CONFIG = {
         tableresize: 0,
         tabletools: 0, // зависит от contextmenu
         templates: 0, // диалог выбора шаблонов
-        textmatch: 1, // содержит полезные функции для зравнения текста по ренджу
         textwatcher: 1, // наблюдает за печатаемым текстом, генерит события при остановке печати
         toolbar: 1,
         translate: 1, // интерфейс переводчика
