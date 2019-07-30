@@ -441,25 +441,31 @@
 			html = html.replace( /\t/g, '&nbsp;&nbsp; &nbsp;' );
 
 			var paragraphTag = enterMode == CKEDITOR.ENTER_P ? 'p' : 'div';
+			var openTag = '<' + paragraphTag + '>';
+			var endTag = '</' + paragraphTag + '>';
 
 			// Two line-breaks create one paragraphing block.
 			if ( !isEnterBrMode ) {
 				var duoLF = /\n{2}/g;
 				if ( duoLF.test( html ) ) {
-					var openTag = '<' + paragraphTag + '>', endTag = '</' + paragraphTag + '>';
-					html = openTag + html.replace( duoLF, function() {
-						return endTag + openTag;
-					} ) + endTag;
+					var breakHtml = openTag + (enterMode == CKEDITOR.ENTER_P ? '&nbsp;' : '<br>') + endTag;
+					html = openTag + html.replace( duoLF, endTag + breakHtml + openTag ) + endTag;
 				}
 			}
 
 			// One <br> per line-break.
-			html = html.replace( /\n/g, '<br>' );
+			if ( /\n/g.test( html ) ) {
+				if (isEnterBrMode) {
+					html = html.replace( /\n/g, '<br>' );
+				} else {
+					html = openTag + html.replace( /\n/g, endTag + openTag ) + endTag;
+				}
+			}
 
 			// Compensate padding <br> at the end of block, avoid loosing them during insertion.
 			if ( !isEnterBrMode ) {
-				html = html.replace( new RegExp( '<br>(?=</' + paragraphTag + '>)' ), function( match ) {
-					return CKEDITOR.tools.repeat( match, 2 );
+				html = html.replace( new RegExp( '(<' + paragraphTag + '>?)(<br>)(?=</' + paragraphTag + '>)' ), function( fullMatch, openTag, match ) {
+					return openTag ? fullMatch : CKEDITOR.tools.repeat( match, 2 );
 				} );
 			}
 
@@ -889,20 +895,8 @@
 				}
 
 				if ( !( /%$/ ).test( cssLength ) ) {
-					var isNegative = parseFloat( cssLength ) < 0,
-						ret;
-
-					if ( isNegative ) {
-						cssLength = cssLength.replace( '-', '' );
-					}
-
 					calculator.setStyle( 'width', cssLength );
-					ret = calculator.$.clientWidth;
-
-					if ( isNegative ) {
-						return -ret;
-					}
-					return ret;
+					return calculator.$.clientWidth;
 				}
 
 				return cssLength;
@@ -1058,7 +1052,7 @@
 					name = name.toLowerCase();
 					// Drop extra whitespacing from font-family.
 					if ( name == 'font-family' )
-						value = value.replace( /\s*,\s*/g, ',' );
+						value = value.toLowerCase().replace( /["']/g, '' ).replace( /\s*,\s*/g, ',' );
 					value = CKEDITOR.tools.trim( value );
 				}
 
