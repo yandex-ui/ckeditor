@@ -248,7 +248,7 @@ a.cke_dialog_tab {
   background: #d4d4d4;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#fafafa), to(#ededed));
   background-image: -webkit-linear-gradient(top, #fafafa, #ededed);
-  background-image: -moz-linear-gradient(top, #fafafa, #ededed);
+  background-image: -moz- oldlinear-gradient(top, #fafafa, #ededed);
   background-image: -o-linear-gradient(top, #fafafa, #ededed);
   background-image: linear-gradient(to bottom, #fafafa, #ededed);
 }
@@ -293,7 +293,7 @@ a.cke_dialog_ui_button {
   background: rgba(0,0,0,0.3);
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.2)), to(rgba(0,0,0,0.4)));
   background: -webkit-linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4));
-  background: -moz-linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4));
+  background: -moz- oldlinear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4));
   background: -o-linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4));
   background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4));
   position: relative;
@@ -365,7 +365,7 @@ a.cke_dialog_ui_button:before {
   background: #f7f7f7;
   background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee));
   background: -webkit-linear-gradient(#fff, #eee);
-  background: -moz-linear-gradient(#fff, #eee);
+  background: -moz- oldlinear-gradient(#fff, #eee);
   background: -o-linear-gradient(#fff, #eee);
   background: linear-gradient(#fff, #eee);
 }
@@ -374,7 +374,7 @@ a.cke_dialog_ui_button:hover {
   background: rgba(0,0,0,0.31);
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.22)), to(rgba(0,0,0,0.4)));
   background: -webkit-linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.4));
-  background: -moz-linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.4));
+  background: -moz- oldlinear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.4));
   background: -o-linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.4));
   background: linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.4));
 }
@@ -383,7 +383,7 @@ a.cke_dialog_ui_button:hover:before {
   background: #fbfaf9;
   background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#f6f5f3));
   background: -webkit-linear-gradient(#fff, #f6f5f3);
-  background: -moz-linear-gradient(#fff, #f6f5f3);
+  background: -moz- oldlinear-gradient(#fff, #f6f5f3);
   background: -o-linear-gradient(#fff, #f6f5f3);
   background: linear-gradient(#fff, #f6f5f3);
 }
@@ -419,7 +419,7 @@ a.cke_dialog_ui_button_ok {
   background: rgba(83,56,0,0.47);
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(96,64,0,0.4)), to(rgba(70,47,0,0.54)));
   background: -webkit-linear-gradient(rgba(96,64,0,0.4), rgba(70,47,0,0.54));
-  background: -moz-linear-gradient(rgba(96,64,0,0.4), rgba(70,47,0,0.54));
+  background: -moz- oldlinear-gradient(rgba(96,64,0,0.4), rgba(70,47,0,0.54));
   background: -o-linear-gradient(rgba(96,64,0,0.4), rgba(70,47,0,0.54));
   background: linear-gradient(rgba(96,64,0,0.4), rgba(70,47,0,0.54));
 }
@@ -475,7 +475,7 @@ a.cke_dialog_ui_button_ok:before {
   background: #ffd630;
   background: -webkit-gradient(linear, left top, left bottom, from(#ffdf60), to(#fc0));
   background: -webkit-linear-gradient(#ffdf60, #fc0);
-  background: -moz-linear-gradient(#ffdf60, #fc0);
+  background: -moz- oldlinear-gradient(#ffdf60, #fc0);
   background: -o-linear-gradient(#ffdf60, #fc0);
   background: linear-gradient(#ffdf60, #fc0);
 }
@@ -484,7 +484,7 @@ a.cke_dialog_ui_button_ok:hover {
   background: rgba(0,0,0,0.31);
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.22)), to(rgba(0,0,0,0.4)));
   background: -webkit-linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.4));
-  background: -moz-linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.4));
+  background: -moz- oldlinear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.4));
   background: -o-linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.4));
   background: linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.4));
 }
@@ -493,7 +493,7 @@ a.cke_dialog_ui_button_ok:hover:before {
   background: #fd5;
   background: -webkit-gradient(linear, left top, left bottom, from(#ffe681), to(#ffd428));
   background: -webkit-linear-gradient(#ffe681, #ffd428);
-  background: -moz-linear-gradient(#ffe681, #ffd428);
+  background: -moz- oldlinear-gradient(#ffe681, #ffd428);
   background: -o-linear-gradient(#ffe681, #ffd428);
   background: linear-gradient(#ffe681, #ffd428);
 }
@@ -518,7 +518,7 @@ a.cke_dialog_tab:focus {
   background: #ebebeb;
   background: -webkit-gradient(linear, left top, left bottom, from(#ebebeb), to(#dfdfdf));
   background: -webkit-linear-gradient(top, #ebebeb 0%, #dfdfdf 100%);
-  background: -moz-linear-gradient(top, #ebebeb 0%, #dfdfdf 100%);
+  background: -moz- oldlinear-gradient(top, #ebebeb 0%, #dfdfdf 100%);
   background: -o-linear-gradient(top, #ebebeb 0%, #dfdfdf 100%);
   background: linear-gradient(to bottom, #ebebeb 0%, #dfdfdf 100%);
 }
@@ -527,7 +527,7 @@ a.cke_dialog_tab_selected:focus,
 background #ededed {
   background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#fff));
   background: -webkit-linear-gradient(top, #ededed 0%, #fff 100%);
-  background: -moz-linear-gradient(top, #ededed 0%, #fff 100%);
+  background: -moz- oldlinear-gradient(top, #ededed 0%, #fff 100%);
   background: -o-linear-gradient(top, #ededed 0%, #fff 100%);
   background: linear-gradient(to bottom, #ededed 0%, #fff 100%);
 }
@@ -596,7 +596,7 @@ textarea.cke_dialog_ui_input_textarea {
   background: #fff /* ie fallback */;
   background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff));
   background: -webkit-linear-gradient(#fff, #fff);
-  background: -moz-linear-gradient(#fff, #fff);
+  background: -moz- oldlinear-gradient(#fff, #fff);
   background: -o-linear-gradient(#fff, #fff);
   background: linear-gradient(#fff, #fff);
   background-clip: padding-box;
