@@ -25,7 +25,7 @@
     "auto": "^0.1.2",
     "autoprefixer": "5.2.0",
     "del": "~1.1.0",
-    "grunt": "~0.4.5",
+    "grunt": "^1.0.2",
     "gulp": "3.9.0",
     "gulp-filelog": "~0.4.1",
     "gulp-grunt": "~0.5.2",
@@ -38,5 +38,11 @@
   },
   "engines": {
     "node": ">=0.6.0"
+  },
+  "scripts": {
+    "preinstall": "npx npm-force-resolutions"
+  },
+  "resolutions": {
+    "graceful-fs": "4.2.3"
   }
 }
