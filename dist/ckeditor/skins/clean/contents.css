@@ -31,6 +31,10 @@
   color: #ccc;
   padding-left: 4px;
 }
+.cke_source:-moz-placeholder {
+  color: #ccc;
+  padding-left: 4px;
+}
 .cke_source::-moz-placeholder {
   color: #ccc;
   padding-left: 4px;
