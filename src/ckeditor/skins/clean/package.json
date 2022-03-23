@@ -1,0 +1,48 @@
+{
+  "name": "ckeditor-skin-clean",
+  "description": "",
+  "version": "0.0.1",
+  "keywords": [
+    "ckeditor",
+    "skin",
+    "clean"
+  ],
+  "author": {
+    "name": "Rikishi",
+    "email": "bufpost@yandex.ru",
+    "url": "https://github.com/Katochimoto"
+  },
+  "bugs": {
+    "url": "https://github.com/Katochimoto/ckeditor-skin-clean/issues",
+    "email": "bufpost@yandex.ru"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Katochimoto/ckeditor-skin-clean.git"
+  },
+  "devDependencies": {
+    "auto": "^0.1.2",
+    "autoprefixer": "5.2.0",
+    "del": "~1.1.0",
+    "grunt": "^1.0.2",
+    "gulp": "3.9.0",
+    "gulp-filelog": "~0.4.1",
+    "gulp-grunt": "~0.5.2",
+    "gulp-replace": "~0.5.2",
+    "load-grunt-tasks": "~1.0.0",
+    "stylobate": "0.25.x",
+    "stylobate-islands": "0.28.x",
+    "stylus": "0.52.0",
+    "svg_fallback": "https://github.com/Katochimoto/svg-fallback.git#my-master"
+  },
+  "engines": {
+    "node": ">=0.6.0"
+  },
+  "scripts": {
+    "preinstall": "npx npm-force-resolutions"
+  },
+  "resolutions": {
+    "graceful-fs": "4.2.3"
+  }
+}

@@ -1,0 +1,88 @@
+.cke_notifications_area
+  pointer-events: none
+
+.cke_notification
+  pointer-events: auto
+  position: relative
+  margin: 10px
+  width: 300px
+  color: white
+  border-radius: 3px
+  text-align: center
+  opacity: 0.95
+  box-shadow: 2px 2px 3px 0px rgba(50, 50, 50, 0.3)
+  animation: fadeIn 0.7s
+
+.cke_notification_message
+  position: relative
+  margin: 4px 23px 3px
+  font-family: $fontFamily
+  font-size: 12px
+  line-height: 18px
+  z-index: 4
+  text-overflow: ellipsis
+  overflow: hidden
+
+  & a
+    color: #12306F
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.4
+  }
+  to {
+    opacity: 0.95
+  }
+}
+
+.cke_notification_success
+  background: #72B572
+  border: 1px solid #63A563
+
+.cke_notification_warning
+  background: #C83939
+  border: 1px solid #902B2B
+
+  & a
+    &.cke_notification_close
+      opacity: 0.8
+
+      &:hover
+        opacity: 1
+
+.cke_notification_info
+  background: #2E9AD0
+  border: 1px solid #0F74A8
+
+  & span
+    &.cke_notification_progress
+      background-color: #0F74A8
+      display: block
+      padding: 0
+      margin: 0
+      height: 100%
+      overflow: hidden
+      position: absolute
+      z-index: 1
+
+.cke_notification_close
+  background-image: url("src-images/cke_svgicon/close.svg")
+  background-repeat: no-repeat
+  background-position: 50%
+  position: absolute
+  cursor: pointer
+  text-align: center
+  height: 20px
+  width: 20px
+  top: 1px
+  right: 1px
+  padding: 0
+  margin: 0
+  z-index: 5
+  opacity: 0.6
+
+  &:hover
+    opacity: 1
+
+  & span
+    display: none

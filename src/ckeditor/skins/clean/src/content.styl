@@ -1,0 +1,137 @@
+.cke_editable
+  font: 14px $fontFamily
+  line-height: normal
+  color: #000
+  background-color: #fff
+  border: none
+  padding: 0
+  margin: 0
+  display: block
+
+  &:not(#cke_pastebin)
+    white-space: pre-wrap
+    word-wrap: break-word
+
+.cke_maximized
+  & .cke_source
+    padding: 0 10px
+
+.cke_source::-webkit-input-placeholder
+  color: #ccc
+  padding-left: 4px
+
+.cke_source::-moz-placeholder
+  color: #ccc
+  padding-left: 4px
+
+.cke_source::-ms-input-placeholder
+  color: #ccc
+  padding-left: 4px
+
+.cke_source::placeholder
+  color: #ccc
+  padding-left: 4px
+
+.cke_source:-ms-input-placeholder
+  color: #ccc !important
+  padding-left: 4px !important
+
+.cke_editable
+  & h1
+    font-size: 2em
+
+  & h2
+    font-size: 1.5em
+
+  & h3
+    font-size: 1.2em
+
+  & h4
+    font-size: 1em
+
+  & h5
+    font-size: 0.8em
+
+  & h6
+    font-size: 0.7em
+
+  & img
+    border: 0
+
+    &.right
+      border: 1px solid #ccc
+      float: right
+      margin-left: 15px
+      padding: 5px
+
+    &.left
+      border: 1px solid #ccc
+      float: left
+      margin-right: 15px
+      padding: 5px
+
+  & ins
+    border-bottom: 1px solid green
+    text-decoration: none
+    color: green
+
+  & del
+    color: red
+    text-decoration: line-through
+
+  & cite
+    border-bottom: 1px dashed blue
+
+  & acronym
+    border-bottom: 1px dotted #ccc
+    cursor: help
+
+  & abbr
+    border-bottom: 1px dashed #ccc
+    cursor: help
+
+  & blockquote
+    _border: 1px solid #fff
+    border-left: 1px solid #ccc
+    margin: 0 0 0 1em
+    padding-left: 1em
+
+  & table
+    cursor: default
+
+  & pre
+    white-space: pre-line
+
+  & code
+    white-space: pre-wrap
+
+  & a
+    &:link
+      cursor: pointer
+      color: #00e
+
+    &:visited
+      color: #609
+
+    &:hover,
+    &:visited:hover
+      color: #f00
+
+  & .marker
+    background-color: Yellow
+
+  & span[lang]
+    font-style: italic
+
+  & figure
+    text-align: center
+    border: solid 1px #ccc
+    border-radius: 2px
+    background: rgba(#000, 0.05)
+    padding: 10px
+    margin: 10px 20px
+    display: inline-block
+
+    & > figcaption
+      text-align: center
+      display: block

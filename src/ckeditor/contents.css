@@ -1,0 +1,113 @@
+.cke_editable {
+  font: 14px Arial, sans-serif;
+  line-height: normal;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+.cke_editable:not(#cke_pastebin) {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.cke_maximized .cke_source {
+  padding: 0 10px;
+}
+.cke_editable h1 {
+  font-size: 2em;
+}
+.cke_editable h2 {
+  font-size: 1.5em;
+}
+.cke_editable h3 {
+  font-size: 1.2em;
+}
+.cke_editable h4 {
+  font-size: 1em;
+}
+.cke_editable h5 {
+  font-size: 0.8em;
+}
+.cke_editable h6 {
+  font-size: 0.7em;
+}
+.cke_editable img {
+  border: 0;
+}
+.cke_editable img.right {
+  border: 1px solid #ccc;
+  float: right;
+  margin-left: 15px;
+  padding: 5px;
+}
+.cke_editable img.left {
+  border: 1px solid #ccc;
+  float: left;
+  margin-right: 15px;
+  padding: 5px;
+}
+.cke_editable ins {
+  border-bottom: 1px solid #008000;
+  text-decoration: none;
+  color: #008000;
+}
+.cke_editable del {
+  color: #f00;
+  text-decoration: line-through;
+}
+.cke_editable cite {
+  border-bottom: 1px dashed #00f;
+}
+.cke_editable acronym {
+  border-bottom: 1px dotted #ccc;
+  cursor: help;
+}
+.cke_editable abbr {
+  border-bottom: 1px dashed #ccc;
+  cursor: help;
+}
+.cke_editable blockquote {
+  _border: 1px solid #fff;
+  border-left: 1px solid #ccc;
+  margin: 0 0 0 1em;
+  padding-left: 1em;
+}
+.cke_editable table {
+  cursor: default;
+}
+.cke_editable pre {
+  white-space: pre-line;
+}
+.cke_editable a:link {
+  cursor: pointer;
+  color: #00e;
+}
+.cke_editable a:visited {
+  color: #609;
+}
+.cke_editable a:hover,
+.cke_editable a:visited:hover {
+  color: #f00;
+}
+.cke_editable .marker {
+  background-color: Yellow;
+}
+.cke_editable span[lang] {
+  font-style: italic;
+}
+.cke_editable figure {
+  text-align: center;
+  border: solid 1px #ccc;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
+  background: rgba(0,0,0,0.05);
+  padding: 10px;
+  margin: 10px 20px;
+  display: inline-block;
+}
+.cke_editable figure > figcaption {
+  text-align: center;
+  display: block;
+}

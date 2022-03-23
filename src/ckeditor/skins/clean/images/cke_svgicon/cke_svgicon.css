@@ -1,0 +1,504 @@
+.cke_svgicon {
+    display: inline-block;
+    background-image: url(cke_svgicon.png);
+    /* This hides bg-image in modern browsers except IE9 */
+    background: -webkit-linear-gradient(transparent, transparent);
+    background: linear-gradient(transparent, transparent);
+    /* This hides bg-image in IE9 */
+    background-position: -1000vh 0 !important;
+    }
+.cke_svgicon--addimage {
+    width: 16px;
+    height: 16px;
+    background-position: -170px -112px;
+    }
+.cke_svgicon--arrow {
+    width: 16px;
+    height: 8px;
+    background-position: -276px -126px;
+    }
+.cke_svgicon--attachment {
+    width: 16px;
+    height: 16px;
+    background-position: -170px -138px;
+    }
+.cke_svgicon--attachmentcomputer {
+    width: 16px;
+    height: 16px;
+    background-position: -34px -137px;
+    }
+.cke_svgicon--attachmentdisk {
+    width: 16px;
+    height: 16px;
+    background-position: -60px -137px;
+    }
+.cke_svgicon--attachmentmail {
+    width: 16px;
+    height: 16px;
+    background-position: -86px -137px;
+    }
+.cke_svgicon--bgcolor {
+    width: 16px;
+    height: 16px;
+    background-position: -112px -137px;
+    }
+.cke_svgicon--blockquote {
+    width: 16px;
+    height: 16px;
+    background-position: -138px -137px;
+    }
+.cke_svgicon--bold-en {
+    width: 16px;
+    height: 16px;
+    background-position: 0 -164px;
+    }
+.cke_svgicon--bold-ru {
+    width: 16px;
+    height: 16px;
+    background-position: -26px -164px;
+    }
+.cke_svgicon--bulletedlist {
+    width: 16px;
+    height: 16px;
+    background-position: -52px -164px;
+    }
+.cke_svgicon--close {
+    width: 14px;
+    height: 14px;
+    background-position: -276px -78px;
+    }
+.cke_svgicon--codesnippet {
+    width: 16px;
+    height: 16px;
+    background-position: -78px -164px;
+    }
+.cke_svgicon--emoticons {
+    width: 16px;
+    height: 16px;
+    background-position: -104px -164px;
+    }
+.cke_svgicon--font {
+    width: 16px;
+    height: 16px;
+    background-position: -130px -164px;
+    }
+.cke_svgicon--fontsize {
+    width: 16px;
+    height: 16px;
+    background-position: -156px -164px;
+    }
+.cke_svgicon--info {
+    width: 16px;
+    height: 16px;
+    background-position: -198px 0;
+    }
+.cke_svgicon--italic-en {
+    width: 16px;
+    height: 16px;
+    background-position: -198px -26px;
+    }
+.cke_svgicon--italic-ru {
+    width: 16px;
+    height: 16px;
+    background-position: -198px -52px;
+    }
+.cke_svgicon--justifyblock {
+    width: 16px;
+    height: 16px;
+    background-position: -198px -78px;
+    }
+.cke_svgicon--justifycenter {
+    width: 16px;
+    height: 16px;
+    background-position: -198px -104px;
+    }
+.cke_svgicon--justifyleft {
+    width: 16px;
+    height: 16px;
+    background-position: -198px -130px;
+    }
+.cke_svgicon--justifyright {
+    width: 16px;
+    height: 16px;
+    background-position: -198px -156px;
+    }
+.cke_svgicon--link {
+    width: 16px;
+    height: 16px;
+    background-position: 0 -190px;
+    }
+.cke_svgicon--lisa_addimage {
+    width: 24px;
+    height: 24px;
+    background-position: -68px 0;
+    }
+.cke_svgicon--lisa_arrow {
+    width: 16px;
+    height: 8px;
+    background-position: -276px -144px;
+    }
+.cke_svgicon--lisa_attachment {
+    width: 16px;
+    height: 16px;
+    background-position: -26px -190px;
+    }
+.cke_svgicon--lisa_attachmentcomputer {
+    width: 16px;
+    height: 16px;
+    background-position: -52px -190px;
+    }
+.cke_svgicon--lisa_attachmentdisk {
+    width: 16px;
+    height: 16px;
+    background-position: -78px -190px;
+    }
+.cke_svgicon--lisa_attachmentmail {
+    width: 16px;
+    height: 16px;
+    background-position: -104px -190px;
+    }
+.cke_svgicon--lisa_bgcolor {
+    width: 24px;
+    height: 24px;
+    background-position: 0 -35px;
+    }
+.cke_svgicon--lisa_blockquote {
+    width: 24px;
+    height: 17px;
+    background-position: 0 -137px;
+    }
+.cke_svgicon--lisa_bold-en {
+    width: 16px;
+    height: 16px;
+    background-position: -130px -190px;
+    }
+.cke_svgicon--lisa_bold-ru {
+    width: 24px;
+    height: 24px;
+    background-position: -34px -35px;
+    }
+.cke_svgicon--lisa_bulletedlist {
+    width: 24px;
+    height: 24px;
+    background-position: -68px -35px;
+    }
+.cke_svgicon--lisa_close {
+    width: 14px;
+    height: 14px;
+    background-position: -276px -102px;
+    }
+.cke_svgicon--lisa_codesnippet {
+    width: 16px;
+    height: 16px;
+    background-position: -156px -190px;
+    }
+.cke_svgicon--lisa_emoticons {
+    width: 24px;
+    height: 24px;
+    background-position: -102px 0;
+    }
+.cke_svgicon--lisa_font {
+    width: 16px;
+    height: 16px;
+    background-position: -182px -190px;
+    }
+.cke_svgicon--lisa_fontsize {
+    width: 19px;
+    height: 12px;
+    background-position: 0 -268px;
+    }
+.cke_svgicon--lisa_info {
+    width: 16px;
+    height: 16px;
+    background-position: -224px 0;
+    }
+.cke_svgicon--lisa_italic-en {
+    width: 16px;
+    height: 16px;
+    background-position: -224px -26px;
+    }
+.cke_svgicon--lisa_italic-ru {
+    width: 24px;
+    height: 24px;
+    background-position: -102px -34px;
+    }
+.cke_svgicon--lisa_justifyblock {
+    width: 16px;
+    height: 16px;
+    background-position: -224px -52px;
+    }
+.cke_svgicon--lisa_justifycenter {
+    width: 24px;
+    height: 25px;
+    background-position: 0 0;
+    }
+.cke_svgicon--lisa_justifyleft {
+    width: 24px;
+    height: 24px;
+    background-position: 0 -69px;
+    }
+.cke_svgicon--lisa_justifyright {
+    width: 24px;
+    height: 25px;
+    background-position: -34px 0;
+    }
+.cke_svgicon--lisa_link {
+    width: 24px;
+    height: 24px;
+    background-position: -34px -69px;
+    }
+.cke_svgicon--lisa_lock {
+    width: 18px;
+    height: 18px;
+    background-position: -170px 0;
+    }
+.cke_svgicon--lisa_mailbgcolor {
+    width: 24px;
+    height: 24px;
+    background-position: -68px -69px;
+    }
+.cke_svgicon--lisa_mailfont {
+    width: 16px;
+    height: 16px;
+    background-position: -224px -78px;
+    }
+.cke_svgicon--lisa_mailfontsize {
+    width: 19px;
+    height: 12px;
+    background-position: -29px -268px;
+    }
+.cke_svgicon--lisa_mailtextcolor {
+    width: 24px;
+    height: 24px;
+    background-position: -102px -69px;
+    }
+.cke_svgicon--lisa_maximize {
+    width: 16px;
+    height: 16px;
+    background-position: -224px -104px;
+    }
+.cke_svgicon--lisa_menualignment {
+    width: 16px;
+    height: 16px;
+    background-position: -224px -130px;
+    }
+.cke_svgicon--lisa_menulist {
+    width: 16px;
+    height: 16px;
+    background-position: -224px -156px;
+    }
+.cke_svgicon--lisa_menuselection-en {
+    width: 16px;
+    height: 16px;
+    background-position: -224px -182px;
+    }
+.cke_svgicon--lisa_menuselection-ru {
+    width: 16px;
+    height: 16px;
+    background-position: 0 -216px;
+    }
+.cke_svgicon--lisa_more {
+    width: 24px;
+    height: 24px;
+    background-position: -136px 0;
+    }
+.cke_svgicon--lisa_numberedlist {
+    width: 24px;
+    height: 24px;
+    background-position: -136px -34px;
+    }
+.cke_svgicon--lisa_pastefromword {
+    width: 16px;
+    height: 16px;
+    background-position: -26px -216px;
+    }
+.cke_svgicon--lisa_redo {
+    width: 24px;
+    height: 24px;
+    background-position: -136px -68px;
+    }
+.cke_svgicon--lisa_refresh {
+    width: 18px;
+    height: 18px;
+    background-position: -170px -28px;
+    }
+.cke_svgicon--lisa_removeformat {
+    width: 24px;
+    height: 24px;
+    background-position: 0 -103px;
+    }
+.cke_svgicon--lisa_strike-en {
+    width: 16px;
+    height: 16px;
+    background-position: -52px -216px;
+    }
+.cke_svgicon--lisa_strike-ru {
+    width: 24px;
+    height: 24px;
+    background-position: -34px -103px;
+    }
+.cke_svgicon--lisa_switchmode-off {
+    width: 16px;
+    height: 16px;
+    background-position: -78px -216px;
+    }
+.cke_svgicon--lisa_switchmode-on {
+    width: 16px;
+    height: 16px;
+    background-position: -104px -216px;
+    }
+.cke_svgicon--lisa_switchmode {
+    width: 16px;
+    height: 16px;
+    background-position: -130px -216px;
+    }
+.cke_svgicon--lisa_textcolor {
+    width: 24px;
+    height: 24px;
+    background-position: -68px -103px;
+    }
+.cke_svgicon--lisa_underline-en {
+    width: 16px;
+    height: 16px;
+    background-position: -156px -216px;
+    }
+.cke_svgicon--lisa_underline-ru {
+    width: 24px;
+    height: 24px;
+    background-position: -102px -103px;
+    }
+.cke_svgicon--lisa_undo {
+    width: 24px;
+    height: 24px;
+    background-position: -136px -103px;
+    }
+.cke_svgicon--lisa_unlink {
+    width: 16px;
+    height: 16px;
+    background-position: -182px -216px;
+    }
+.cke_svgicon--lock {
+    width: 18px;
+    height: 18px;
+    background-position: -170px -56px;
+    }
+.cke_svgicon--mailbgcolor {
+    width: 16px;
+    height: 16px;
+    background-position: -208px -216px;
+    }
+.cke_svgicon--mailfont {
+    width: 16px;
+    height: 16px;
+    background-position: -250px 0;
+    }
+.cke_svgicon--mailfontsize {
+    width: 16px;
+    height: 16px;
+    background-position: -250px -26px;
+    }
+.cke_svgicon--mailtextcolor {
+    width: 16px;
+    height: 16px;
+    background-position: -250px -52px;
+    }
+.cke_svgicon--maximize {
+    width: 16px;
+    height: 16px;
+    background-position: -250px -78px;
+    }
+.cke_svgicon--menualignment {
+    width: 16px;
+    height: 16px;
+    background-position: -250px -104px;
+    }
+.cke_svgicon--menulist {
+    width: 16px;
+    height: 16px;
+    background-position: -250px -130px;
+    }
+.cke_svgicon--menuselection-en {
+    width: 16px;
+    height: 16px;
+    background-position: -250px -156px;
+    }
+.cke_svgicon--menuselection-ru {
+    width: 16px;
+    height: 16px;
+    background-position: -250px -182px;
+    }
+.cke_svgicon--numberedlist {
+    width: 16px;
+    height: 16px;
+    background-position: -250px -208px;
+    }
+.cke_svgicon--pastefromword {
+    width: 16px;
+    height: 16px;
+    background-position: 0 -242px;
+    }
+.cke_svgicon--redo {
+    width: 16px;
+    height: 16px;
+    background-position: -26px -242px;
+    }
+.cke_svgicon--refresh {
+    width: 18px;
+    height: 18px;
+    background-position: -170px -84px;
+    }
+.cke_svgicon--removeformat {
+    width: 16px;
+    height: 16px;
+    background-position: -52px -242px;
+    }
+.cke_svgicon--strike-en {
+    width: 16px;
+    height: 16px;
+    background-position: -78px -242px;
+    }
+.cke_svgicon--strike-ru {
+    width: 16px;
+    height: 16px;
+    background-position: -104px -242px;
+    }
+.cke_svgicon--switchmode-off {
+    width: 16px;
+    height: 16px;
+    background-position: -130px -242px;
+    }
+.cke_svgicon--switchmode-on {
+    width: 16px;
+    height: 16px;
+    background-position: -156px -242px;
+    }
+.cke_svgicon--switchmode {
+    width: 16px;
+    height: 16px;
+    background-position: -182px -242px;
+    }
+.cke_svgicon--textcolor {
+    width: 16px;
+    height: 16px;
+    background-position: -208px -242px;
+    }
+.cke_svgicon--underline-en {
+    width: 16px;
+    height: 16px;
+    background-position: -234px -242px;
+    }
+.cke_svgicon--underline-ru {
+    width: 16px;
+    height: 16px;
+    background-position: -276px 0;
+    }
+.cke_svgicon--undo {
+    width: 16px;
+    height: 16px;
+    background-position: -276px -26px;
+    }
+.cke_svgicon--unlink {
+    width: 16px;
+    height: 16px;
+    background-position: -276px -52px;
+    }
