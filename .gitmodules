@@ -1,3 +1,0 @@
-[submodule "src/ckeditor"]
-	path = src/ckeditor
-	url = https://github.com/yandex-ui/ckeditor-dev.git
