@@ -1,0 +1,9 @@
+.npmignore
+.idea
+.git
+.npm-debug.log
+.gitignore
+node_modules
+Makefile
+Gruntfile.js
+gulpfile.js

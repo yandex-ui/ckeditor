@@ -1,0 +1,215 @@
+.cke_toolbar
+  float: left
+
+  .cke_rtl &
+    float: right
+
+.cke_toolgroup
+  float: left
+  margin: 0 6px 5px 0
+
+  .cke_rtl &
+    float: right
+    margin-left: 6px
+    margin-right: 0
+
+  .cke_hc &
+    border: 0
+    margin-right: 10px
+    margin-bottom: 10px
+
+a.cke_button
+  color: rgba(#000, 0.5)
+  display: inline-block
+  padding: 2px
+  outline: none
+  cursor: pointer
+  float: left
+  border: 0
+  border-radius: 2px
+  height: 16px
+
+  &:hover
+    color: #000
+
+    & > span.cke_button_icon
+      opacity: 1
+
+  .cke_rtl &
+    float: right
+
+a.cke_button_on
+  box-shadow: inset 30px 30px 0px 30px #ffeba0
+  background: #ffeba0
+
+a.cke_toolbox_collapser
+  width: 12px
+  height: 11px
+  float: right
+  margin: 11px 0 0
+  font-size: 0
+  cursor: default
+  text-align: center
+  border: 1px solid #a6a6a6
+  border-bottom-color: #979797
+  border-radius: 3px
+  box-shadow: 0 1px 0 rgba(255,255,255,.5), 0 0 2px rgba(255,255,255,.15) inset, 0 1px 0 rgba(255,255,255,.15) inset
+  background: #e4e4e4
+  background-image: linear-gradient(to bottom, #ffffff, #e4e4e4)
+
+.cke_toolbox_collapser
+  &:hover
+    background: #ccc
+    background-image: linear-gradient(to bottom, #f2f2f2, #ccc)
+
+  .cke_rtl &
+    float: left
+
+  &.cke_toolbox_collapser_min
+    margin: 0 2px 4px
+
+    & .cke_arrow
+      margin-top: 4px
+      border-bottom-color: transparent
+      border-top-color: #474747
+
+  .cke_arrow
+    display: inline-block
+    height: 0
+    width: 0
+    font-size: 0
+    margin-top: 1px
+    border-left: 3px solid transparent
+    border-right: 3px solid transparent
+    border-bottom: 3px solid #474747
+    border-top: 3px solid transparent
+
+.cke_toolbar_break
+  display: block
+  clear: left
+
+  .cke_rtl &
+    clear: right
+
+.cke_toolbar_separator
+  float: left
+  background-color: #c0c0c0
+  background-color: rgba(#000,.2)
+  margin: 5px 2px 0
+  height: 18px
+  width: 1px
+  box-shadow: 1px 0 1px rgba(#fff,.5)
+
+  &_line
+    float: left
+    margin: 2px 10px 7px
+    height: 16px
+    width: 1px
+    background-color: #cecece
+
+  .cke_hc &
+    width: 0
+    border-left: 1px solid
+    margin: 1px 5px 0 0px
+
+  .cke_rtl &
+    float: right
+    box-shadow: -1px 0 1px rgba(#fff,.1)
+
+
+.cke_button_arrow,
+.cke_combo_arrow
+  skin: icon _arrow \
+        (width 1px) (size 8px) \
+        with-transition
+  margin-left: 2px
+  margin-top: -0.6em
+
+  .cke_rtl &
+    margin-right: 5px
+    margin-left: 0
+
+  .cke_hc &
+    font-size: 10px
+    margin: 3px -2px 0 3px
+    width: auto
+    border: 0
+
+.cke_button_on .cke_button_arrow,
+.cke_combo_on .cke_combo_arrow
+    skin: icon_arrow-direction top (offset-y 4px)
+
+.cke_button_label
+  display: none
+  padding: 0 3px
+  margin-top: 1px
+  line-height: 16px
+  vertical-align: middle
+  float: left
+  cursor: pointer
+
+  &__inline
+    display: inline
+    padding: 0 6px
+
+  .cke_rtl &
+    padding-right: 3px
+    padding-left: 0
+    float: right
+
+  .cke_hc &
+    padding: 0
+    display: inline-block
+    font-size: 12px
+
+.cke_button_icon
+  cursor: inherit
+  background-repeat: no-repeat
+  width: 16px
+  height: 16px
+  float: left
+  display: inline-block
+
+  .cke_rtl &
+    float: right
+
+  .cke_hc &
+    display: none
+
+span.cke_button_icon
+  opacity: .6
+
+  .cke_button_disabled > &
+    opacity: .15
+
+.cke_button_disabled,
+.cke_combo_disabled > .cke_combo_button
+  color: rgba(#000, 0.15) !important
+  pointer-events: none
+
+a.cke_button_on
+  &:hover,
+  &:focus,
+  &:active
+    box-shadow: inset 30px 30px 0px 30px #ffeba0
+    background: #ffeba0
+
+a.cke_combo_button
+  color: rgba(#000, 0.5)
+  cursor: pointer
+  display: inline-block
+  float: left
+  padding: 2px
+  border-radius: 2px
+
+  &:hover
+    color: #000
+
+  .cke_rtl &
+    float: right
+    margin-left: 5px
+    margin-right: 0
+
+  .cke_combo_on > &
+    box-shadow: inset 30px 30px 0px 30px #ffeba0
+    background: #ffeba0
