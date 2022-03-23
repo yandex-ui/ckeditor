@@ -27,7 +27,7 @@ $(out_min_css): %.min.css: %.css node_modules
 	$(NPM_BIN)/stylus --compress < $< > $@
 
 svgimages_gulp: node_modules
-	$(NPM_BIN)/gulp grunt-svg_fallback
+	npx --no-install gulp grunt-svg_fallback
 
 svgimages: svgimages_gulp
 	for x in $$(find images -name '*.svg'); do (printf ":::" && cat "$$x" && printf ":::") > "$$x".yate; done

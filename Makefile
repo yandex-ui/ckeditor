@@ -19,7 +19,7 @@ node_modules: package.json
 	npm install
 	touch node_modules
 
-$(CURDIR)/src/ckeditor/dev/builder/release/ckeditor: $(src_js)
+$(CURDIR)/src/ckeditor/dev/builder/release/ckeditor: $(src_js) skin_clean
 	$(CURDIR)/src/ckeditor/dev/builder/build.sh \
 		--skip-omitted-in-build-config \
 		--leave-js-unminified \
@@ -41,4 +41,7 @@ $(CURDIR)/dist/ckeditor: $(CURDIR)/src/ckeditor/dev/builder/release/ckeditor
 	rm -rf $(CURDIR)/dist/ckeditor
 	cp -r $(CURDIR)/src/ckeditor/dev/builder/release/ckeditor $(CURDIR)/dist
 
-.PHONY: all clean
+skin_clean:
+	$(MAKE) -C ./src/ckeditor/skins/clean
+
+.PHONY: all clean skin_clean
