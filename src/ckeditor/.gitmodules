@@ -25,9 +25,6 @@
 [submodule "plugins/exselection"]
 	path = plugins/exselection
 	url = https://github.com/yandex-ui/ckeditor-exselection.git
-[submodule "skins/clean"]
-	path = skins/clean
-	url = https://github.com/yandex-ui/ckeditor-skin-clean.git
 [submodule "plugins/svgicons"]
 	path = plugins/svgicons
 	url = https://github.com/yandex-ui/ckeditor-svgicons.git
