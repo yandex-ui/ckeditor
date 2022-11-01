@@ -20,7 +20,7 @@
         "url": "git@github.com:yandex-ui/ckeditor.git"
     },
     "devDependencies": {
-        "borschik": "1.3.2",
+        "borschik": "1.8.0",
         "vow": "0.4.10",
         "lodash": "3.10.1"
     },
